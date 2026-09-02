@@ -1,0 +1,919 @@
+<title>Daily Task Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#F1F4F3; --panel:#FFFFFF; --panel-2:#E8EDEB; --panel-3:#DFE6E3;
+  --line:#D5DEDB; --line-strong:#B8C5C1;
+  --ink:#131C1A; --ink-2:#4B5B57; --ink-3:#7A8A85;
+  --accent:#0F6E68; --accent-hover:#0B5A55; --accent-ink:#FFFFFF; --accent-soft:#DBEDEA;
+  --p-critical:#B0281F; --p-critical-bg:#FAE6E4;
+  --p-high:#A25C0D;     --p-high-bg:#F9EEDF;
+  --p-med:#75620F;      --p-med-bg:#F4F0DC;
+  --p-low:#516560;      --p-low-bg:#E7EDEB;
+  --shadow:0 1px 2px rgba(19,28,26,.05), 0 6px 20px -12px rgba(19,28,26,.28);
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1413; --panel:#151E1C; --panel-2:#1B2624; --panel-3:#22302C;
+    --line:#26332F; --line-strong:#3A4A45;
+    --ink:#E6EDEB; --ink-2:#A4B3AF; --ink-3:#7A8A85;
+    --accent:#48BEB3; --accent-hover:#5FD1C6; --accent-ink:#04211F; --accent-soft:#123330;
+    --p-critical:#FF9083; --p-critical-bg:#37201C;
+    --p-high:#EDA85C;     --p-high-bg:#33260F;
+    --p-med:#D3C06B;      --p-med-bg:#2C2913;
+    --p-low:#9AADA7;      --p-low-bg:#1F2A27;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1413; --panel:#151E1C; --panel-2:#1B2624; --panel-3:#22302C;
+  --line:#26332F; --line-strong:#3A4A45;
+  --ink:#E6EDEB; --ink-2:#A4B3AF; --ink-3:#7A8A85;
+  --accent:#48BEB3; --accent-hover:#5FD1C6; --accent-ink:#04211F; --accent-soft:#123330;
+  --p-critical:#FF9083; --p-critical-bg:#37201C;
+  --p-high:#EDA85C;     --p-high-bg:#33260F;
+  --p-med:#D3C06B;      --p-med-bg:#2C2913;
+  --p-low:#9AADA7;      --p-low-bg:#1F2A27;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -14px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Archivo","Segoe UI",system-ui,sans-serif;
+  font-size:15px; line-height:1.45; -webkit-font-smoothing:antialiased;
+}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+
+.app{max-width:940px;margin:0 auto;padding:20px 18px 72px;display:flex;flex-direction:column;gap:14px}
+
+/* ---------- header ---------- */
+.topbar{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.brand h1{
+  margin:0;font-size:25px;font-weight:800;font-stretch:118%;
+  letter-spacing:-.015em;text-wrap:balance;
+}
+.brand .today{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);
+  text-transform:uppercase;letter-spacing:.08em;
+}
+.topbar-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.stats{display:flex;gap:14px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.stats b{color:var(--ink);font-weight:600}
+.stats .warn{color:var(--p-critical)}
+.sync{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.1em;color:var(--ink-3);border:1px solid var(--line);
+  padding:3px 8px;border-radius:99px;white-space:nowrap;
+}
+.sync[data-state="on"]{color:var(--accent);border-color:var(--accent-soft);background:var(--accent-soft)}
+.sync[data-state="local"]{color:var(--p-high);border-color:var(--p-high-bg);background:var(--p-high-bg)}
+
+/* ---------- list switch ---------- */
+.listswitch{display:flex;gap:4px;background:var(--panel-2);border:1px solid var(--line);padding:4px;border-radius:var(--r);width:fit-content}
+.seg{
+  border:0;background:transparent;color:var(--ink-2);padding:7px 18px;border-radius:7px;
+  font-weight:600;font-size:13.5px;letter-spacing:.01em;transition:background .12s,color .12s;
+}
+.seg:hover{color:var(--ink)}
+.seg[aria-selected="true"]{background:var(--panel);color:var(--ink);box-shadow:var(--shadow)}
+
+/* ---------- composer ---------- */
+.composer{
+  display:flex;gap:8px;align-items:stretch;flex-wrap:wrap;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+  padding:8px;box-shadow:var(--shadow);
+}
+.composer input[type="text"]{
+  flex:1 1 260px;min-width:0;border:0;background:transparent;padding:8px 10px;font-size:15.5px;
+}
+.composer input[type="text"]::placeholder{color:var(--ink-3)}
+.composer select,.composer input[type="date"]{
+  border:1px solid var(--line);background:var(--panel-2);border-radius:7px;padding:7px 9px;
+  font-size:13px;color:var(--ink-2);max-width:190px;
+}
+.composer button[type="submit"]{
+  border:0;background:var(--accent);color:var(--accent-ink);border-radius:7px;
+  padding:8px 18px;font-weight:600;font-size:13.5px;transition:background .12s;
+}
+.composer button[type="submit"]:hover{background:var(--accent-hover)}
+.hint{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);
+  padding:0 4px;min-height:17px;
+}
+.hint code{background:var(--panel-2);padding:1px 5px;border-radius:4px;color:var(--ink-2)}
+.hint .parsed{color:var(--accent)}
+
+/* ---------- view tabs ---------- */
+.views{display:flex;gap:22px;border-bottom:1px solid var(--line);padding:0 2px}
+.views button{
+  border:0;background:transparent;padding:9px 0 10px;color:var(--ink-3);
+  font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.09em;
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+}
+.views button:hover{color:var(--ink-2)}
+.views button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+
+/* ---------- filters ---------- */
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.chip{
+  border:1px solid var(--line);background:var(--panel);border-radius:99px;
+  padding:5px 13px;font-size:12.5px;color:var(--ink-2);
+}
+.chip:hover{border-color:var(--line-strong)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* ---------- groups & tasks ---------- */
+.group{margin-top:18px}
+.group-head{
+  display:flex;align-items:center;gap:10px;margin-bottom:8px;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.14em;
+}
+.group-head .dot{width:8px;height:8px;border-radius:2px;flex:none}
+.group-head .n{color:var(--ink-3);font-variant-numeric:tabular-nums}
+.tasks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.task{
+  display:flex;align-items:flex-start;gap:10px;position:relative;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+  padding:10px 10px 10px 14px;overflow:hidden;
+}
+.task:hover{border-color:var(--line-strong)}
+.task .stripe{position:absolute;left:0;top:0;bottom:0;width:4px}
+.check{
+  flex:none;width:19px;height:19px;margin-top:2px;border-radius:5px;
+  border:1.5px solid var(--line-strong);background:transparent;
+  display:grid;place-items:center;transition:border-color .12s,background .12s;
+}
+.check:hover{border-color:var(--accent)}
+.check svg{width:11px;height:11px;opacity:0;stroke:var(--accent-ink)}
+.task.done .check{background:var(--accent);border-color:var(--accent)}
+.task.done .check svg{opacity:1}
+.task .body{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.task .title{
+  width:100%;border:0;background:transparent;padding:0;font-size:15px;
+  color:var(--ink);text-overflow:ellipsis;
+}
+.task.done .title{color:var(--ink-3);text-decoration:line-through}
+.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3)}
+.meta .cat{color:var(--ink-2)}
+.meta .sep{opacity:.4}
+.meta .due-overdue{color:var(--p-critical);font-weight:500}
+.meta .due-today{color:var(--p-high);font-weight:500}
+.meta .bump{
+  border:1px solid currentColor;border-radius:99px;padding:0 6px;font-size:9.5px;
+  text-transform:uppercase;letter-spacing:.09em;opacity:.85;
+}
+.rowactions{display:flex;align-items:center;gap:4px;flex:none}
+.rowactions select{
+  border:1px solid transparent;background:transparent;border-radius:6px;padding:3px 4px;
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--ink-3);
+}
+.rowactions select:hover{border-color:var(--line);background:var(--panel-2)}
+.icon-btn{
+  border:0;background:transparent;color:var(--ink-3);width:26px;height:26px;
+  border-radius:6px;display:grid;place-items:center;font-size:16px;line-height:1;
+}
+.icon-btn:hover{background:var(--p-critical-bg);color:var(--p-critical)}
+
+/* ---------- log ---------- */
+.day{margin-top:18px}
+.day-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+  padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:8px;
+}
+.day-head h3{margin:0;font-size:14px;font-weight:700;font-stretch:112%;letter-spacing:.01em}
+.day-head .n{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.logbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+
+/* ---------- rules ---------- */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+.card + .card{margin-top:12px}
+.card h3{margin:0 0 4px;font-size:14px;font-weight:700;font-stretch:112%}
+.card p.note{margin:0 0 14px;font-size:13px;color:var(--ink-2);max-width:62ch}
+.card p.note code{font-family:"IBM Plex Mono",monospace;font-size:12px;background:var(--panel-2);padding:1px 5px;border-radius:4px}
+.rules-table{width:100%;border-collapse:collapse}
+.rules-table th{
+  text-align:left;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);
+  font-weight:500;padding:0 8px 8px 0;border-bottom:1px solid var(--line);
+}
+.rules-table td{padding:7px 8px 7px 0;border-bottom:1px solid var(--line)}
+.rules-table td:last-child,.rules-table th:last-child{text-align:right;padding-right:0}
+.rules-table input[type="text"]{width:100%;border:1px solid transparent;background:transparent;border-radius:6px;padding:4px 6px}
+.rules-table input[type="text"]:hover{border-color:var(--line)}
+.rules-table select{border:1px solid var(--line);background:var(--panel-2);border-radius:6px;padding:4px 8px;font-size:13px}
+.addrow{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.addrow input[type="text"]{flex:1 1 200px;border:1px solid var(--line);background:var(--panel-2);border-radius:7px;padding:8px 10px}
+.addrow select{border:1px solid var(--line);background:var(--panel-2);border-radius:7px;padding:8px 10px;font-size:13px}
+.btn{border:1px solid var(--line);background:var(--panel-2);color:var(--ink);border-radius:7px;padding:8px 15px;font-size:13px;font-weight:600}
+.btn:hover{border-color:var(--line-strong)}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.btn-quiet{background:transparent;color:var(--ink-2)}
+.toggle{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
+.toggle input{margin-top:3px;accent-color:var(--accent);width:16px;height:16px}
+.toggle span{font-size:13.5px}
+.toggle small{display:block;color:var(--ink-3);font-size:12px}
+.ladder{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 0}
+.ladder span{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.09em;padding:3px 9px;border-radius:99px;
+}
+
+/* ---------- misc ---------- */
+.empty{
+  text-align:center;padding:52px 20px;color:var(--ink-3);
+  border:1px dashed var(--line-strong);border-radius:var(--r);
+}
+.empty strong{display:block;color:var(--ink-2);font-size:15px;font-weight:600;margin-bottom:4px}
+.toast{
+  position:fixed;left:50%;bottom:22px;transform:translateX(-50%);
+  background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:99px;
+  font-size:13px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;
+  z-index:20;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (max-width:600px){
+  .app{padding:14px 12px 60px}
+  .brand h1{font-size:21px}
+  .composer select,.composer input[type="date"]{flex:1 1 130px;max-width:none}
+  .rowactions select{display:none}
+}
+</style>
+
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <h1>Daily Task Ledger</h1>
+      <span class="today" id="todayLabel"></span>
+    </div>
+    <div class="topbar-right">
+      <div class="stats" id="stats"></div>
+      <span class="sync" id="syncPill" data-state="wait">connecting</span>
+    </div>
+  </header>
+
+  <div class="listswitch" role="tablist" aria-label="Task list">
+    <button class="seg" role="tab" data-list="work" aria-selected="true">Work</button>
+    <button class="seg" role="tab" data-list="personal" aria-selected="false">Personal</button>
+  </div>
+
+  <form class="composer" id="composer" autocomplete="off">
+    <input type="text" id="titleInput" placeholder="Log a task and press Enter…" aria-label="Task">
+    <select id="catInput" aria-label="Category"></select>
+    <input type="date" id="dueInput" aria-label="Due date">
+    <button type="submit">Log it</button>
+  </form>
+  <div class="hint" id="hint"></div>
+
+  <nav class="views" role="tablist" aria-label="View">
+    <button role="tab" data-view="open" aria-selected="true">Open</button>
+    <button role="tab" data-view="log" aria-selected="false">Log</button>
+    <button role="tab" data-view="rules" aria-selected="false">Rules</button>
+  </nav>
+
+  <main id="main"></main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+
+/* ============ model ============ */
+var LEVELS = ["low","med","high","critical"];
+var LABEL  = {low:"Low", med:"Medium", high:"High", critical:"Critical"};
+
+var DEFAULT_SETTINGS = {
+  categories:[
+    {id:"w-deadline", list:"work",     name:"Deadline / delivery",   priority:"critical"},
+    {id:"w-blocking", list:"work",     name:"Blocking someone else", priority:"critical"},
+    {id:"w-design",   list:"work",     name:"Design & modeling",     priority:"high"},
+    {id:"w-review",   list:"work",     name:"Reviews & approvals",   priority:"high"},
+    {id:"w-meeting",  list:"work",     name:"Meetings",              priority:"med"},
+    {id:"w-admin",    list:"work",     name:"Admin & email",         priority:"low"},
+    {id:"w-learning", list:"work",     name:"Learning",              priority:"low"},
+    {id:"p-health",   list:"personal", name:"Health & appointments", priority:"critical"},
+    {id:"p-money",    list:"personal", name:"Bills & money",         priority:"high"},
+    {id:"p-family",   list:"personal", name:"Family",                priority:"high"},
+    {id:"p-home",     list:"personal", name:"Home & errands",        priority:"med"},
+    {id:"p-side",     list:"personal", name:"Side projects",         priority:"med"},
+    {id:"p-rest",     list:"personal", name:"Fun & rest",            priority:"low"}
+  ],
+  escalateDueToday:true,
+  escalateOverdue:true
+};
+
+var settings = JSON.parse(JSON.stringify(DEFAULT_SETTINGS));
+var tasks = [];
+var db = null, downloads = null;
+var ready = false;
+var ui = {list:"work", view:"open", filter:"all", pendingRender:false};
+
+/* ============ dates ============ */
+function pad(n){ return String(n).length < 2 ? "0" + n : String(n); }
+function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()); }
+function todayISO(){ return iso(new Date()); }
+function parseISO(s){ var p = String(s).split("-"); return new Date(+p[0], +p[1]-1, +p[2]); }
+function dueState(due){
+  if(!due) return "none";
+  var t = todayISO();
+  if(due < t) return "overdue";
+  if(due === t) return "today";
+  return "future";
+}
+function fmtDate(s){
+  return parseISO(s).toLocaleDateString(undefined,{day:"numeric",month:"short"});
+}
+function dayHeading(s){
+  if(s === todayISO()) return "Today";
+  var y = new Date(); y.setDate(y.getDate()-1);
+  if(s === iso(y)) return "Yesterday";
+  return parseISO(s).toLocaleDateString(undefined,{weekday:"long",day:"numeric",month:"long"});
+}
+
+/* ============ priority ============ */
+function catOf(id){
+  for(var i=0;i<settings.categories.length;i++){ if(settings.categories[i].id === id) return settings.categories[i]; }
+  return null;
+}
+function priorityOf(t){
+  var cat = catOf(t.categoryId);
+  var base = t.manualPriority || (cat ? cat.priority : "med");
+  var i = LEVELS.indexOf(base); if(i < 0){ i = 1; base = "med"; }
+  var ds = dueState(t.due);
+  var bump = 0;
+  if(ds === "overdue" && settings.escalateOverdue) bump = 2;
+  else if(ds === "today" && settings.escalateDueToday) bump = 1;
+  var level = LEVELS[Math.min(i + bump, LEVELS.length - 1)];
+  return {level:level, base:base, escalated:level !== base, dueState:ds};
+}
+
+/* ============ storage ============ */
+function localLoad(){
+  try{
+    var s = localStorage.getItem("dtl.settings");
+    if(s){ var parsed = JSON.parse(s); if(parsed && parsed.categories) settings = parsed; }
+    var t = localStorage.getItem("dtl.tasks");
+    tasks = t ? JSON.parse(t) : [];
+  }catch(e){ tasks = []; }
+}
+function localSave(){
+  try{
+    localStorage.setItem("dtl.settings", JSON.stringify(settings));
+    localStorage.setItem("dtl.tasks", JSON.stringify(tasks));
+  }catch(e){}
+}
+function newId(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+function bodyOf(t){
+  return {title:t.title, list:t.list, categoryId:t.categoryId || null,
+          manualPriority:t.manualPriority || null, due:t.due || null,
+          done:!!t.done, createdAt:t.createdAt || null, doneAt:t.doneAt || null};
+}
+function warn(e){
+  var code = e && e.code ? e.code : "unavailable";
+  if(code === "quota_exceeded") toast("Storage is full — clear old entries in the Log.");
+  else toast("Could not save that. Try again.");
+}
+function persistTask(t){
+  if(db) return db.doc("tasks/" + t.id).set(bodyOf(t))["catch"](warn);
+  localSave();
+  return Promise.resolve();
+}
+function removeTask(id){
+  tasks = tasks.filter(function(x){ return x.id !== id; });
+  var p = db ? db.doc("tasks/" + id)["delete"]()["catch"](warn) : (localSave(), Promise.resolve());
+  render();
+  return p;
+}
+function persistSettings(){
+  var p = db ? db.doc("config/settings").set(JSON.parse(JSON.stringify(settings)))["catch"](warn)
+             : (localSave(), Promise.resolve());
+  render();
+  return p;
+}
+
+function initStore(){
+  var pill = document.getElementById("syncPill");
+  var got = null;
+  try{ got = (window.claude && claude.use) ? claude.use("db") : Promise.resolve(null); }
+  catch(e){ got = Promise.resolve(null); }
+
+  got.then(function(cap){
+    if(cap){
+      db = cap;
+      pill.textContent = "synced"; pill.setAttribute("data-state","on");
+      pill.title = "Saved to this page's store — the same list on every device you open it from.";
+
+      db.doc("config/settings").onSnapshot(function(snap){
+        if(snap.exists){
+          var d = snap.data();
+          if(d && Array.isArray(d.categories)) settings = d;
+        }
+        render();
+      }, function(){});
+
+      db.collection("tasks").onSnapshot(function(snap){
+        tasks = snap.docs.map(function(d){
+          var o = d.data() || {}; o.id = d.id; return o;
+        });
+        ready = true; render();
+      }, function(){ toast("Live sync stopped. Reload the page to reconnect."); });
+
+      db.doc("config/settings").get().then(function(s){
+        if(!s.exists) return db.doc("config/settings").set(JSON.parse(JSON.stringify(DEFAULT_SETTINGS)));
+      })["catch"](function(){});
+
+      ready = true;
+    } else {
+      localLoad();
+      pill.textContent = "this device"; pill.setAttribute("data-state","local");
+      pill.title = "Saved in this browser only.";
+      ready = true;
+    }
+    render();
+    return (window.claude && claude.use) ? claude.use("downloads") : null;
+  })["catch"](function(){ return null; })
+   .then(function(d){ downloads = d || null; render(); })["catch"](function(){});
+}
+
+/* ============ shorthand parsing ============ */
+var WEEKDAYS = {sun:0,sunday:0,mon:1,monday:1,tue:2,tues:2,tuesday:2,wed:3,weds:3,wednesday:3,
+                thu:4,thur:4,thurs:4,thursday:4,fri:5,friday:5,sat:6,saturday:6};
+function norm(s){ return String(s).toLowerCase().replace(/[^a-z0-9]/g,""); }
+function findCategory(token, list){
+  var q = norm(token); if(!q) return null;
+  var pool = settings.categories.filter(function(c){ return c.list === list; });
+  for(var i=0;i<pool.length;i++){ if(norm(pool[i].name).indexOf(q) === 0) return pool[i]; }
+  for(var j=0;j<pool.length;j++){
+    var words = pool[j].name.toLowerCase().split(/[^a-z0-9]+/);
+    for(var k=0;k<words.length;k++){ if(words[k] && words[k].indexOf(q) === 0) return pool[j]; }
+  }
+  return null;
+}
+function parseInput(raw, list){
+  var out = {title:raw, categoryId:null, level:null, due:null, hits:[]};
+  var text = raw;
+
+  text = text.replace(/(^|\s)!(critical|crit|high|medium|med|low)\b/gi, function(m, sp, w){
+    var t = w.toLowerCase();
+    out.level = t.indexOf("crit") === 0 ? "critical"
+              : t.indexOf("high") === 0 ? "high"
+              : t.indexOf("med")  === 0 ? "med" : "low";
+    out.hits.push(LABEL[out.level]);
+    return sp ? " " : "";
+  });
+
+  text = text.replace(/(^|\s)#([A-Za-z0-9_-]+)/g, function(m, sp, w){
+    var c = findCategory(w, list);
+    if(!c) return m;
+    out.categoryId = c.id; out.hits.push(c.name);
+    return sp ? " " : "";
+  });
+
+  text = text.replace(/(^|\s)(today|tod|tomorrow|tmr|tmw|\+\d{1,3}d|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|weds|wed|thursday|thurs|thur|thu|friday|fri|saturday|sat)\b/gi,
+  function(m, sp, w){
+    if(out.due) return m;
+    var t = w.toLowerCase(), d = new Date();
+    if(t === "today" || t === "tod"){ /* today */ }
+    else if(t === "tomorrow" || t === "tmr" || t === "tmw"){ d.setDate(d.getDate() + 1); }
+    else if(t.charAt(0) === "+"){ d.setDate(d.getDate() + parseInt(t.slice(1), 10)); }
+    else {
+      var delta = (WEEKDAYS[t] - d.getDay() + 7) % 7;
+      if(delta === 0) delta = 7;
+      d.setDate(d.getDate() + delta);
+    }
+    out.due = iso(d); out.hits.push("due " + fmtDate(out.due));
+    return sp ? " " : "";
+  });
+
+  out.title = text.replace(/\s{2,}/g, " ").trim();
+  return out;
+}
+
+/* ============ composer ============ */
+var titleInput = document.getElementById("titleInput");
+var catInput   = document.getElementById("catInput");
+var dueInput   = document.getElementById("dueInput");
+var hintEl     = document.getElementById("hint");
+var manualLevel = null;
+
+function fillCategorySelect(){
+  var pool = settings.categories.filter(function(c){ return c.list === ui.list; });
+  var keep = catInput.value;
+  catInput.innerHTML = "";
+  pool.forEach(function(c){
+    var o = document.createElement("option");
+    o.value = c.id;
+    o.textContent = c.name + "  ·  " + LABEL[c.priority];
+    catInput.appendChild(o);
+  });
+  if(pool.some(function(c){ return c.id === keep; })) catInput.value = keep;
+}
+
+function updateHint(){
+  var p = parseInput(titleInput.value, ui.list);
+  if(p.categoryId) catInput.value = p.categoryId;
+  if(p.due) dueInput.value = p.due;
+  manualLevel = p.level;
+
+  if(p.hits.length){
+    hintEl.innerHTML = '<span class="parsed">&rarr; ' + esc(p.title || "…") + "  ·  " +
+      p.hits.map(esc).join("  ·  ") + "</span>";
+  } else {
+    hintEl.innerHTML = 'Shortcuts: <code>#category</code> <code>!high</code> <code>today</code> <code>fri</code> <code>+3d</code>';
+  }
+}
+titleInput.addEventListener("input", updateHint);
+
+document.getElementById("composer").addEventListener("submit", function(e){
+  e.preventDefault();
+  var p = parseInput(titleInput.value, ui.list);
+  if(!p.title){ titleInput.focus(); return; }
+  var t = {
+    id:newId(), title:p.title, list:ui.list,
+    categoryId: catInput.value || null,
+    manualPriority: manualLevel,
+    due: dueInput.value || null,
+    done:false, createdAt:new Date().toISOString(), doneAt:null
+  };
+  tasks.push(t);
+  titleInput.value = ""; dueInput.value = ""; manualLevel = null;
+  updateHint(); render();
+  persistTask(t);
+  titleInput.focus();
+});
+
+document.addEventListener("keydown", function(e){
+  var tag = (e.target.tagName || "").toLowerCase();
+  if(e.key === "/" && tag !== "input" && tag !== "select" && tag !== "textarea"){
+    e.preventDefault(); titleInput.focus();
+  }
+  if(e.key === "Escape" && e.target === titleInput){
+    titleInput.value = ""; dueInput.value = ""; manualLevel = null; updateHint();
+  }
+});
+
+/* ============ tabs ============ */
+Array.prototype.forEach.call(document.querySelectorAll(".seg"), function(b){
+  b.addEventListener("click", function(){
+    ui.list = b.getAttribute("data-list");
+    Array.prototype.forEach.call(document.querySelectorAll(".seg"), function(x){
+      x.setAttribute("aria-selected", String(x === b));
+    });
+    fillCategorySelect(); updateHint(); render();
+  });
+});
+Array.prototype.forEach.call(document.querySelectorAll(".views button"), function(b){
+  b.addEventListener("click", function(){
+    ui.view = b.getAttribute("data-view");
+    Array.prototype.forEach.call(document.querySelectorAll(".views button"), function(x){
+      x.setAttribute("aria-selected", String(x === b));
+    });
+    render();
+  });
+});
+
+/* ============ render ============ */
+var main = document.getElementById("main");
+function esc(s){
+  return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+  });
+}
+
+function render(){
+  var ae = document.activeElement;
+  if(ae && ae.classList && ae.classList.contains("title")){ ui.pendingRender = true; return; }
+  ui.pendingRender = false;
+
+  document.getElementById("todayLabel").textContent =
+    new Date().toLocaleDateString(undefined,{weekday:"short",day:"numeric",month:"short"});
+  fillCategorySelect();
+  renderStats();
+
+  if(!ready){ main.innerHTML = '<div class="empty">Loading your ledger…</div>'; return; }
+  if(ui.view === "open") renderOpen();
+  else if(ui.view === "log") renderLog();
+  else renderRules();
+}
+
+function renderStats(){
+  var mine = tasks.filter(function(t){ return t.list === ui.list; });
+  var open = mine.filter(function(t){ return !t.done; });
+  var overdue = open.filter(function(t){ return dueState(t.due) === "overdue"; }).length;
+  var doneToday = mine.filter(function(t){
+    return t.done && t.doneAt && t.doneAt.slice(0,10) === todayISO();
+  }).length;
+  document.getElementById("stats").innerHTML =
+    "<span><b>" + open.length + "</b> open</span>" +
+    (overdue ? '<span class="warn"><b>' + overdue + "</b> overdue</span>" : "") +
+    "<span><b>" + doneToday + "</b> done today</span>";
+}
+
+function renderOpen(){
+  var list = tasks.filter(function(t){ return t.list === ui.list && !t.done; });
+  var filters = [["all","All"],["today","Due today"],["overdue","Overdue"],["undated","No date"]];
+  if(ui.filter === "today")   list = list.filter(function(t){ return dueState(t.due) === "today"; });
+  if(ui.filter === "overdue") list = list.filter(function(t){ return dueState(t.due) === "overdue"; });
+  if(ui.filter === "undated") list = list.filter(function(t){ return !t.due; });
+
+  var html = '<div class="filters" style="margin-top:14px">' +
+    filters.map(function(f){
+      return '<button class="chip" data-filter="' + f[0] + '" aria-pressed="' +
+        (ui.filter === f[0]) + '">' + f[1] + "</button>";
+    }).join("") + "</div>";
+
+  if(!list.length){
+    html += '<div class="empty" style="margin-top:18px"><strong>' +
+      (ui.filter === "all" ? "Nothing open here" : "Nothing matches this filter") + "</strong>" +
+      (ui.filter === "all" ? "Log your first " + ui.list + " task in the box above." : "Try another filter.") +
+      "</div>";
+    main.innerHTML = html; bindOpen(); return;
+  }
+
+  var buckets = {critical:[], high:[], med:[], low:[]};
+  list.forEach(function(t){ buckets[priorityOf(t).level].push(t); });
+
+  ["critical","high","med","low"].forEach(function(lv){
+    var group = buckets[lv];
+    if(!group.length) return;
+    group.sort(function(a,b){
+      var da = a.due || "9999-99-99", dbb = b.due || "9999-99-99";
+      if(da !== dbb) return da < dbb ? -1 : 1;
+      return (a.createdAt || "") < (b.createdAt || "") ? -1 : 1;
+    });
+    html += '<section class="group"><div class="group-head" style="color:var(--p-' + lv + ')">' +
+      '<span class="dot" style="background:var(--p-' + lv + ')"></span>' + LABEL[lv] +
+      '<span class="n">' + group.length + '</span></div><ul class="tasks">' +
+      group.map(taskRow).join("") + "</ul></section>";
+  });
+
+  main.innerHTML = html; bindOpen();
+}
+
+function taskRow(t){
+  var p = priorityOf(t);
+  var cat = catOf(t.categoryId);
+  var dueHtml = "";
+  if(t.due){
+    var cls = p.dueState === "overdue" ? "due-overdue" : p.dueState === "today" ? "due-today" : "";
+    var txt = p.dueState === "overdue" ? "overdue · " + fmtDate(t.due)
+            : p.dueState === "today"   ? "due today"
+            : "due " + fmtDate(t.due);
+    dueHtml = '<span class="sep">/</span><span class="' + cls + '">' + txt + "</span>";
+  }
+  var bump = p.escalated
+    ? '<span class="bump" style="color:var(--p-' + p.level + ')">' + LABEL[p.base] + " &rarr; " + LABEL[p.level] + "</span>"
+    : "";
+  var opts = ["auto"].concat(LEVELS).map(function(v){
+    var on = v === "auto" ? !t.manualPriority : t.manualPriority === v;
+    return '<option value="' + v + '"' + (on ? " selected" : "") + ">" +
+           (v === "auto" ? "Auto" : LABEL[v]) + "</option>";
+  }).join("");
+
+  return '<li class="task' + (t.done ? " done" : "") + '" data-id="' + t.id + '">' +
+    '<span class="stripe" style="background:var(--p-' + p.level + ')"></span>' +
+    '<button class="check" data-act="toggle" aria-label="' + (t.done ? "Reopen task" : "Mark complete") + '">' +
+      '<svg viewBox="0 0 12 12" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="M1.5 6.2 4.4 9.2 10.5 2.8"/></svg></button>' +
+    '<div class="body">' +
+      '<input class="title" value="' + esc(t.title) + '" aria-label="Task title">' +
+      '<div class="meta"><span class="cat">' + esc(cat ? cat.name : "Uncategorised") + "</span>" +
+        dueHtml + bump + "</div>" +
+    "</div>" +
+    '<div class="rowactions">' +
+      '<select data-act="level" aria-label="Priority override">' + opts + "</select>" +
+      '<button class="icon-btn" data-act="delete" aria-label="Delete task">&times;</button>' +
+    "</div></li>";
+}
+
+function bindOpen(){
+  Array.prototype.forEach.call(main.querySelectorAll(".chip[data-filter]"), function(b){
+    b.addEventListener("click", function(){ ui.filter = b.getAttribute("data-filter"); render(); });
+  });
+  bindTaskRows();
+}
+
+function bindTaskRows(){
+  Array.prototype.forEach.call(main.querySelectorAll(".task"), function(li){
+    var id = li.getAttribute("data-id");
+    var t = null;
+    for(var i=0;i<tasks.length;i++){ if(tasks[i].id === id){ t = tasks[i]; break; } }
+    if(!t) return;
+
+    var chk = li.querySelector('[data-act="toggle"]');
+    if(chk) chk.addEventListener("click", function(){
+      t.done = !t.done;
+      t.doneAt = t.done ? new Date().toISOString() : null;
+      render(); persistTask(t);
+      if(t.done) toast("Recorded as done");
+    });
+
+    var del = li.querySelector('[data-act="delete"]');
+    if(del) del.addEventListener("click", function(){ removeTask(id); });
+
+    var sel = li.querySelector('[data-act="level"]');
+    if(sel) sel.addEventListener("change", function(){
+      t.manualPriority = sel.value === "auto" ? null : sel.value;
+      render(); persistTask(t);
+    });
+
+    var title = li.querySelector(".title");
+    if(title){
+      title.addEventListener("keydown", function(e){
+        if(e.key === "Enter"){ e.preventDefault(); title.blur(); }
+      });
+      title.addEventListener("blur", function(){
+        var v = title.value.trim();
+        if(v && v !== t.title){ t.title = v; persistTask(t); }
+        else { title.value = t.title; }
+        if(ui.pendingRender) render();
+      });
+    }
+  });
+}
+
+function renderLog(){
+  var done = tasks.filter(function(t){ return t.list === ui.list && t.done && t.doneAt; })
+                  .sort(function(a,b){ return a.doneAt < b.doneAt ? 1 : -1; });
+
+  var html = '<div class="logbar" style="margin-top:14px">' +
+    '<div class="stats"><span><b>' + done.length + "</b> completed " + ui.list + " tasks recorded</span></div>" +
+    '<div style="display:flex;gap:8px">' +
+      (downloads ? '<button class="btn" id="exportBtn">Export CSV</button>' : "") +
+      '<button class="btn btn-quiet" id="pruneBtn">Clear older than 30 days</button>' +
+    "</div></div>";
+
+  if(!done.length){
+    html += '<div class="empty" style="margin-top:18px"><strong>Nothing recorded yet</strong>' +
+      "Completed tasks land here, grouped by the day you finished them.</div>";
+    main.innerHTML = html; bindLog(); return;
+  }
+
+  var order = [], byDay = {};
+  done.forEach(function(t){
+    var k = t.doneAt.slice(0,10);
+    if(!byDay[k]){ byDay[k] = []; order.push(k); }
+    byDay[k].push(t);
+  });
+  order.forEach(function(k){
+    html += '<section class="day"><div class="day-head"><h3>' + esc(dayHeading(k)) + "</h3>" +
+      '<span class="n">' + byDay[k].length + " done</span></div>" +
+      '<ul class="tasks">' + byDay[k].map(taskRow).join("") + "</ul></section>";
+  });
+
+  main.innerHTML = html; bindLog();
+}
+
+function bindLog(){
+  bindTaskRows();
+  var ex = document.getElementById("exportBtn");
+  if(ex) ex.addEventListener("click", exportCsv);
+  var pr = document.getElementById("pruneBtn");
+  if(pr) pr.addEventListener("click", pruneOld);
+}
+
+function exportCsv(){
+  if(!downloads) return;
+  var rows = [["List","Category","Task","Priority","Due","Status","Created","Completed"]];
+  tasks.filter(function(t){ return t.list === ui.list; }).forEach(function(t){
+    var cat = catOf(t.categoryId);
+    rows.push([t.list, cat ? cat.name : "", t.title, LABEL[priorityOf(t).level],
+               t.due || "", t.done ? "done" : "open", t.createdAt || "", t.doneAt || ""]);
+  });
+  var csv = rows.map(function(r){
+    return r.map(function(v){ return '"' + String(v).replace(/"/g,'""') + '"'; }).join(",");
+  }).join("\r\n");
+
+  downloads.save({filename:"task-ledger-" + ui.list + "-" + todayISO() + ".csv", data:csv})
+    .then(function(){ toast("Exported"); })
+    ["catch"](function(e){
+      if(e && e.code === "declined") return;
+      toast("Export is not available here.");
+    });
+}
+
+function pruneOld(){
+  var cut = new Date(); cut.setDate(cut.getDate() - 30);
+  var cutISO = cut.toISOString();
+  var old = tasks.filter(function(t){ return t.done && t.doneAt && t.doneAt < cutISO; });
+  if(!old.length){ toast("Nothing older than 30 days."); return; }
+  var chain = Promise.resolve();
+  old.forEach(function(t){ chain = chain.then(function(){ return removeTask(t.id); }); });
+  chain.then(function(){
+    toast("Cleared " + old.length + " old " + (old.length === 1 ? "entry" : "entries"));
+  });
+}
+
+function renderRules(){
+  var pool = settings.categories.filter(function(c){ return c.list === ui.list; });
+
+  var html = '<div class="card" style="margin-top:14px">' +
+    "<h3>How a priority gets decided</h3>" +
+    '<p class="note">Every task inherits its level from the category you file it under, so you set the judgement ' +
+    "once here instead of arguing with yourself over every task. The due date can then push a task up the ladder.</p>" +
+    '<div class="ladder">' +
+      LEVELS.slice().reverse().map(function(lv){
+        return '<span style="background:var(--p-' + lv + '-bg);color:var(--p-' + lv + ')">' + LABEL[lv] + "</span>";
+      }).join("") +
+    "</div>" +
+    '<div class="toggle" style="margin-top:14px"><input type="checkbox" id="escToday"' +
+      (settings.escalateDueToday ? " checked" : "") + ">" +
+      '<span><label for="escToday">Due today moves a task up one level</label>' +
+      "<small>A Medium task due today shows as High.</small></span></div>" +
+    '<div class="toggle"><input type="checkbox" id="escOver"' +
+      (settings.escalateOverdue ? " checked" : "") + ">" +
+      '<span><label for="escOver">Overdue moves a task up two levels</label>' +
+      "<small>An overdue Medium task jumps to Critical.</small></span></div>" +
+    "</div>";
+
+  html += '<div class="card"><h3>' + (ui.list === "work" ? "Work" : "Personal") + " categories</h3>" +
+    '<p class="note">Rename a category in place or change the level it assigns — every task filed under it re-sorts straight away.</p>' +
+    '<table class="rules-table"><thead><tr><th>Category</th><th style="width:150px">Assigns</th><th style="width:44px"></th></tr></thead><tbody>' +
+    pool.map(function(c){
+      return '<tr data-cat="' + c.id + '"><td><input type="text" value="' + esc(c.name) + '" aria-label="Category name"></td>' +
+        '<td><select aria-label="Priority">' +
+        LEVELS.slice().reverse().map(function(lv){
+          return '<option value="' + lv + '"' + (c.priority === lv ? " selected" : "") + ">" + LABEL[lv] + "</option>";
+        }).join("") + "</select></td>" +
+        '<td><button class="icon-btn" data-act="delcat" aria-label="Delete category">&times;</button></td></tr>';
+    }).join("") +
+    "</tbody></table>" +
+    '<div class="addrow"><input type="text" id="newCatName" placeholder="New category name">' +
+      '<select id="newCatLevel">' +
+      LEVELS.slice().reverse().map(function(lv){
+        return '<option value="' + lv + '"' + (lv === "med" ? " selected" : "") + ">" + LABEL[lv] + "</option>";
+      }).join("") + "</select>" +
+      '<button class="btn btn-primary" id="addCatBtn">Add category</button></div></div>';
+
+  html += '<div class="card"><h3>Faster logging</h3><p class="note" style="margin-bottom:0">' +
+    "Type straight into the box and let it read the details: <code>#</code> picks a category from the first few letters, " +
+    "<code>!</code> overrides the level for one task, and a date word sets the due date. So " +
+    "<code>Fix the jig drawing #design fri !high</code> files itself. Press <code>/</code> anywhere to jump to the box." +
+    "</p></div>";
+
+  main.innerHTML = html;
+
+  document.getElementById("escToday").addEventListener("change", function(e){
+    settings.escalateDueToday = e.target.checked; persistSettings();
+  });
+  document.getElementById("escOver").addEventListener("change", function(e){
+    settings.escalateOverdue = e.target.checked; persistSettings();
+  });
+
+  Array.prototype.forEach.call(main.querySelectorAll("tr[data-cat]"), function(tr){
+    var c = catOf(tr.getAttribute("data-cat"));
+    if(!c) return;
+    tr.querySelector('input[type="text"]').addEventListener("change", function(e){
+      var v = e.target.value.trim();
+      if(!v){ e.target.value = c.name; return; }
+      c.name = v; persistSettings();
+    });
+    tr.querySelector("select").addEventListener("change", function(e){
+      c.priority = e.target.value; persistSettings();
+    });
+    tr.querySelector('[data-act="delcat"]').addEventListener("click", function(){
+      var used = tasks.filter(function(t){ return t.categoryId === c.id; }).length;
+      if(used){ toast(used + " task" + (used === 1 ? "" : "s") + " still filed under this category."); return; }
+      settings.categories = settings.categories.filter(function(x){ return x.id !== c.id; });
+      persistSettings();
+    });
+  });
+
+  document.getElementById("addCatBtn").addEventListener("click", function(){
+    var nameEl = document.getElementById("newCatName");
+    var v = nameEl.value.trim();
+    if(!v){ nameEl.focus(); return; }
+    settings.categories.push({
+      id:newId(), list:ui.list, name:v,
+      priority:document.getElementById("newCatLevel").value
+    });
+    nameEl.value = ""; persistSettings();
+  });
+}
+
+/* ============ toast ============ */
+var toastTimer = null;
+function toast(msg){
+  var el = document.getElementById("toast");
+  el.textContent = msg; el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ el.classList.remove("show"); }, 2400);
+}
+
+/* ============ boot ============ */
+updateHint();
+render();
+initStore();
+})();
+</script>
