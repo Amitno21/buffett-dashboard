@@ -99,11 +99,11 @@ button{cursor:pointer}
   border:1px solid var(--line);background:var(--panel-2);border-radius:7px;padding:7px 9px;
   font-size:13px;color:var(--ink-2);max-width:190px;
 }
-.composer button[type="submit"]{
+.composer .log-btn{
   border:0;background:var(--accent);color:var(--accent-ink);border-radius:7px;
   padding:8px 18px;font-weight:600;font-size:13.5px;transition:background .12s;
 }
-.composer button[type="submit"]:hover{background:var(--accent-hover)}
+.composer .log-btn:hover{background:var(--accent-hover)}
 .hint{
   font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);
   padding:0 4px;min-height:17px;
@@ -267,12 +267,12 @@ button{cursor:pointer}
     <button class="seg" role="tab" data-list="personal" aria-selected="false">Personal</button>
   </div>
 
-  <form class="composer" id="composer" autocomplete="off">
-    <input type="text" id="titleInput" placeholder="Log a task and press Enter…" aria-label="Task">
+  <div class="composer" id="composer">
+    <input type="text" id="titleInput" placeholder="Log a task and press Enter…" aria-label="Task" autocomplete="off">
     <select id="catInput" aria-label="Category"></select>
     <input type="date" id="dueInput" aria-label="Due date">
-    <button type="submit">Log it</button>
-  </form>
+    <button type="button" class="log-btn" id="logBtn">Log it</button>
+  </div>
   <div class="hint" id="hint"></div>
 
   <nav class="views" role="tablist" aria-label="View">
@@ -535,8 +535,7 @@ function updateHint(){
 }
 titleInput.addEventListener("input", updateHint);
 
-document.getElementById("composer").addEventListener("submit", function(e){
-  e.preventDefault();
+function addTask(){
   var p = parseInput(titleInput.value, ui.list);
   if(!p.title){ titleInput.focus(); return; }
   var t = {
@@ -551,6 +550,11 @@ document.getElementById("composer").addEventListener("submit", function(e){
   updateHint(); render();
   persistTask(t);
   titleInput.focus();
+}
+
+document.getElementById("logBtn").addEventListener("click", addTask);
+titleInput.addEventListener("keydown", function(e){
+  if(e.key === "Enter"){ e.preventDefault(); addTask(); }
 });
 
 document.addEventListener("keydown", function(e){
