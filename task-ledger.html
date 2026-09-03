@@ -1,75 +1,89 @@
 <title>Daily Task Ledger</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 :root{
-  --bg:#F1F4F3; --panel:#FFFFFF; --panel-2:#E8EDEB; --panel-3:#DFE6E3;
-  --line:#D5DEDB; --line-strong:#B8C5C1;
-  --ink:#131C1A; --ink-2:#4B5B57; --ink-3:#7A8A85;
-  --accent:#0F6E68; --accent-hover:#0B5A55; --accent-ink:#FFFFFF; --accent-soft:#DBEDEA;
-  --p-critical:#B0281F; --p-critical-bg:#FAE6E4;
-  --p-high:#A25C0D;     --p-high-bg:#F9EEDF;
-  --p-med:#75620F;      --p-med-bg:#F4F0DC;
-  --p-low:#516560;      --p-low-bg:#E7EDEB;
-  --shadow:0 1px 2px rgba(19,28,26,.05), 0 6px 20px -12px rgba(19,28,26,.28);
-  --r:10px;
+  --font-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --font-body:"Figtree","Segoe UI",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+
+  --bg:#F6F4F1; --panel:#FFFFFF; --panel-2:#EFEBE6; --panel-3:#E7E0D8;
+  --line:#E4DDD5; --line-strong:#CBC1B6;
+  --ink:#1F1B17; --ink-2:#5A5249; --ink-3:#8C8279;
+  --accent:#17786D; --accent-hover:#125F56; --accent-ink:#FFFFFF; --accent-soft:#DEEDE9;
+  --p-critical:#BF4A3A; --p-critical-bg:#FBEAE6;
+  --p-high:#B57628;     --p-high-bg:#FBF1E0;
+  --p-med:#94802F;      --p-med-bg:#F5F1DE;
+  --p-low:#6E7C73;      --p-low-bg:#EBEFEA;
+  --shadow:0 1px 2px rgba(31,27,23,.04), 0 8px 24px -14px rgba(31,27,23,.24);
+  --r:14px; --r-sm:11px;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#0D1413; --panel:#151E1C; --panel-2:#1B2624; --panel-3:#22302C;
-    --line:#26332F; --line-strong:#3A4A45;
-    --ink:#E6EDEB; --ink-2:#A4B3AF; --ink-3:#7A8A85;
-    --accent:#48BEB3; --accent-hover:#5FD1C6; --accent-ink:#04211F; --accent-soft:#123330;
-    --p-critical:#FF9083; --p-critical-bg:#37201C;
-    --p-high:#EDA85C;     --p-high-bg:#33260F;
-    --p-med:#D3C06B;      --p-med-bg:#2C2913;
-    --p-low:#9AADA7;      --p-low-bg:#1F2A27;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -14px rgba(0,0,0,.7);
+    --bg:#14120F; --panel:#1C1916; --panel-2:#241F1B; --panel-3:#2C2621;
+    --line:#2F2924; --line-strong:#463E35;
+    --ink:#F0EAE3; --ink-2:#B5ABA1; --ink-3:#8A8078;
+    --accent:#4FC9B8; --accent-hover:#68DCCB; --accent-ink:#06231F; --accent-soft:#153833;
+    --p-critical:#FF9C8A; --p-critical-bg:#3A211B;
+    --p-high:#F0B368;     --p-high-bg:#352713;
+    --p-med:#DCC578;      --p-med-bg:#2F2A15;
+    --p-low:#A7B3A8;      --p-low-bg:#242A25;
+    --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 28px -16px rgba(0,0,0,.75);
   }
 }
 :root[data-theme="dark"]{
-  --bg:#0D1413; --panel:#151E1C; --panel-2:#1B2624; --panel-3:#22302C;
-  --line:#26332F; --line-strong:#3A4A45;
-  --ink:#E6EDEB; --ink-2:#A4B3AF; --ink-3:#7A8A85;
-  --accent:#48BEB3; --accent-hover:#5FD1C6; --accent-ink:#04211F; --accent-soft:#123330;
-  --p-critical:#FF9083; --p-critical-bg:#37201C;
-  --p-high:#EDA85C;     --p-high-bg:#33260F;
-  --p-med:#D3C06B;      --p-med-bg:#2C2913;
-  --p-low:#9AADA7;      --p-low-bg:#1F2A27;
-  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -14px rgba(0,0,0,.7);
+  --bg:#14120F; --panel:#1C1916; --panel-2:#241F1B; --panel-3:#2C2621;
+  --line:#2F2924; --line-strong:#463E35;
+  --ink:#F0EAE3; --ink-2:#B5ABA1; --ink-3:#8A8078;
+  --accent:#4FC9B8; --accent-hover:#68DCCB; --accent-ink:#06231F; --accent-soft:#153833;
+  --p-critical:#FF9C8A; --p-critical-bg:#3A211B;
+  --p-high:#F0B368;     --p-high-bg:#352713;
+  --p-med:#DCC578;      --p-med-bg:#2F2A15;
+  --p-low:#A7B3A8;      --p-low-bg:#242A25;
+  --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 28px -16px rgba(0,0,0,.75);
 }
 
 *{box-sizing:border-box}
 body{
   margin:0; background:var(--bg); color:var(--ink);
-  font-family:"Archivo","Segoe UI",system-ui,sans-serif;
+  font-family:var(--font-body);
   font-size:15px; line-height:1.45; -webkit-font-smoothing:antialiased;
 }
 button,input,select{font:inherit;color:inherit}
 button{cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
-.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.mono{font-family:var(--font-mono)}
 
 .app{max-width:940px;margin:0 auto;padding:20px 18px 72px;display:flex;flex-direction:column;gap:14px}
 
 /* ---------- header ---------- */
-.topbar{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-.brand h1{
-  margin:0;font-size:25px;font-weight:800;font-stretch:118%;
-  letter-spacing:-.015em;text-wrap:balance;
+.topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:2px}
+.greeting{display:flex;flex-direction:column;gap:2px;min-width:0}
+.greeting .eyebrow{
+  font-family:var(--font-mono);font-size:11px;color:var(--ink-3);
+  text-transform:uppercase;letter-spacing:.12em;
 }
-.brand .today{
-  font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);
-  text-transform:uppercase;letter-spacing:.08em;
+.greeting h1{
+  margin:0;font-family:var(--font-display);font-size:28px;font-weight:700;
+  letter-spacing:-.02em;text-wrap:balance;line-height:1.15;
 }
-.topbar-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.stats{display:flex;gap:14px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.greeting .subhead{margin:0;font-size:14.5px;color:var(--ink-2);text-wrap:balance}
+.headright{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.daymeter{display:flex;align-items:center;gap:10px}
+.daymeter[hidden]{display:none}
+.ring{width:42px;height:42px;flex:none;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:4.5;stroke-linecap:round}
+.ring .ring-track{stroke:var(--panel-3)}
+.ring .ring-fill{stroke:var(--accent);transition:stroke-dashoffset .5s cubic-bezier(.4,0,.2,1)}
+.daymeter-text{display:flex;flex-direction:column;line-height:1.25}
+.daymeter-text .count{font-size:14px;font-weight:600;font-variant-numeric:tabular-nums}
+.daymeter-text .label{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.09em}
+.stats{display:flex;gap:14px;font-family:var(--font-mono);font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums}
 .stats b{color:var(--ink);font-weight:600}
 .stats .warn{color:var(--p-critical)}
 .sync{
-  font-family:"IBM Plex Mono",monospace;font-size:10.5px;text-transform:uppercase;
+  font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;
   letter-spacing:.1em;color:var(--ink-3);border:1px solid var(--line);
   padding:3px 8px;border-radius:99px;white-space:nowrap;
 }
@@ -79,7 +93,7 @@ button{cursor:pointer}
 /* ---------- list switch ---------- */
 .listswitch{display:flex;gap:4px;background:var(--panel-2);border:1px solid var(--line);padding:4px;border-radius:var(--r);width:fit-content}
 .seg{
-  border:0;background:transparent;color:var(--ink-2);padding:7px 18px;border-radius:7px;
+  border:0;background:transparent;color:var(--ink-2);padding:7px 18px;border-radius:10px;
   font-weight:600;font-size:13.5px;letter-spacing:.01em;transition:background .12s,color .12s;
 }
 .seg:hover{color:var(--ink)}
@@ -96,16 +110,16 @@ button{cursor:pointer}
 }
 .composer input[type="text"]::placeholder{color:var(--ink-3)}
 .composer select,.composer input[type="date"]{
-  border:1px solid var(--line);background:var(--panel-2);border-radius:7px;padding:7px 9px;
+  border:1px solid var(--line);background:var(--panel-2);border-radius:var(--r-sm);padding:7px 9px;
   font-size:13px;color:var(--ink-2);max-width:190px;
 }
 .composer .log-btn{
-  border:0;background:var(--accent);color:var(--accent-ink);border-radius:7px;
+  border:0;background:var(--accent);color:var(--accent-ink);border-radius:99px;
   padding:8px 18px;font-weight:600;font-size:13.5px;transition:background .12s;
 }
 .composer .log-btn:hover{background:var(--accent-hover)}
 .hint{
-  font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);
+  font-family:var(--font-mono);font-size:11.5px;color:var(--ink-3);
   padding:0 4px;min-height:17px;
 }
 .hint code{background:var(--panel-2);padding:1px 5px;border-radius:4px;color:var(--ink-2)}
@@ -133,35 +147,50 @@ button{cursor:pointer}
 /* ---------- groups & tasks ---------- */
 .group{margin-top:18px}
 .group-head{
-  display:flex;align-items:center;gap:10px;margin-bottom:8px;
-  font-family:"IBM Plex Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.14em;
+  display:flex;align-items:baseline;gap:9px;margin-bottom:9px;
+  font-family:var(--font-display);font-size:15px;font-weight:600;letter-spacing:-.005em;
 }
-.group-head .dot{width:8px;height:8px;border-radius:2px;flex:none}
-.group-head .n{color:var(--ink-3);font-variant-numeric:tabular-nums}
+.group-head .dot{width:8px;height:8px;border-radius:99px;flex:none;align-self:center}
+.group-head .n{
+  font-family:var(--font-mono);font-size:11px;color:var(--ink-3);
+  font-variant-numeric:tabular-nums;font-weight:400;
+}
 .tasks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
 .task{
-  display:flex;align-items:flex-start;gap:10px;position:relative;
+  display:flex;align-items:flex-start;gap:11px;position:relative;
   background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
-  padding:10px 10px 10px 14px;overflow:hidden;
+  padding:11px 11px 11px 16px;overflow:hidden;
+  transition:border-color .14s, box-shadow .14s, transform .14s;
 }
-.task:hover{border-color:var(--line-strong)}
+.task:hover{border-color:var(--line-strong);box-shadow:var(--shadow)}
 .task .stripe{position:absolute;left:0;top:0;bottom:0;width:4px}
 .check{
-  flex:none;width:19px;height:19px;margin-top:2px;border-radius:5px;
+  flex:none;width:21px;height:21px;margin-top:1px;border-radius:99px;
   border:1.5px solid var(--line-strong);background:transparent;
-  display:grid;place-items:center;transition:border-color .12s,background .12s;
+  display:grid;place-items:center;transition:border-color .14s,background .14s;
 }
-.check:hover{border-color:var(--accent)}
+.check:hover{border-color:var(--accent);background:var(--accent-soft)}
 .check svg{width:11px;height:11px;opacity:0;stroke:var(--accent-ink)}
 .task.done .check{background:var(--accent);border-color:var(--accent)}
 .task.done .check svg{opacity:1}
+
+/* the completion moment */
+@keyframes taskLeaves{
+  0%{transform:translateX(0);opacity:1}
+  35%{transform:translateX(-3px)}
+  100%{transform:translateX(14px);opacity:0}
+}
+@keyframes checkPops{0%{transform:scale(.55)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+.task.completing{animation:taskLeaves .34s cubic-bezier(.4,0,.6,1) forwards;pointer-events:none}
+.task.completing .check{background:var(--accent);border-color:var(--accent)}
+.task.completing .check svg{opacity:1;animation:checkPops .3s ease}
 .task .body{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
 .task .title{
   width:100%;border:0;background:transparent;padding:0;font-size:15px;
   color:var(--ink);text-overflow:ellipsis;
 }
 .task.done .title{color:var(--ink-3);text-decoration:line-through}
-.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3)}
+.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-family:var(--font-mono);font-size:11px;color:var(--ink-3)}
 .meta .cat{color:var(--ink-2)}
 .meta .sep{opacity:.4}
 .meta .due-overdue{color:var(--p-critical);font-weight:500}
@@ -173,7 +202,7 @@ button{cursor:pointer}
 .rowactions{display:flex;align-items:center;gap:4px;flex:none}
 .rowactions select{
   border:1px solid transparent;background:transparent;border-radius:6px;padding:3px 4px;
-  font-family:"IBM Plex Mono",monospace;font-size:10.5px;text-transform:uppercase;
+  font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;
   letter-spacing:.06em;color:var(--ink-3);
 }
 .rowactions select:hover{border-color:var(--line);background:var(--panel-2)}
@@ -189,19 +218,19 @@ button{cursor:pointer}
   display:flex;align-items:baseline;justify-content:space-between;gap:10px;
   padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:8px;
 }
-.day-head h3{margin:0;font-size:14px;font-weight:700;font-stretch:112%;letter-spacing:.01em}
-.day-head .n{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.day-head h3{margin:0;font-family:var(--font-display);font-size:16px;font-weight:600;letter-spacing:-.01em}
+.day-head .n{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
 .logbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between}
 
 /* ---------- rules ---------- */
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
 .card + .card{margin-top:12px}
-.card h3{margin:0 0 4px;font-size:14px;font-weight:700;font-stretch:112%}
+.card h3{margin:0 0 5px;font-family:var(--font-display);font-size:16px;font-weight:600;letter-spacing:-.01em}
 .card p.note{margin:0 0 14px;font-size:13px;color:var(--ink-2);max-width:62ch}
-.card p.note code{font-family:"IBM Plex Mono",monospace;font-size:12px;background:var(--panel-2);padding:1px 5px;border-radius:4px}
+.card p.note code{font-family:var(--font-mono);font-size:12px;background:var(--panel-2);padding:1px 5px;border-radius:4px}
 .rules-table{width:100%;border-collapse:collapse}
 .rules-table th{
-  text-align:left;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  text-align:left;font-family:var(--font-mono);font-size:10.5px;
   text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);
   font-weight:500;padding:0 8px 8px 0;border-bottom:1px solid var(--line);
 }
@@ -211,9 +240,9 @@ button{cursor:pointer}
 .rules-table input[type="text"]:hover{border-color:var(--line)}
 .rules-table select{border:1px solid var(--line);background:var(--panel-2);border-radius:6px;padding:4px 8px;font-size:13px}
 .addrow{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
-.addrow input[type="text"]{flex:1 1 200px;border:1px solid var(--line);background:var(--panel-2);border-radius:7px;padding:8px 10px}
-.addrow select{border:1px solid var(--line);background:var(--panel-2);border-radius:7px;padding:8px 10px;font-size:13px}
-.btn{border:1px solid var(--line);background:var(--panel-2);color:var(--ink);border-radius:7px;padding:8px 15px;font-size:13px;font-weight:600}
+.addrow input[type="text"]{flex:1 1 200px;border:1px solid var(--line);background:var(--panel-2);border-radius:var(--r-sm);padding:8px 10px}
+.addrow select{border:1px solid var(--line);background:var(--panel-2);border-radius:var(--r-sm);padding:8px 10px;font-size:13px}
+.btn{border:1px solid var(--line);background:var(--panel-2);color:var(--ink);border-radius:99px;padding:8px 16px;font-size:13px;font-weight:600}
 .btn:hover{border-color:var(--line-strong)}
 .btn-primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
@@ -224,7 +253,7 @@ button{cursor:pointer}
 .toggle small{display:block;color:var(--ink-3);font-size:12px}
 .ladder{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 0}
 .ladder span{
-  font-family:"IBM Plex Mono",monospace;font-size:10.5px;text-transform:uppercase;
+  font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;
   letter-spacing:.09em;padding:3px 9px;border-radius:99px;
 }
 
@@ -235,12 +264,14 @@ button{cursor:pointer}
 }
 .empty strong{display:block;color:var(--ink-2);font-size:15px;font-weight:600;margin-bottom:4px}
 .toast{
-  position:fixed;left:50%;bottom:22px;transform:translateX(-50%);
-  background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:99px;
-  font-size:13px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;
-  z-index:20;
+  position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(8px);
+  background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;
+  font-size:13.5px;font-weight:500;box-shadow:var(--shadow);
+  opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;
+  z-index:20;max-width:min(92vw,420px);text-align:center;
 }
-.toast.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.good{background:var(--accent);color:var(--accent-ink)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media (max-width:600px){
   .app{padding:14px 12px 60px}
@@ -252,12 +283,22 @@ button{cursor:pointer}
 
 <div class="app">
   <header class="topbar">
-    <div class="brand">
-      <h1>Daily Task Ledger</h1>
-      <span class="today" id="todayLabel"></span>
+    <div class="greeting">
+      <span class="eyebrow" id="todayLabel"></span>
+      <h1 id="greetingLine">Hello</h1>
+      <p class="subhead" id="subheadLine"></p>
     </div>
-    <div class="topbar-right">
-      <div class="stats" id="stats"></div>
+    <div class="headright">
+      <div class="daymeter" id="dayMeter" hidden>
+        <svg class="ring" viewBox="0 0 44 44" aria-hidden="true">
+          <circle class="ring-track" cx="22" cy="22" r="19"></circle>
+          <circle class="ring-fill" id="ringFill" cx="22" cy="22" r="19"></circle>
+        </svg>
+        <div class="daymeter-text">
+          <span class="count" id="ringCount">0 of 0</span>
+          <span class="label">done today</span>
+        </div>
+      </div>
       <span class="sync" id="syncPill" data-state="wait">connecting</span>
     </div>
   </header>
@@ -268,7 +309,7 @@ button{cursor:pointer}
   </div>
 
   <div class="composer" id="composer">
-    <input type="text" id="titleInput" placeholder="Log a task and press Enter…" aria-label="Task" autocomplete="off">
+    <input type="text" id="titleInput" placeholder="What's on your mind?" aria-label="Task" autocomplete="off">
     <select id="catInput" aria-label="Category"></select>
     <input type="date" id="dueInput" aria-label="Due date">
     <button type="button" class="log-btn" id="logBtn">Log it</button>
@@ -292,6 +333,10 @@ button{cursor:pointer}
 /* ============ model ============ */
 var LEVELS = ["low","med","high","critical"];
 var LABEL  = {low:"Low", med:"Medium", high:"High", critical:"Critical"};
+/* what each level is called in the lists, where you're scanning rather than configuring */
+var BAND   = {low:"No rush", med:"When you can", high:"Important", critical:"Needs attention"};
+var PRAISE = ["Nice — {t} sorted.", "Done. {t} is off the list.",
+              "That's {t} handled.", "Good one — {t} done.", "{t}, finished."];
 
 var DEFAULT_SETTINGS = {
   categories:[
@@ -310,7 +355,8 @@ var DEFAULT_SETTINGS = {
     {id:"p-rest",     list:"personal", name:"Fun & rest",            priority:"low"}
   ],
   escalateDueToday:true,
-  escalateOverdue:true
+  escalateOverdue:true,
+  name:"Amit"
 };
 
 var settings = JSON.parse(JSON.stringify(DEFAULT_SETTINGS));
@@ -603,25 +649,56 @@ function render(){
   document.getElementById("todayLabel").textContent =
     new Date().toLocaleDateString(undefined,{weekday:"short",day:"numeric",month:"short"});
   fillCategorySelect();
-  renderStats();
+  renderHeader();
 
-  if(!ready){ main.innerHTML = '<div class="empty">Loading your ledger…</div>'; return; }
+  if(!ready){ main.innerHTML = '<div class="empty">Getting your list…</div>'; return; }
   if(ui.view === "open") renderOpen();
   else if(ui.view === "log") renderLog();
   else renderRules();
 }
 
-function renderStats(){
+function greetingWord(h){
+  if(h < 5)  return "Still up";
+  if(h < 12) return "Good morning";
+  if(h < 17) return "Good afternoon";
+  if(h < 22) return "Good evening";
+  return "Winding down";
+}
+function plural(n, one, many){ return n + " " + (n === 1 ? one : many); }
+
+function subheadFor(open, overdue, dueToday, doneToday){
+  if(!open.length && doneToday) return "That's everything for now — the list is clear.";
+  if(!open.length) return "Nothing on this list yet. Add the first thing below.";
+  if(overdue)  return plural(overdue, "thing has", "things have") + " slipped past the date you set.";
+  if(dueToday) return plural(dueToday, "thing needs", "things need") + " you today.";
+  return plural(open.length, "thing is", "things are") + " waiting, none due yet.";
+}
+
+function renderHeader(){
   var mine = tasks.filter(function(t){ return t.list === ui.list; });
   var open = mine.filter(function(t){ return !t.done; });
-  var overdue = open.filter(function(t){ return dueState(t.due) === "overdue"; }).length;
+  var overdue  = open.filter(function(t){ return dueState(t.due) === "overdue"; }).length;
+  var dueToday = open.filter(function(t){ return dueState(t.due) === "today"; }).length;
   var doneToday = mine.filter(function(t){
     return t.done && t.doneAt && t.doneAt.slice(0,10) === todayISO();
   }).length;
-  document.getElementById("stats").innerHTML =
-    "<span><b>" + open.length + "</b> open</span>" +
-    (overdue ? '<span class="warn"><b>' + overdue + "</b> overdue</span>" : "") +
-    "<span><b>" + doneToday + "</b> done today</span>";
+
+  var who = (settings.name || "").trim();
+  document.getElementById("greetingLine").textContent =
+    greetingWord(new Date().getHours()) + (who ? ", " + who : "");
+  document.getElementById("subheadLine").textContent =
+    ready ? subheadFor(open, overdue, dueToday, doneToday) : "Getting your list…";
+
+  var total = open.length + doneToday;
+  var meter = document.getElementById("dayMeter");
+  meter.hidden = total === 0;
+  if(total){
+    var C = 2 * Math.PI * 19;
+    var fill = document.getElementById("ringFill");
+    fill.style.strokeDasharray = C.toFixed(1);
+    fill.style.strokeDashoffset = (C * (1 - doneToday / total)).toFixed(1);
+    document.getElementById("ringCount").textContent = doneToday + " of " + total;
+  }
 }
 
 function renderOpen(){
@@ -639,8 +716,8 @@ function renderOpen(){
 
   if(!list.length){
     html += '<div class="empty" style="margin-top:18px"><strong>' +
-      (ui.filter === "all" ? "Nothing open here" : "Nothing matches this filter") + "</strong>" +
-      (ui.filter === "all" ? "Log your first " + ui.list + " task in the box above." : "Try another filter.") +
+      (ui.filter === "all" ? "All clear here" : "Nothing matches that filter") + "</strong>" +
+      (ui.filter === "all" ? "Add the first thing in the box above." : "Try another filter.") +
       "</div>";
     main.innerHTML = html; bindOpen(); return;
   }
@@ -657,7 +734,7 @@ function renderOpen(){
       return (a.createdAt || "") < (b.createdAt || "") ? -1 : 1;
     });
     html += '<section class="group"><div class="group-head" style="color:var(--p-' + lv + ')">' +
-      '<span class="dot" style="background:var(--p-' + lv + ')"></span>' + LABEL[lv] +
+      '<span class="dot" style="background:var(--p-' + lv + ')"></span>' + BAND[lv] +
       '<span class="n">' + group.length + '</span></div><ul class="tasks">' +
       group.map(taskRow).join("") + "</ul></section>";
   });
@@ -717,10 +794,19 @@ function bindTaskRows(){
 
     var chk = li.querySelector('[data-act="toggle"]');
     if(chk) chk.addEventListener("click", function(){
-      t.done = !t.done;
-      t.doneAt = t.done ? new Date().toISOString() : null;
-      render(); persistTask(t);
-      if(t.done) toast("Recorded as done");
+      if(t.done){
+        t.done = false; t.doneAt = null;
+        render(); persistTask(t);
+        return;
+      }
+      t.done = true; t.doneAt = new Date().toISOString();
+      persistTask(t);
+      toast(praiseFor(t.title), "good");
+      if(prefersReducedMotion()){ render(); }
+      else {
+        li.classList.add("completing");
+        setTimeout(render, 300);
+      }
     });
 
     var del = li.querySelector('[data-act="delete"]');
@@ -823,12 +909,20 @@ function renderRules(){
   var pool = settings.categories.filter(function(c){ return c.list === ui.list; });
 
   var html = '<div class="card" style="margin-top:14px">' +
+    "<h3>What should I call you?</h3>" +
+    '<p class="note">Used for the greeting at the top of the page. Leave it empty for a plain greeting.</p>' +
+    '<div class="addrow" style="margin-top:0"><input type="text" id="nameInput" value="' +
+      esc(settings.name || "") + '" placeholder="Your name" aria-label="Your name"></div></div>';
+
+  html += '<div class="card">' +
     "<h3>How a priority gets decided</h3>" +
     '<p class="note">Every task inherits its level from the category you file it under, so you set the judgement ' +
-    "once here instead of arguing with yourself over every task. The due date can then push a task up the ladder.</p>" +
+    "once here instead of arguing with yourself over every task. The due date can then push a task up the ladder. " +
+    "In your lists these show as friendlier names:</p>" +
     '<div class="ladder">' +
       LEVELS.slice().reverse().map(function(lv){
-        return '<span style="background:var(--p-' + lv + '-bg);color:var(--p-' + lv + ')">' + LABEL[lv] + "</span>";
+        return '<span style="background:var(--p-' + lv + '-bg);color:var(--p-' + lv + ')">' +
+               BAND[lv] + " &nbsp;·&nbsp; " + LABEL[lv] + "</span>";
       }).join("") +
     "</div>" +
     '<div class="toggle" style="margin-top:14px"><input type="checkbox" id="escToday"' +
@@ -868,6 +962,9 @@ function renderRules(){
 
   main.innerHTML = html;
 
+  document.getElementById("nameInput").addEventListener("change", function(e){
+    settings.name = e.target.value.trim(); persistSettings();
+  });
   document.getElementById("escToday").addEventListener("change", function(e){
     settings.escalateDueToday = e.target.checked; persistSettings();
   });
@@ -906,13 +1003,24 @@ function renderRules(){
   });
 }
 
+/* ============ the completion moment ============ */
+function prefersReducedMotion(){
+  return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+function praiseFor(title){
+  var t = String(title || "").trim();
+  if(t.length > 34) t = t.slice(0, 33).replace(/\s+\S*$/, "") + "…";
+  return PRAISE[Math.floor(Math.random() * PRAISE.length)].replace("{t}", t);
+}
+
 /* ============ toast ============ */
 var toastTimer = null;
-function toast(msg){
+function toast(msg, kind){
   var el = document.getElementById("toast");
-  el.textContent = msg; el.classList.add("show");
+  el.textContent = msg;
+  el.className = "toast show" + (kind === "good" ? " good" : "");
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(function(){ el.classList.remove("show"); }, 2400);
+  toastTimer = setTimeout(function(){ el.className = "toast"; }, 2600);
 }
 
 /* ============ boot ============ */
