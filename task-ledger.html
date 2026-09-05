@@ -265,13 +265,22 @@ button{cursor:pointer}
 .empty strong{display:block;color:var(--ink-2);font-size:15px;font-weight:600;margin-bottom:4px}
 .toast{
   position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(8px);
-  background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;
+  display:flex;align-items:center;gap:14px;
+  background:var(--ink);color:var(--bg);padding:10px 12px 10px 18px;border-radius:99px;
   font-size:13.5px;font-weight:500;box-shadow:var(--shadow);
   opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;
-  z-index:20;max-width:min(92vw,420px);text-align:center;
+  z-index:20;max-width:min(92vw,460px);
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .toast.good{background:var(--accent);color:var(--accent-ink)}
+.toast #toastText{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toast-action{
+  flex:none;pointer-events:auto;border:1px solid currentColor;background:transparent;
+  color:inherit;border-radius:99px;padding:3px 13px;font-size:12.5px;font-weight:600;
+  opacity:.85;transition:opacity .12s,background .12s;
+}
+.toast-action:hover{opacity:1;background:rgba(255,255,255,.16)}
+.toast-action[hidden]{display:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media (max-width:600px){
   .app{padding:14px 12px 60px}
@@ -324,7 +333,10 @@ button{cursor:pointer}
 
   <main id="main"></main>
 </div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span id="toastText"></span>
+  <button type="button" class="toast-action" id="toastAction" hidden>Undo</button>
+</div>
 
 <script>
 (function(){
@@ -605,6 +617,12 @@ titleInput.addEventListener("keydown", function(e){
 
 document.addEventListener("keydown", function(e){
   var tag = (e.target.tagName || "").toLowerCase();
+  var typing = tag === "input" || tag === "textarea";
+  /* Ctrl/Cmd+Z undoes the last completion or deletion — but never while you're
+     typing, where it belongs to the text field */
+  if((e.ctrlKey || e.metaKey) && (e.key === "z" || e.key === "Z") && undoAction && !typing){
+    e.preventDefault(); runUndo(); return;
+  }
   if(e.key === "/" && tag !== "input" && tag !== "select" && tag !== "textarea"){
     e.preventDefault(); titleInput.focus();
   }
@@ -801,7 +819,7 @@ function bindTaskRows(){
       }
       t.done = true; t.doneAt = new Date().toISOString();
       persistTask(t);
-      toast(praiseFor(t.title), "good");
+      toast(praiseFor(t.title), "good", function(){ restoreTask(id); });
       if(prefersReducedMotion()){ render(); }
       else {
         li.classList.add("completing");
@@ -810,7 +828,15 @@ function bindTaskRows(){
     });
 
     var del = li.querySelector('[data-act="delete"]');
-    if(del) del.addEventListener("click", function(){ removeTask(id); });
+    if(del) del.addEventListener("click", function(){
+      var saved = JSON.parse(JSON.stringify(t));   /* keep a copy to put back */
+      removeTask(id);
+      toast("Deleted “" + shortTitle(saved.title, 28) + "”.", null, function(){
+        tasks.push(saved);
+        render(); persistTask(saved);
+        toast("Put back.");
+      });
+    });
 
     var sel = li.querySelector('[data-act="level"]');
     if(sel) sel.addEventListener("change", function(){
@@ -1007,20 +1033,55 @@ function renderRules(){
 function prefersReducedMotion(){
   return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
-function praiseFor(title){
+function shortTitle(title, n){
   var t = String(title || "").trim();
-  if(t.length > 34) t = t.slice(0, 33).replace(/\s+\S*$/, "") + "…";
-  return PRAISE[Math.floor(Math.random() * PRAISE.length)].replace("{t}", t);
+  var max = n || 34;
+  return t.length > max ? t.slice(0, max - 1).replace(/\s+\S*$/, "") + "…" : t;
+}
+function praiseFor(title){
+  return PRAISE[Math.floor(Math.random() * PRAISE.length)].replace("{t}", shortTitle(title));
 }
 
-/* ============ toast ============ */
+/* ============ toast, with undo ============ */
 var toastTimer = null;
-function toast(msg, kind){
-  var el = document.getElementById("toast");
-  el.textContent = msg;
+var undoAction = null;   /* what Ctrl+Z and the Undo button will do, while a toast is up */
+
+function toast(msg, kind, onUndo){
+  var el  = document.getElementById("toast");
+  var txt = document.getElementById("toastText");
+  var btn = document.getElementById("toastAction");
+  txt.textContent = msg;
+  undoAction = onUndo || null;
+  btn.hidden = !undoAction;
   el.className = "toast show" + (kind === "good" ? " good" : "");
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(function(){ el.className = "toast"; }, 2600);
+  /* an undoable toast stays up long enough to actually react to */
+  toastTimer = setTimeout(hideToast, undoAction ? 8000 : 2600);
+}
+function hideToast(){
+  document.getElementById("toast").className = "toast";
+  document.getElementById("toastAction").hidden = true;
+  undoAction = null;
+}
+function runUndo(){
+  if(!undoAction) return;
+  var fn = undoAction;
+  hideToast();
+  fn();
+}
+document.getElementById("toastAction").addEventListener("click", runUndo);
+
+/* put a completed task back, looked up fresh so a live update can't leave us
+   holding a stale copy */
+function restoreTask(id){
+  for(var i = 0; i < tasks.length; i++){
+    if(tasks[i].id === id){
+      tasks[i].done = false; tasks[i].doneAt = null;
+      render(); persistTask(tasks[i]);
+      toast("Back on the list.");
+      return;
+    }
+  }
 }
 
 /* ============ boot ============ */
