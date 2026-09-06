@@ -362,6 +362,9 @@ function openDrawer(ticker) {
           <h3>What it is worth</h3>
           <div id="dcf-panel"></div>
 
+          <h3>Momentum and timing</h3>
+          ${momentumPanel(p)}
+
           <h3>Recent filings</h3>
           <div class="table-wrap"><table>
             <thead><tr><th>Form</th><th>Filed</th><th>Link</th></tr></thead>
@@ -382,6 +385,44 @@ function openDrawer(ticker) {
   };
   renderDcf(c, v);
   document.body.style.overflow = 'hidden';
+}
+
+/* The short-term panel. Deliberately separated from everything above it and
+   labelled as a different discipline: none of these say anything about what a
+   business is worth. They are here for timing an entry you have already
+   decided on, and for position sizing. */
+function momentumPanel(p) {
+  if (!p || !p.price) return '<p class="lede">No price history available.</p>';
+
+  const trend = (p.sma50 && p.sma200)
+    ? (p.sma50 > p.sma200 ? 'above' : 'below')
+    : null;
+  const rsiNote = p.rsi14 === null || p.rsi14 === undefined ? ''
+    : p.rsi14 >= 70 ? 'conventionally overbought'
+    : p.rsi14 <= 30 ? 'conventionally oversold' : 'neither extreme';
+
+  return `
+    <p class="lede">A different discipline from everything above. These measure
+      what the price has been doing, not what the business is worth, and Buffett
+      does not use them to decide what to own. They are useful only for timing a
+      purchase you have already justified on value, and for sizing it.</p>
+    <div class="kv">
+      <div><div class="k">50-day average</div><div class="v">${money(p.sma50)}</div></div>
+      <div><div class="k">200-day average</div><div class="v">${money(p.sma200)}</div></div>
+      <div><div class="k">RSI (14)</div><div class="v">${p.rsi14 ?? '--'}</div></div>
+      <div><div class="k">Daily move (ATR)</div><div class="v">${pct(p.atr_pct)}</div></div>
+      <div><div class="k">52-week high</div><div class="v">${money(p.high_52w)}</div></div>
+      <div><div class="k">52-week low</div><div class="v">${money(p.low_52w)}</div></div>
+    </div>
+    <p class="lede" style="margin-top:12px">
+      ${trend ? `The 50-day average is <b>${trend}</b> the 200-day, the conventional
+        reading of an ${trend === 'above' ? 'uptrend' : 'downtrend'}. ` : ''}
+      RSI of ${p.rsi14 ?? '--'} is ${rsiNote}.
+      The price sits <b>${signed(p.from_high_pct)}</b> from its 52-week high and
+      <b>${signed(p.from_low_pct)}</b> above its low. A typical day moves about
+      ${pct(p.atr_pct)}, which is the figure to size a position against if a
+      temporary fall would force you to sell.
+    </p>`;
 }
 
 function closeDrawer() {
@@ -607,7 +648,7 @@ function renderLearn() {
         <li><b>Is the price sensible?</b> Only asked last. Owner earnings are discounted to a present
           value, and a margin of safety is demanded on top, because every estimate can be wrong.</li>
       </ol>
-      <p class="lede">The short-term panel on the companies table exists for timing and context only.
+      <p class="lede">The momentum panel inside each company's detail view exists for timing and context only.
         Momentum and RSI say nothing about what a business is worth, and mixing the two disciplines
         is how people end up doing neither well.</p>
     </div>`;
