@@ -84,23 +84,30 @@ returns 429 without one. Hence the per-source header profiles.
 ### 1. Create the repository
 
 ```bash
-gh repo create buffett-dashboard --private --source=. --remote=origin --push
+gh repo create buffett-dashboard --public --source=. --remote=origin --push
 ```
+
+Pages serves a private repository only on a paid plan, which is why this is
+public. The repository holds no personal data as shipped — but if you add real
+holdings to `positions` in `watchlist.json`, they become public too. Keep that
+section empty, or move to a private repo and view the dashboard locally.
 
 ### 2. Turn on GitHub Pages
 
 Settings → Pages → Source: **Deploy from a branch** → branch `main`, folder
 `/docs`. The dashboard appears at `https://<you>.github.io/buffett-dashboard/`.
 
-For a private repository, Pages requires a paid plan; otherwise make the repo
-public — it holds no personal data unless you add positions to `watchlist.json`.
-
 ### 3. Identify yourself to the SEC
 
-The SEC asks for a contact address in the `User-Agent`. Settings → Secrets and
-secrets → Actions → new repository **secret** named `SEC_CONTACT` holding your
-email, or run `gh secret set SEC_CONTACT --body "you@example.com"`. A secret
-rather than a variable, so it stays out of the public build logs.
+The SEC asks for a contact address in the `User-Agent`:
+
+```bash
+gh secret set SEC_CONTACT --body "you@example.com"
+```
+
+A secret rather than a variable, so the address stays out of the build logs,
+which are public on a public repository. Without it the build still runs, using
+a placeholder address.
 
 ### 4. Let it run
 
