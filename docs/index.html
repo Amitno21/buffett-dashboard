@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buffett Dashboard</title>
+<meta name="description" content="A daily value-investing dashboard built from SEC filings: quality scores, owner earnings, intrinsic value and margin of safety.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div>
+        <h1>Buffett Dashboard</h1>
+        <div class="sub">
+          <span id="updated">Loading&hellip;</span>
+          <span>Rebuilt every 24 hours from SEC filings</span>
+        </div>
+      </div>
+      <button class="icon-btn" id="theme-toggle" title="Switch light and dark">Theme</button>
+    </div>
+  </header>
+
+  <div id="loading" class="loading">Loading the latest run&hellip;</div>
+
+  <div id="app" hidden>
+    <div class="weather" id="weather"></div>
+    <div class="regime" id="regime"></div>
+
+    <nav class="tabs" role="tablist">
+      <button data-tab="signals"   role="tab" aria-selected="true">Today<span class="count" id="c-signals">0</span></button>
+      <button data-tab="companies" role="tab" aria-selected="false">Companies<span class="count" id="c-companies">0</span></button>
+      <button data-tab="screen"    role="tab" aria-selected="false">S&amp;P 500 screen</button>
+      <button data-tab="berkshire" role="tab" aria-selected="false">Berkshire</button>
+      <button data-tab="positions" role="tab" aria-selected="false">My positions</button>
+      <button data-tab="learn"     role="tab" aria-selected="false">Learn</button>
+    </nav>
+
+    <main>
+      <section id="tab-signals"   role="tabpanel"></section>
+      <section id="tab-companies" role="tabpanel" hidden></section>
+      <section id="tab-screen"    role="tabpanel" hidden></section>
+      <section id="tab-berkshire" role="tabpanel" hidden></section>
+      <section id="tab-positions" role="tabpanel" hidden></section>
+      <section id="tab-learn"     role="tabpanel" hidden></section>
+    </main>
+
+    <div class="disclaimer">
+      <b>Read this before acting on anything here.</b>
+      <span id="disclaimer-text"></span>
+      <div class="sources">
+        Sources: company financials and 13F holdings from the SEC via
+        <code>data.sec.gov</code>; daily prices from Yahoo Finance; Treasury yields and the
+        Buffett Indicator from the Federal Reserve via <code>FRED</code>; S&amp;P 500
+        constituents from the <code>datasets/s-and-p-500-companies</code> repository.
+        Owner earnings use the standard <code>min(capex, depreciation)</code> proxy for
+        maintenance capital expenditure, which is an estimate, not a disclosed figure.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="drawer-root"></div>
+<script src="app.js"></script>
+</body>
+</html>

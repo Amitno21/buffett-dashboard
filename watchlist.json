@@ -1,0 +1,39 @@
+{
+  "_comment": "Edit this file to change what the dashboard tracks. Tickers must be US-listed SEC filers.",
+  "watchlist": [
+    "AAPL",
+    "KO",
+    "AXP",
+    "BAC",
+    "MCO",
+    "CB",
+    "OXY",
+    "KHC",
+    "V",
+    "MA",
+    "COST",
+    "JNJ",
+    "PG",
+    "UNH",
+    "GOOGL",
+    "MSFT"
+  ],
+  "positions": [
+    {
+      "ticker": "AAPL",
+      "shares": 0,
+      "cost_basis": 0.0
+    }
+  ],
+  "settings": {
+    "margin_of_safety_pct": 30,
+    "discount_rate_pct": 10.0,
+    "terminal_growth_pct": 2.5,
+    "big_move_pct": 5.0,
+    "max_berkshire_holdings": 25
+  },
+  "shares_override": {
+    "_comment": "Companies that report share counts per share class do not expose a single total through the SEC companyfacts API. Supply the diluted share count here to enable a valuation.",
+    "V": 1950000000
+  }
+}

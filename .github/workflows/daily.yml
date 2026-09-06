@@ -1,0 +1,88 @@
+name: Daily dashboard build
+
+on:
+  schedule:
+    # 07:10 UTC daily. US markets close at 20:00/21:00 UTC, so this runs after
+    # the previous session has settled and before the European morning.
+    # Times are UTC; GitHub does not observe daylight saving.
+    - cron: "10 7 * * *"
+  workflow_dispatch:        # lets you trigger a run by hand from the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "watchlist.json"
+      - ".github/workflows/daily.yml"
+
+permissions:
+  contents: write           # needed to commit the refreshed data back
+
+concurrency:
+  group: dashboard-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Derived fundamentals are cached so that companyfacts, which runs to
+      # several megabytes per filer, is only refetched when a company actually
+      # files something new.
+      - name: Restore fundamentals cache
+        uses: actions/cache@v4
+        with:
+          path: cache
+          key: fundamentals-${{ github.run_id }}
+          restore-keys: fundamentals-
+
+      - name: Run tests
+        run: python scripts/test_pipeline.py
+
+      - name: Build dashboard data
+        env:
+          # The SEC requires a descriptive User-Agent with a contact address.
+          # Set the SEC_CONTACT repository variable to your own email.
+          SEC_USER_AGENT: "buffett-dashboard/1.0 (${{ vars.SEC_CONTACT || 'dashboard@example.com' }})"
+        run: python scripts/build.py
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data
+          if git diff --staged --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "Update dashboard data ($(date -u +'%Y-%m-%d'))"
+            git push
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          if [ -f docs/data/latest.json ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          d = json.load(open("docs/data/latest.json", encoding="utf-8"))
+          print(f"### Build complete\n")
+          print(f"- Generated: `{d['generated_at']}` in {d['build_seconds']}s")
+          print(f"- Companies analysed: **{len(d['companies'])}**")
+          print(f"- Signals raised: **{len(d['signals'])}**")
+          cheap = [c['ticker'] for c in d['companies']
+                   if (c.get('valuation') or {}).get('band') == 'Below margin of safety']
+          print(f"- Below margin of safety: {', '.join(cheap) if cheap else 'none'}\n")
+          print("| Signal | Detail |\n| --- | --- |")
+          for s in d['signals'][:12]:
+              print(f"| {s['headline']} | {s['detail']} |")
+          PY
+          else
+            echo "No data file was produced." >> "$GITHUB_STEP_SUMMARY"
+          fi

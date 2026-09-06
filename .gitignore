@@ -1,0 +1,11 @@
+# Derived fundamentals cache: regenerated from SEC filings, restored in CI by
+# actions/cache. Committing it would add megabytes of duplicated filing data.
+cache/
+
+__pycache__/
+*.pyc
+.DS_Store
+
+# Archival copy of the prior run. Nothing reads it (the signals diff reads the
+# committed latest.json), so keeping it out of history avoids ~275KB a day.
+docs/data/previous.json
