@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-06T19:00:59+00:00",
- "build_seconds": 24.2,
+ "generated_at": "2026-09-06T19:32:06+00:00",
+ "build_seconds": 14.4,
  "settings": {
   "margin_of_safety_pct": 30,
   "discount_rate_pct": 10.0,
@@ -45,7 +45,7 @@
    "ticker": "COST",
    "name": "COSTCO WHOLESALE CORP /NEW",
    "cik": 909832,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 444803000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -507,7 +507,7 @@
    "ticker": "MSFT",
    "name": "MICROSOFT CORP",
    "cik": 789019,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 7453000000.0,
    "shares_source": "diluted weighted average (2026)",
    "price": {
@@ -969,7 +969,7 @@
    "ticker": "GOOGL",
    "name": "Alphabet Inc.",
    "cik": 1652044,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 12230000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -1431,7 +1431,7 @@
    "ticker": "MCO",
    "name": "MOODYS CORP /DE/",
    "cik": 1059556,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 179900000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -1890,7 +1890,7 @@
    "ticker": "V",
    "name": "VISA INC.",
    "cik": 1403161,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 1950000000.0,
    "shares_source": "manual override in watchlist.json",
    "price": {
@@ -2326,7 +2326,7 @@
    "ticker": "MA",
    "name": "Mastercard Inc",
    "cik": 1141391,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 906000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -2775,7 +2775,7 @@
    "ticker": "JNJ",
    "name": "JOHNSON & JOHNSON",
    "cik": 200406,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 2429400000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -3211,7 +3211,7 @@
    "ticker": "PG",
    "name": "PROCTER & GAMBLE Co",
    "cik": 80424,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 2422500000.0,
    "shares_source": "diluted weighted average (2026)",
    "price": {
@@ -3673,7 +3673,7 @@
    "ticker": "AAPL",
    "name": "Apple Inc.",
    "cik": 320193,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 15004697000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -4135,7 +4135,7 @@
    "ticker": "UNH",
    "name": "UNITEDHEALTH GROUP INC",
    "cik": 731766,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 911000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -4597,7 +4597,7 @@
    "ticker": "KO",
    "name": "COCA COLA CO",
    "cik": 21344,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 4313000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -5059,7 +5059,7 @@
    "ticker": "AXP",
    "name": "AMERICAN EXPRESS CO",
    "cik": 4962,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 696000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -5482,7 +5482,7 @@
    "ticker": "NUE",
    "name": "NUCOR CORP",
    "cik": 73309,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 231000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -5918,7 +5918,7 @@
    "ticker": "KR",
    "name": "KROGER CO",
    "cik": 56873,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 655000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -6372,7 +6372,7 @@
    "ticker": "CB",
    "name": "Chubb Ltd",
    "cik": 896159,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 401513338.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -6797,7 +6797,7 @@
    "ticker": "LEN",
    "name": "LENNAR CORP /NEW/",
    "cik": 920760,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 257746000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -7242,7 +7242,7 @@
    "ticker": "CVX",
    "name": "CHEVRON CORP",
    "cik": 93410,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 1856000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -7677,7 +7677,7 @@
    "ticker": "DVA",
    "name": "DAVITA INC.",
    "cik": 927066,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 75885000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -8126,7 +8126,7 @@
    "ticker": "DAL",
    "name": "DELTA AIR LINES, INC.",
    "cik": 27904,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 654000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -8575,7 +8575,7 @@
    "ticker": "BAC",
    "name": "BANK OF AMERICA CORP /DE/",
    "cik": 70858,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 7680900000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -9001,7 +9001,7 @@
    "ticker": "OXY",
    "name": "OCCIDENTAL PETROLEUM CORP /DE/",
    "cik": 797468,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 1000100000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -9434,7 +9434,7 @@
    "ticker": "KHC",
    "name": "Kraft Heinz Co",
    "cik": 1637459,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 1187000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -9896,7 +9896,7 @@
    "ticker": "LLYVA",
    "name": "Liberty Live Holdings, Inc.",
    "cik": 2078416,
-   "refreshed_fundamentals": false,
+   "refreshed_fundamentals": true,
    "shares": 92471000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -11107,7 +11107,112 @@
    }
   ]
  },
- "signals": [],
+ "signals": [
+  {
+   "severity": "high",
+   "ticker": "COST",
+   "kind": "filing",
+   "headline": "COST filed a new 10-Q",
+   "detail": "Filed 2026-06-03. The scores below already reflect it.",
+   "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm"
+  },
+  {
+   "severity": "high",
+   "ticker": "MCO",
+   "kind": "filing",
+   "headline": "MCO filed a new 10-Q",
+   "detail": "Filed 2026-07-23. The scores below already reflect it.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026049398/mco-20260630.htm"
+  },
+  {
+   "severity": "high",
+   "ticker": "V",
+   "kind": "filing",
+   "headline": "V filed a new 10-Q",
+   "detail": "Filed 2026-07-29. The scores below already reflect it.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm"
+  },
+  {
+   "severity": "high",
+   "ticker": "AAPL",
+   "kind": "filing",
+   "headline": "AAPL filed a new 10-Q",
+   "detail": "Filed 2026-07-31. The scores below already reflect it.",
+   "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
+  },
+  {
+   "severity": "high",
+   "ticker": "UNH",
+   "kind": "filing",
+   "headline": "UNH filed a new 10-Q",
+   "detail": "Filed 2026-08-10. The scores below already reflect it.",
+   "url": "https://www.sec.gov/Archives/edgar/data/731766/000073176626000197/unh-20260630.htm"
+  },
+  {
+   "severity": "high",
+   "ticker": "KO",
+   "kind": "filing",
+   "headline": "KO filed a new 10-Q",
+   "detail": "Filed 2026-07-29. The scores below already reflect it.",
+   "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026050503/ko-20260703.htm"
+  },
+  {
+   "severity": "high",
+   "ticker": "AXP",
+   "kind": "filing",
+   "headline": "AXP filed a new 10-Q",
+   "detail": "Filed 2026-07-24. The scores below already reflect it.",
+   "url": "https://www.sec.gov/Archives/edgar/data/4962/000000496226000322/axp-20260630.htm"
+  },
+  {
+   "severity": "high",
+   "ticker": "NUE",
+   "kind": "filing",
+   "headline": "NUE filed a new 10-Q",
+   "detail": "Filed 2026-08-12. The scores below already reflect it.",
+   "url": "https://www.sec.gov/Archives/edgar/data/73309/000119312526345891/nue-20260704.htm"
+  },
+  {
+   "severity": "high",
+   "ticker": "CB",
+   "kind": "filing",
+   "headline": "CB filed a new 10-Q",
+   "detail": "Filed 2026-07-28. The scores below already reflect it.",
+   "url": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000017/cb-20260630.htm"
+  },
+  {
+   "severity": "high",
+   "ticker": "DAL",
+   "kind": "filing",
+   "headline": "DAL filed a new 10-Q",
+   "detail": "Filed 2026-07-10. The scores below already reflect it.",
+   "url": "https://www.sec.gov/Archives/edgar/data/27904/000002790426000031/dal-20260630.htm"
+  },
+  {
+   "severity": "high",
+   "ticker": "OXY",
+   "kind": "filing",
+   "headline": "OXY filed a new 10-Q",
+   "detail": "Filed 2026-08-05. The scores below already reflect it.",
+   "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026053388/oxy-20260630.htm"
+  },
+  {
+   "severity": "high",
+   "ticker": "KHC",
+   "kind": "filing",
+   "headline": "KHC filed a new 10-Q",
+   "detail": "Filed 2026-08-05. The scores below already reflect it.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1637459/000163745926000054/khc-20260627.htm"
+  },
+  {
+   "severity": "high",
+   "ticker": "LLYVA",
+   "kind": "filing",
+   "headline": "LLYVA filed a new 10-Q",
+   "detail": "Filed 2026-08-06. The scores below already reflect it.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2078416/000110465926092020/tmb-20260630x10q.htm"
+  }
+ ],
  "positions": {
   "rows": [],
   "total_value": 0.0,
@@ -11122,6 +11227,6 @@
   "index": 5,
   "total": 20
  },
- "previous_generated_at": "2026-09-06T18:58:26+00:00",
+ "previous_generated_at": "2026-09-06T19:00:59+00:00",
  "disclaimer": "This dashboard reports public filings and applies published screening criteria. It is not investment advice, does not know your circumstances, and makes no recommendation to buy or sell anything. Every estimate here depends on assumptions that are shown alongside it and that you should judge for yourself."
 }
