@@ -98,7 +98,9 @@ public — it holds no personal data unless you add positions to `watchlist.json
 ### 3. Identify yourself to the SEC
 
 The SEC asks for a contact address in the `User-Agent`. Settings → Secrets and
-variables → Actions → Variables → new variable `SEC_CONTACT` with your email.
+secrets → Actions → new repository **secret** named `SEC_CONTACT` holding your
+email, or run `gh secret set SEC_CONTACT --body "you@example.com"`. A secret
+rather than a variable, so it stays out of the public build logs.
 
 ### 4. Let it run
 

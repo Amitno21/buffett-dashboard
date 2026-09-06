@@ -48,9 +48,11 @@ jobs:
 
       - name: Build dashboard data
         env:
-          # The SEC requires a descriptive User-Agent with a contact address.
-          # Set the SEC_CONTACT repository variable to your own email.
-          SEC_USER_AGENT: "buffett-dashboard/1.0 (${{ vars.SEC_CONTACT || 'dashboard@example.com' }})"
+          # The SEC asks for a contact address in the User-Agent. This is a
+          # secret rather than a variable so the address stays out of the build
+          # logs, which are public on a public repository. Set it with:
+          #   gh secret set SEC_CONTACT --body "you@example.com"
+          SEC_USER_AGENT: "buffett-dashboard/1.0 (${{ secrets.SEC_CONTACT || 'dashboard@example.com' }})"
         run: python scripts/build.py
 
       - name: Commit refreshed data
