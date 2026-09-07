@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-07T06:42:09+00:00",
- "build_seconds": 21.7,
+ "generated_at": "2026-09-07T06:45:12+00:00",
+ "build_seconds": 7.2,
  "settings": {
   "margin_of_safety_pct": 30,
   "discount_rate_pct": 10.0,
@@ -11169,6 +11169,6 @@
   "index": 6,
   "total": 20
  },
- "previous_generated_at": "2026-09-07T06:40:05+00:00",
+ "previous_generated_at": "2026-09-07T06:42:09+00:00",
  "disclaimer": "This dashboard reports public filings and applies published screening criteria. It is not investment advice, does not know your circumstances, and makes no recommendation to buy or sell anything. Every estimate here depends on assumptions that are shown alongside it and that you should judge for yourself."
 }
