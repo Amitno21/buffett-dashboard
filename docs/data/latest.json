@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-07T06:45:12+00:00",
- "build_seconds": 7.2,
+ "generated_at": "2026-09-07T13:28:02+00:00",
+ "build_seconds": 6.7,
  "settings": {
   "margin_of_safety_pct": 30,
   "discount_rate_pct": 10.0,
@@ -33,9 +33,9 @@
    "low_52w": 6343.7202
   },
   "vix": {
-   "price": 14.53,
-   "change_pct": 1.47,
-   "from_high_pct": -53.2,
+   "price": 15.14,
+   "change_pct": 4.2,
+   "from_high_pct": -51.24,
    "high_52w": 31.05,
    "low_52w": 13.47
   }
@@ -11169,6 +11169,6 @@
   "index": 6,
   "total": 20
  },
- "previous_generated_at": "2026-09-07T06:42:09+00:00",
+ "previous_generated_at": "2026-09-07T06:45:12+00:00",
  "disclaimer": "This dashboard reports public filings and applies published screening criteria. It is not investment advice, does not know your circumstances, and makes no recommendation to buy or sell anything. Every estimate here depends on assumptions that are shown alongside it and that you should judge for yourself."
 }
