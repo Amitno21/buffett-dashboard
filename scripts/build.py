@@ -19,6 +19,7 @@ from datetime import datetime, timezone
 import edgar
 import market
 import metrics
+import summary
 from common import (CACHE, DATA, FUND, FetchError, fetch, load_config,
                     read_json, safe_div, write_json)
 from principles import principle_of_the_day
@@ -134,6 +135,9 @@ def analyse(ticker: str, info: dict, settings: dict, force: bool = False,
                                 if derived.get("gross_margin", {}).get(latest_year) else None,
         },
         "filings": filings[:8],
+        # Filled in after the dict is built, since it reads the finished scores.
+        "summary": "",
+        "headline": "",
         "edgar_url": f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={cik}&type=10-K&dateb=&owner=include&count=10",
     }
 
@@ -460,6 +464,11 @@ def build(limit: int | None = None, force: bool = False, skip_screen: bool = Fal
                 f"{(result['valuation'] or {}).get('band', 'no valuation')}")
     companies.sort(key=lambda c: c["quality"]["score"], reverse=True)
 
+    # Plain-English descriptions, written once here so the browser only renders.
+    for company in companies:
+        company["summary"] = summary.company_summary(company)
+        company["headline"] = summary.quality_headline(company)
+
     print("[5/6] Market weather and screen", flush=True)
     weather = market.market_weather()
     screen = {"available": False, "reason": "skipped"} if skip_screen else broad_screen()
@@ -481,6 +490,7 @@ def build(limit: int | None = None, force: bool = False, skip_screen: bool = Fal
         "screen": screen,
         "signals": signals,
         "positions": value_positions(config["positions"], companies),
+        "brief": "",
         "principle": principle_of_the_day(),
         "previous_generated_at": previous.get("generated_at"),
         "disclaimer": (
@@ -490,6 +500,9 @@ def build(limit: int | None = None, force: bool = False, skip_screen: bool = Fal
             "that are shown alongside it and that you should judge for yourself."
         ),
     }
+
+    # The brief reads the finished payload, so it is written last.
+    payload["brief"] = summary.daily_brief(payload)
 
     if previous:
         write_json(DATA / "previous.json", previous)

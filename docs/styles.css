@@ -347,3 +347,51 @@ td.num, th.num { text-align: right; }
   .drawer-body, .drawer-head { padding-left: 15px; padding-right: 15px; }
   .stat-value { font-size: 21px; }
 }
+
+/* ------------------------------------------------- plain-English summaries */
+
+.brief {
+  background: var(--accent-sub); border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent); border-radius: 9px;
+  padding: 14px 17px; margin-bottom: 20px;
+}
+.brief-label {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--accent); font-weight: 700; margin-bottom: 5px;
+}
+.brief p {
+  margin: 0; font-size: 15px; line-height: 1.62; color: var(--ink);
+  max-width: 74ch;
+}
+
+/* Heading and its view switch share a row. An earlier version floated the
+   button with a negative margin, which collided with the heading text on
+   narrow screens. */
+.section-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap; margin-bottom: 6px;
+}
+.section-head h2.section { margin-bottom: 0; }
+
+.plain-card {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 15px 18px; margin-bottom: 11px; cursor: pointer;
+  box-shadow: var(--shadow); transition: border-color .15s, transform .12s;
+}
+.plain-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.plain-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 12px; flex-wrap: wrap; margin-bottom: 3px;
+}
+.plain-headline {
+  font-size: 12.5px; color: var(--accent); font-weight: 600;
+  margin-bottom: 7px;
+}
+.plain-body {
+  margin: 0; font-size: 14px; line-height: 1.6; color: var(--ink-2); max-width: 78ch;
+}
+
+@media (max-width: 620px) {
+  .section-head { align-items: stretch; }
+  .section-head .icon-btn { width: 100%; }
+}

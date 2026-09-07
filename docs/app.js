@@ -4,7 +4,8 @@
    the browser so the assumption sliders respond instantly. That JavaScript
    implementation deliberately mirrors metrics.discounted_owner_earnings. */
 
-const state = { data: null, tab: 'signals', sort: { key: 'score', dir: -1 }, drawer: null };
+const state = { data: null, tab: 'signals', sort: { key: 'score', dir: -1 },
+                drawer: null, view: 'table' };
 
 /* ----------------------------------------------------------- formatting */
 
@@ -193,15 +194,19 @@ function regimeNote(w) {
 function renderSignals() {
   const signals = state.data.signals || [];
   const el = document.getElementById('tab-signals');
+  const brief = state.data.brief
+    ? `<div class="brief"><div class="brief-label">The short version</div>
+         <p>${esc(state.data.brief)}</p></div>` : '';
+
   if (!signals.length) {
-    el.innerHTML = `<div class="card"><div class="empty">
+    el.innerHTML = `${brief}<div class="card"><div class="empty">
       <div class="big">Nothing moved today</div>
       <div>No price shocks, valuation crossings or new filings since the last run.
       A quiet day is the normal state of a portfolio you intend to hold.</div>
     </div></div>`;
     return;
   }
-  el.innerHTML = `<h2 class="section">What changed in the last 24 hours</h2>
+  el.innerHTML = `${brief}<h2 class="section">What changed in the last 24 hours</h2>
     <p class="lede">Compared against the previous run${state.data.previous_generated_at
       ? ' from ' + timeAgo(state.data.previous_generated_at) : ''}.</p>
     <div class="card">${signals.map(s => `
@@ -281,8 +286,13 @@ function renderCompanies() {
       </div></td>
     </tr>`).join('');
 
+  if (state.view === 'plain') { renderCompanyCards(); return; }
+
   document.getElementById('tab-companies').innerHTML = `
-    <h2 class="section">Quality and valuation</h2>
+    <div class="section-head">
+      <h2 class="section">Quality and valuation</h2>
+      <button class="icon-btn" id="view-toggle">Read it in plain English</button>
+    </div>
     <p class="lede">Every figure comes from ten years of SEC filings. Click any row for the
       full scoring breakdown, the ten-year history, and a discounted cash flow you can adjust yourself.
       "Return" is return on equity, or return on invested capital where buybacks have driven book equity
@@ -292,6 +302,9 @@ function renderCompanies() {
       <thead><tr>${head}</tr></thead><tbody>${body}</tbody>
     </table></div></div>`;
 
+  document.getElementById('view-toggle').onclick = () => {
+    state.view = 'plain'; renderCompanies();
+  };
   document.querySelectorAll('#tab-companies th.sortable').forEach(th => {
     th.onclick = () => {
       const k = th.dataset.key;
@@ -301,6 +314,43 @@ function renderCompanies() {
   });
   document.querySelectorAll('#tab-companies tr.clickable').forEach(tr => {
     tr.onclick = () => openDrawer(tr.dataset.ticker);
+  });
+}
+
+/* The same companies as sentences rather than columns, for reading rather
+   than comparing. Ordered worst-priced last so anything trading below the
+   estimate is at the top, where it will actually be read. */
+function renderCompanyCards() {
+  const order = { 'Below margin of safety': 0, 'Near fair value': 1, 'Above estimated value': 2 };
+  const rows = [...state.data.companies].sort((a, b) => {
+    const ka = order[(a.valuation || {}).band] ?? 3;
+    const kb = order[(b.valuation || {}).band] ?? 3;
+    return ka - kb || (b.quality.score || 0) - (a.quality.score || 0);
+  });
+
+  document.getElementById('tab-companies').innerHTML = `
+    <div class="section-head">
+      <h2 class="section">Quality and valuation</h2>
+      <button class="icon-btn" id="view-toggle">Back to the table</button>
+    </div>
+    <p class="lede">Every company in a sentence or two, cheapest against its estimate first.
+      Click any card for the full detail.</p>
+    ${rows.map(c => `
+      <div class="plain-card" data-ticker="${esc(c.ticker)}">
+        <div class="plain-head">
+          <span><span class="ticker">${esc(c.ticker)}</span>
+            <span class="co-name">${esc(c.name)}</span></span>
+          ${bandPill((c.valuation || {}).band)}
+        </div>
+        <div class="plain-headline">${esc(c.headline || '')}</div>
+        <p class="plain-body">${esc(c.summary || '')}</p>
+      </div>`).join('')}`;
+
+  document.getElementById('view-toggle').onclick = () => {
+    state.view = 'table'; renderCompanies();
+  };
+  document.querySelectorAll('.plain-card').forEach(card => {
+    card.onclick = () => openDrawer(card.dataset.ticker);
   });
 }
 
@@ -351,6 +401,8 @@ function openDrawer(ticker) {
           <button class="close-x" id="close-drawer" aria-label="Close">&times;</button>
         </div>
         <div class="drawer-body">
+          ${c.summary ? `<div class="brief"><div class="brief-label">In plain English</div>
+            <p>${esc(c.summary)}</p></div>` : ''}
           ${(q.caveats || []).map(t => `<div class="caveat">${esc(t)}</div>`).join('')}
 
           <h3>Quality score: ${q.score ?? '--'} / 100</h3>

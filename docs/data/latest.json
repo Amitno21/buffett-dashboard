@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-06T19:32:06+00:00",
- "build_seconds": 14.4,
+ "generated_at": "2026-09-07T06:42:09+00:00",
+ "build_seconds": 21.7,
  "settings": {
   "margin_of_safety_pct": 30,
   "discount_rate_pct": 10.0,
@@ -45,7 +45,7 @@
    "ticker": "COST",
    "name": "COSTCO WHOLESALE CORP /NEW",
    "cik": 909832,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 444803000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -501,13 +501,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000035/xslF345X05/form4.xml"
     }
    ],
+   "summary": "Costco Wholesale Corp scores 98.3 out of 100, which makes it an exceptional business by these tests. It earns about 25% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $408.77 each, against a market price of $915.74. That is roughly 124% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Exceptional business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=909832&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "MSFT",
    "name": "MICROSOFT CORP",
    "cik": 789019,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 7453000000.0,
    "shares_source": "diluted weighted average (2026)",
    "price": {
@@ -963,13 +965,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000154/xslF345X06/form4.xml"
     }
    ],
+   "summary": "Microsoft Corp scores 96.2 out of 100, which makes it an exceptional business by these tests. It earns about 33% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $365.21 each, against a market price of $499.70. That is roughly 37% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Exceptional business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=789019&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "GOOGL",
    "name": "Alphabet Inc.",
    "cik": 1652044,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 12230000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -1425,13 +1429,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526371785/xslF345X06/ownership.xml"
     }
    ],
+   "summary": "Alphabet Inc. scores 88.8 out of 100, which makes it an exceptional business by these tests. It earns about 21% a year on the money shareholders have left in it and its long-term debt comes to only about 0.3 years of earnings. On the dashboard's default assumptions its shares work out at around $191.40 each, against a market price of $338.46. That is roughly 77% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Exceptional business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1652044&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "MCO",
    "name": "MOODYS CORP /DE/",
    "cik": 1059556,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 179900000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -1884,13 +1890,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1059556/000199025826000013/xslF345X06/wk-form4_1783022668.xml"
     }
    ],
+   "summary": "Moodys Corp scores 84.3 out of 100, which makes it an exceptional business by these tests. It earns about 40% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. On the dashboard's default assumptions its shares work out at around $243.01 each, against a market price of $493.55. That is roughly 103% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Exceptional business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1059556&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "V",
    "name": "VISA INC.",
    "cik": 1403161,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 1950000000.0,
    "shares_source": "manual override in watchlist.json",
    "price": {
@@ -2320,13 +2328,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm"
     }
    ],
+   "summary": "Visa Inc. scores 81.2 out of 100, which makes it an exceptional business by these tests. It earns about 34% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $219.42 each, against a market price of $375.07. That is roughly 71% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Exceptional business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1403161&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "MA",
    "name": "Mastercard Inc",
    "cik": 1141391,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 906000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -2769,13 +2779,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000094/xslF345X06/wk-form4_1785961107.xml"
     }
    ],
+   "summary": "Mastercard Inc scores 80.9 out of 100, which makes it an exceptional business by these tests. It earns about 126% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $377.81 each, against a market price of $579.21. That is roughly 53% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Exceptional business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1141391&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "JNJ",
    "name": "JOHNSON & JOHNSON",
    "cik": 200406,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 2429400000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -3205,13 +3217,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000155/jnj-20260727.htm"
     }
    ],
+   "summary": "Johnson & Johnson scores 79.8 out of 100, which makes it a strong business by these tests. It earns about 25% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. The main mark against it is that profit fell sharply in 3 of the last ten years. On the dashboard's default assumptions its shares work out at around $163.40 each, against a market price of $275.23. That is roughly 68% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Strong business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=200406&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "PG",
    "name": "PROCTER & GAMBLE Co",
    "cik": 80424,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 2422500000.0,
    "shares_source": "diluted weighted average (2026)",
    "price": {
@@ -3667,13 +3681,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000153/xslF345X06/form4.xml"
     }
    ],
+   "summary": "PROCTER & GAMBLE Co scores 78.5 out of 100, which makes it a strong business by these tests. It earns about 26% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. The main mark against it is that the cash it throws off for owners has grown only about 2% a year. On the dashboard's default assumptions its shares work out at around $70.93 each, against a market price of $146.44. That is roughly 106% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Strong business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=80424&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "AAPL",
    "name": "Apple Inc.",
    "cik": 320193,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 15004697000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -4129,13 +4145,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm"
     }
    ],
+   "summary": "Apple Inc. scores 77.6 out of 100, which makes it a strong business by these tests. It earns about 92% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $116.09 each, against a market price of $319.97. That is roughly 176% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Strong business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=320193&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "UNH",
    "name": "UNITEDHEALTH GROUP INC",
    "cik": 731766,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 911000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -4591,13 +4609,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/731766/000073176626000187/xslF345X06/wk-form4_1783370766.xml"
     }
    ],
+   "summary": "Unitedhealth Group Inc scores 75.7 out of 100, which makes it a strong business by these tests. It earns about 20% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. The main mark against it is that it owes about 5.7 years of earnings in long-term debt. On the dashboard's default assumptions its shares work out at around $312.21 each, against a market price of $397.14. That is roughly 27% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Strong business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=731766&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "KO",
    "name": "COCA COLA CO",
    "cik": 21344,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 4313000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -5053,13 +5073,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/21344/000002134426000154/xslF345X06/form4.xml"
     }
    ],
+   "summary": "Coca Cola Co scores 75.5 out of 100, which makes it a strong business by these tests. It earns about 36% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. The main mark against it is that profit fell sharply in 3 of the last ten years. On the dashboard's default assumptions its shares work out at around $32.14 each, against a market price of $88.07. That is roughly 174% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Strong business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=21344&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "AXP",
    "name": "AMERICAN EXPRESS CO",
    "cik": 4962,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 696000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -5476,13 +5498,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/4962/000000496226000318/axp-20260724.htm"
     }
    ],
+   "summary": "American Express Co scores 61.6 out of 100, which makes it a middling business by these tests. It earns about 28% a year on the money shareholders have left in it. Against that, it owes about 5.2 years of earnings in long-term debt. On the dashboard's default assumptions its shares work out at around $201.63 each, against a market price of $326.16. That is roughly 62% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Adequate business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=4962&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "NUE",
    "name": "NUCOR CORP",
    "cik": 73309,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 231000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -5912,13 +5936,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/73309/000007330926000122/xslF345X06/form4.xml"
     }
    ],
+   "summary": "Nucor Corp scores 58.2 out of 100, which makes it a middling business by these tests. It earns about 18% a year on the money shareholders have left in it. Against that, its profit margin swings around a lot, which suggests less protection from competition than the headline figures imply. On the dashboard's default assumptions its shares work out at around $587.03 each, and they trade at $261.07, about 56% below that estimate. That is inside the margin of safety set in the settings, which asks for $410.92 or less.",
+   "headline": "Adequate business, trading below the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=73309&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "KR",
    "name": "KROGER CO",
    "cik": 56873,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 655000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -6366,13 +6392,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/56873/000169198326000003/xslF345X06/ownership.xml"
     }
    ],
+   "summary": "Kroger Co scores 55.2 out of 100, which makes it a middling business by these tests. It earns about 26% a year on the money shareholders have left in it. Against that, it owes about 12.3 years of earnings in long-term debt. On the dashboard's default assumptions its shares work out at around $20.65 each, against a market price of $58.59. That is roughly 184% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Adequate business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=56873&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "CB",
    "name": "Chubb Ltd",
    "cik": 896159,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 401513338.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -6791,13 +6819,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/896159/000110465926071034/tm2616757-2_424b2.htm"
     }
    ],
+   "summary": "Chubb Ltd scores 52.4 out of 100, which makes it a middling business by these tests. The cash it throws off for owners has grown about 14% a year. Against that, it beat a 15% return on shareholders' money in only 1 of the last 11 years. On the dashboard's default assumptions its shares work out at around $604.69 each, and they trade at $341.59, about 44% below that estimate. That is inside the margin of safety set in the settings, which asks for $423.28 or less. One caution: this looks like a financial company. Gross margin and maintenance capital expenditure do not apply to banks and insurers, so the margin-stability and owner-earnings components understate it. Judge it on return on equity, consistency and book value instead.",
+   "headline": "Adequate business, trading below the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=896159&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "LEN",
    "name": "LENNAR CORP /NEW/",
    "cik": 920760,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 257746000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -7236,13 +7266,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/920760/000119312526303507/xslF345X06/ownership.xml"
     }
    ],
+   "summary": "Lennar Corp scores 46.1 out of 100, which makes it a weak business by these tests. Each $1 it held back has produced only about $0.53 of market value and it beat a 15% return on shareholders' money in only 2 of the last 11 years. It does score well on one measure: the cash it throws off for owners has grown about 10% a year. On the dashboard's default assumptions its shares work out at around $312.70 each, and they trade at $83.58, about 73% below that estimate. That is inside the margin of safety set in the settings, which asks for $218.89 or less.",
+   "headline": "Weak business, trading below the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=920760&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "CVX",
    "name": "CHEVRON CORP",
    "cik": 93410,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 1856000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -7671,13 +7703,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/93410/000009341026000169/xslF345X06/form4.xml"
     }
    ],
+   "summary": "Chevron Corp scores 42.6 out of 100, which makes it a weak business by these tests. It earns only about 7% a year on the money shareholders have left in it and profit fell sharply in 6 of the last ten years. It does score well on one measure: every $1 it held back rather than paying out has become about $8.28 of market value. On the dashboard's default assumptions its shares work out at around $196.76 each, and they trade at $208.60. That is close enough to the estimate to leave little room for the estimate itself to be wrong.",
+   "headline": "Weak business, priced near the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=93410&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "DVA",
    "name": "DAVITA INC.",
    "cik": 927066,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 75885000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -7826,7 +7860,7 @@
     "components": [
      {
       "key": "roe_level",
-      "label": "Return on equity",
+      "label": "Return on invested capital",
       "points": 16.8,
       "max": 20,
       "value": 13.6,
@@ -8120,13 +8154,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000117/xslF345X06/wk-form4_1787091007.xml"
     }
    ],
+   "summary": "Davita Inc. scores 38.2 out of 100, which makes it a weak business by these tests. It owes about 8.4 years of earnings in long-term debt and profit fell sharply in 4 of the last ten years. It does score well on one measure: the cash it throws off for owners has grown about 16% a year. On the dashboard's default assumptions its shares work out at around $369.65 each, and they trade at $183.99, about 50% below that estimate. That is inside the margin of safety set in the settings, which asks for $258.75 or less. One caution: book equity is negative or very small, usually the result of years of buybacks. Return-on-equity figures for such a company are an artefact of its capital structure rather than a measure of profitability, so return on invested capital is scored in its place.",
+   "headline": "Weak business, trading below the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=927066&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "DAL",
    "name": "DELTA AIR LINES, INC.",
    "cik": 27904,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 654000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -8569,13 +8605,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/27904/000002790426000031/dal-20260630.htm"
     }
    ],
+   "summary": "Delta Air Lines, Inc. scores 31.5 out of 100, which makes it a poor business by these tests. It is losing money on the money shareholders have left in it, at a rate of about 48% a year and profit fell sharply in 3 of the last ten years. It does score well on one measure: every $1 it held back rather than paying out has become about $3.64 of market value. On the dashboard's default assumptions its shares work out at around $72.32 each, against a market price of $80.17. That is roughly 11% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Poor business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=27904&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "BAC",
    "name": "BANK OF AMERICA CORP /DE/",
    "cik": 70858,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 7680900000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -8995,13 +9033,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426026693/form424b2.htm"
     }
    ],
+   "summary": "Bank of America Corp scores 27.6 out of 100, which makes it a poor business by these tests. It has not once beaten a 15% return on shareholders' money in 11 years and it owes about 10.4 years of earnings in long-term debt. It does score well on one measure: every $1 it held back rather than paying out has become about $2.08 of market value. On the dashboard's default assumptions its shares work out at around $49.55 each, against a market price of $62.68. That is roughly 26% more than the estimate supports, so it is the price rather than the business that stands out. One caution: this looks like a financial company. Gross margin and maintenance capital expenditure do not apply to banks and insurers, so the margin-stability and owner-earnings components understate it. Judge it on return on equity, consistency and book value instead.",
+   "headline": "Poor business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=70858&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "OXY",
    "name": "OCCIDENTAL PETROLEUM CORP /DE/",
    "cik": 797468,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 1000100000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -9428,13 +9468,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026031570/xslF345X06/wk-form4_1778108846.xml"
     }
    ],
+   "summary": "Occidental Petroleum Corp scores 20.8 out of 100, which makes it a poor business by these tests. It is losing money on the money shareholders have left in it, at a rate of about 47% a year and profit fell sharply in 4 of the last ten years. It does score well on one measure: its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. On the dashboard's default assumptions its shares work out at around $43.53 each, against a market price of $60.04. That is roughly 38% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Poor business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=797468&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "KHC",
    "name": "Kraft Heinz Co",
    "cik": 1637459,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 1187000000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -9890,13 +9932,15 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1637459/000119312526234627/d101070d8k.htm"
     }
    ],
+   "summary": "Kraft Heinz Co scores 19 out of 100, which makes it a poor business by these tests. It earns only about 1% a year on the money shareholders have left in it and it owes about 18.3 years of earnings in long-term debt. It does score well on one measure: its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. On the dashboard's default assumptions its shares work out at around $16.80 each, against a market price of $24.85. That is roughly 48% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "headline": "Poor business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1637459&type=10-K&dateb=&owner=include&count=10"
   },
   {
    "ticker": "LLYVA",
    "name": "Liberty Live Holdings, Inc.",
    "cik": 2078416,
-   "refreshed_fundamentals": true,
+   "refreshed_fundamentals": false,
    "shares": 92471000.0,
    "shares_source": "diluted weighted average (2025)",
    "price": {
@@ -10045,7 +10089,7 @@
     "components": [
      {
       "key": "roe_level",
-      "label": "Return on equity",
+      "label": "Return on invested capital",
       "points": 0.0,
       "max": 20,
       "value": -6.9,
@@ -10224,6 +10268,8 @@
      "url": "https://www.sec.gov/Archives/edgar/data/2078416/000122520826003422/xslF345X05/doc4.xml"
     }
    ],
+   "summary": "Liberty Live Holdings, Inc. scores 10 out of 100, which makes it a poor business by these tests. It is losing money on all the capital invested in it, at a rate of about 7% a year. There is no usable estimate of what it is worth, because owner earnings are negative in most of the last five years. One caution: book equity is negative or very small, usually the result of years of buybacks. Return-on-equity figures for such a company are an artefact of its capital structure rather than a measure of profitability, so return on invested capital is scored in its place.",
+   "headline": "Poor business, no usable price estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2078416&type=10-K&dateb=&owner=include&count=10"
   }
  ],
@@ -11107,112 +11153,7 @@
    }
   ]
  },
- "signals": [
-  {
-   "severity": "high",
-   "ticker": "COST",
-   "kind": "filing",
-   "headline": "COST filed a new 10-Q",
-   "detail": "Filed 2026-06-03. The scores below already reflect it.",
-   "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm"
-  },
-  {
-   "severity": "high",
-   "ticker": "MCO",
-   "kind": "filing",
-   "headline": "MCO filed a new 10-Q",
-   "detail": "Filed 2026-07-23. The scores below already reflect it.",
-   "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026049398/mco-20260630.htm"
-  },
-  {
-   "severity": "high",
-   "ticker": "V",
-   "kind": "filing",
-   "headline": "V filed a new 10-Q",
-   "detail": "Filed 2026-07-29. The scores below already reflect it.",
-   "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm"
-  },
-  {
-   "severity": "high",
-   "ticker": "AAPL",
-   "kind": "filing",
-   "headline": "AAPL filed a new 10-Q",
-   "detail": "Filed 2026-07-31. The scores below already reflect it.",
-   "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
-  },
-  {
-   "severity": "high",
-   "ticker": "UNH",
-   "kind": "filing",
-   "headline": "UNH filed a new 10-Q",
-   "detail": "Filed 2026-08-10. The scores below already reflect it.",
-   "url": "https://www.sec.gov/Archives/edgar/data/731766/000073176626000197/unh-20260630.htm"
-  },
-  {
-   "severity": "high",
-   "ticker": "KO",
-   "kind": "filing",
-   "headline": "KO filed a new 10-Q",
-   "detail": "Filed 2026-07-29. The scores below already reflect it.",
-   "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026050503/ko-20260703.htm"
-  },
-  {
-   "severity": "high",
-   "ticker": "AXP",
-   "kind": "filing",
-   "headline": "AXP filed a new 10-Q",
-   "detail": "Filed 2026-07-24. The scores below already reflect it.",
-   "url": "https://www.sec.gov/Archives/edgar/data/4962/000000496226000322/axp-20260630.htm"
-  },
-  {
-   "severity": "high",
-   "ticker": "NUE",
-   "kind": "filing",
-   "headline": "NUE filed a new 10-Q",
-   "detail": "Filed 2026-08-12. The scores below already reflect it.",
-   "url": "https://www.sec.gov/Archives/edgar/data/73309/000119312526345891/nue-20260704.htm"
-  },
-  {
-   "severity": "high",
-   "ticker": "CB",
-   "kind": "filing",
-   "headline": "CB filed a new 10-Q",
-   "detail": "Filed 2026-07-28. The scores below already reflect it.",
-   "url": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000017/cb-20260630.htm"
-  },
-  {
-   "severity": "high",
-   "ticker": "DAL",
-   "kind": "filing",
-   "headline": "DAL filed a new 10-Q",
-   "detail": "Filed 2026-07-10. The scores below already reflect it.",
-   "url": "https://www.sec.gov/Archives/edgar/data/27904/000002790426000031/dal-20260630.htm"
-  },
-  {
-   "severity": "high",
-   "ticker": "OXY",
-   "kind": "filing",
-   "headline": "OXY filed a new 10-Q",
-   "detail": "Filed 2026-08-05. The scores below already reflect it.",
-   "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026053388/oxy-20260630.htm"
-  },
-  {
-   "severity": "high",
-   "ticker": "KHC",
-   "kind": "filing",
-   "headline": "KHC filed a new 10-Q",
-   "detail": "Filed 2026-08-05. The scores below already reflect it.",
-   "url": "https://www.sec.gov/Archives/edgar/data/1637459/000163745926000054/khc-20260627.htm"
-  },
-  {
-   "severity": "high",
-   "ticker": "LLYVA",
-   "kind": "filing",
-   "headline": "LLYVA filed a new 10-Q",
-   "detail": "Filed 2026-08-06. The scores below already reflect it.",
-   "url": "https://www.sec.gov/Archives/edgar/data/2078416/000110465926092020/tmb-20260630x10q.htm"
-  }
- ],
+ "signals": [],
  "positions": {
   "rows": [],
   "total_value": 0.0,
@@ -11220,13 +11161,14 @@
   "total_gain": 0.0,
   "total_gain_pct": null
  },
+ "brief": "The US stock market as a whole is worth about 218% of everything the country produces in a year, which is high by any historical standard and is the measure Buffett has pointed to as a warning sign. Government bonds pay 4.77%, which is the return a share has to beat before it is worth taking on the extra risk. Nothing of note has changed since the last check: no large price moves, no new company filings, and nothing crossed into or out of value territory. Quiet days are the normal state of a portfolio meant to be held for years. Of the 23 companies tracked, 4 currently sit below the margin of safety set in the settings: NUE, CB, LEN, DVA. That is this dashboard's arithmetic on its default assumptions rather than a recommendation, so open each one and judge whether the assumptions behind it look right to you.",
  "principle": {
-  "title": "Interest rates are gravity",
-  "body": "The risk-free rate is what every asset must beat. When long-term government bonds yield very little, every other asset can justify a higher price; when they yield a lot, that same asset must get cheaper to stay competitive. Always compare an earnings yield with the ten-year.",
-  "source": "1999 Sun Valley talk; recurring in annual meetings",
-  "index": 5,
+  "title": "The one-dollar premise",
+  "body": "For every dollar a company keeps rather than pays out, it should create at least a dollar of market value over time. Retained earnings that fail this test would have been worth more in the shareholders' hands.",
+  "source": "1984 shareholder letter",
+  "index": 6,
   "total": 20
  },
- "previous_generated_at": "2026-09-06T19:00:59+00:00",
+ "previous_generated_at": "2026-09-07T06:40:05+00:00",
  "disclaimer": "This dashboard reports public filings and applies published screening criteria. It is not investment advice, does not know your circumstances, and makes no recommendation to buy or sell anything. Every estimate here depends on assumptions that are shown alongside it and that you should judge for yourself."
 }

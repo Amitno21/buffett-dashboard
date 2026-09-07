@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import edgar  # noqa: E402
 import metrics  # noqa: E402
+import summary  # noqa: E402
 from common import cagr, safe_div  # noqa: E402
 from principles import PRINCIPLES, principle_of_the_day  # noqa: E402
 
@@ -331,6 +332,134 @@ class TestPrinciples(unittest.TestCase):
         for p in PRINCIPLES:
             self.assertTrue(p["source"].strip(), f"{p['title']} has no source")
             self.assertTrue(p["body"].strip())
+
+
+class TestSummaries(unittest.TestCase):
+    """The prose layer. Each test here is a sentence that read badly on live data."""
+
+    def company(self, score, grade, components, band="Above estimated value",
+                available=True, caveats=None):
+        return {
+            "ticker": "TEST", "name": "TEST CORP /DE/",
+            "quality": {"score": score, "grade": grade, "components": components,
+                        "caveats": caveats or []},
+            "valuation": {"available": available, "band": band, "base_value": 50.0,
+                          "discount_to_value_pct": -20.0, "buy_below": 35.0,
+                          "reason": "owner earnings are negative"},
+            "price": {"price": 60.0},
+        }
+
+    def comp(self, key, points, maximum, value, label=None):
+        return {"key": key, "points": points, "max": maximum, "value": value,
+                "label": label or metrics.LABELS[key], "note": "", "detail": ""}
+
+    def test_registrant_names_are_tidied(self):
+        self.assertEqual(summary.clean_name("BANK OF AMERICA CORP /DE/"), "Bank of America Corp")
+        self.assertEqual(summary.clean_name("COSTCO WHOLESALE CORP /NEW"), "Costco Wholesale Corp")
+        self.assertEqual(summary.clean_name("Chubb Ltd"), "Chubb Ltd")
+
+    def test_consistency_reads_as_words_not_a_fraction(self):
+        text = summary.describe(self.comp("roe_consistency", 10, 10, "11/11"), positive=True)
+        self.assertIn("11 of the last 11 years", text)
+        self.assertNotIn("11/11", text)
+
+    def test_zero_hits_is_not_phrased_as_only_zero(self):
+        text = summary.describe(self.comp("roe_consistency", 0, 10, "0/11"), positive=False)
+        self.assertIn("not once", text)
+        self.assertNotIn("only 0", text)
+
+    def test_tiny_sample_is_not_called_a_track_record(self):
+        # Liberty Live cleared the bar in 2 of 2 years, which proves nothing.
+        self.assertIsNone(summary.describe(self.comp("roe_consistency", 10, 10, "2/2"), positive=True))
+
+    def test_a_loss_is_never_described_as_a_strength(self):
+        self.assertIsNone(summary.describe(self.comp("roe_level", 0, 20, -6.9), positive=True))
+
+    def test_a_loss_reads_as_losing_money(self):
+        text = summary.describe(self.comp("roe_level", 0, 20, -6.9), positive=False)
+        self.assertIn("losing money", text)
+        self.assertNotIn("-7%", text)
+
+    def test_return_basis_follows_the_component_label(self):
+        equity = summary.describe(self.comp("roe_level", 20, 20, 25.0), positive=True)
+        capital = summary.describe(
+            self.comp("roe_level", 20, 20, 25.0, label="Return on invested capital"), positive=True)
+        self.assertIn("shareholders have left in it", equity)
+        self.assertIn("all the capital invested in it", capital)
+
+    def test_retained_earnings_is_formatted_as_money(self):
+        text = summary.describe(self.comp("retained_earnings", 10, 10, 1.7), positive=True)
+        self.assertIn("$1.70", text)
+
+    def test_a_poor_company_leads_with_its_problems(self):
+        poor = self.company(19, "Poor", [
+            self.comp("roe_level", 1, 20, 1.2),
+            self.comp("margin_stability", 15, 15, 0.02),
+        ])
+        text = summary.company_summary(poor)
+        problem = text.index("earns only")
+        redeeming = text.index("It does score well")
+        self.assertLess(problem, redeeming, "the weakness must come before the bright spot")
+
+    def test_a_strong_company_leads_with_its_strengths(self):
+        strong = self.company(90, "Exceptional", [
+            self.comp("roe_level", 20, 20, 30.0),
+            self.comp("earnings_consistency", 3, 15, 4),
+        ])
+        text = summary.company_summary(strong)
+        self.assertLess(text.index("earns about 30%"), text.index("main mark against it"))
+
+    def test_summaries_never_recommend(self):
+        banned = ("you should", "we recommend", "a good buy", "worth buying",
+                  "should buy", "should sell", "must buy")
+        for score, grade, band in [(90, "Exceptional", "Below margin of safety"),
+                                   (19, "Poor", "Above estimated value"),
+                                   (52, "Adequate", "Near fair value")]:
+            text = summary.company_summary(self.company(score, grade, [
+                self.comp("roe_level", 20, 20, 25.0),
+                self.comp("debt_burden", 0, 15, 9.0)], band=band)).lower()
+            for phrase in banned:
+                self.assertNotIn(phrase, text)
+
+    def test_missing_valuation_explains_itself(self):
+        text = summary.company_summary(self.company(
+            10, "Poor", [self.comp("roe_level", 0, 20, -5.0)], available=False))
+        self.assertIn("no usable estimate", text)
+
+    def test_headline_is_short_and_covers_both_questions(self):
+        headline = summary.quality_headline(self.company(
+            90, "Exceptional", [], band="Below margin of safety"))
+        self.assertEqual(headline, "Exceptional business, trading below the estimate")
+
+    def test_brief_mentions_cheap_names_when_there_are_any(self):
+        payload = {
+            "weather": {"buffett_indicator": {"value": 218.0}, "treasury_10y": {"value": 4.77}},
+            "companies": [self.company(60, "Adequate", [], band="Below margin of safety")],
+            "signals": [],
+        }
+        brief = summary.daily_brief(payload)
+        self.assertIn("218%", brief)
+        self.assertIn("4.77%", brief)
+        self.assertIn("TEST", brief)
+        self.assertIn("not a recommendation", brief.replace("rather than a recommendation",
+                                                            "not a recommendation"))
+
+    def test_brief_handles_a_quiet_day(self):
+        payload = {"weather": {}, "companies": [], "signals": []}
+        brief = summary.daily_brief(payload)
+        self.assertIn("Nothing of note", brief)
+
+    def test_brief_leads_with_a_high_severity_signal(self):
+        payload = {
+            "weather": {},
+            "companies": [self.company(60, "Adequate", [])],
+            "signals": [{"severity": "low", "headline": "minor thing"},
+                        {"severity": "high", "headline": "AAPL filed a new 10-K"}],
+        }
+        brief = summary.daily_brief(payload)
+        self.assertIn("AAPL filed a new 10-K", brief)
+        self.assertIn("1 other item", brief)
+
 
 
 if __name__ == "__main__":

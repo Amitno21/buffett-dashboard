@@ -213,10 +213,11 @@ def quality_score(fin: dict, derived: dict, market_cap: float | None = None,
     """Score a business 0-100 on Buffett's published criteria."""
     components: list[dict] = []
 
-    def add(key: str, points: float, value, note: str, detail: str = "") -> None:
+    def add(key: str, points: float, value, note: str, detail: str = "",
+            label: str | None = None) -> None:
         components.append({
             "key": key,
-            "label": LABELS[key],
+            "label": label or LABELS[key],
             "points": round(points, 2),
             "max": WEIGHTS[key],
             "value": value,
@@ -254,7 +255,8 @@ def quality_score(fin: dict, derived: dict, market_cap: float | None = None,
             if avg_roic is not None else "Return on capital unavailable",
             "Book equity is negative or negligible after buybacks, which makes "
             "return on equity meaningless, so return on invested capital is "
-            "scored instead. Full marks at 15%+.")
+            "scored instead. Full marks at 15%+.",
+            label="Return on invested capital")
     elif roe_values:
         avg_roe = mean(roe_values)
         add("roe_level", ramp(avg_roe, 0.08, 0.18, WEIGHTS["roe_level"]),
