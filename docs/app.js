@@ -716,20 +716,28 @@ function switchTab(tab) {
   try { localStorage.setItem('bd-tab', tab); } catch (e) { /* private mode */ }
 }
 
+/* Light unless the reader has explicitly chosen dark. The system setting is
+   deliberately not consulted: someone opening this over breakfast should not
+   get a black page because their laptop is in dark mode. */
 function applyTheme(theme) {
-  if (theme) document.documentElement.setAttribute('data-theme', theme);
-  else document.documentElement.removeAttribute('data-theme');
-  try { theme ? localStorage.setItem('bd-theme', theme) : localStorage.removeItem('bd-theme'); }
+  const dark = theme === 'dark';
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  const button = document.getElementById('theme-toggle');
+  if (button) {
+    button.textContent = dark ? 'Light mode' : 'Dark mode';
+    button.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+  try { localStorage.setItem('bd-theme', dark ? 'dark' : 'light'); }
   catch (e) { /* private mode */ }
 }
 
 async function init() {
-  try { applyTheme(localStorage.getItem('bd-theme')); } catch (e) { /* private mode */ }
+  let stored = null;
+  try { stored = localStorage.getItem('bd-theme'); } catch (e) { /* private mode */ }
+  applyTheme(stored === 'dark' ? 'dark' : 'light');
 
   document.getElementById('theme-toggle').onclick = () => {
-    const dark = document.documentElement.getAttribute('data-theme') === 'dark'
-      || (!document.documentElement.hasAttribute('data-theme')
-          && matchMedia('(prefers-color-scheme: dark)').matches);
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
     applyTheme(dark ? 'light' : 'dark');
   };
 
