@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-08T03:54:04+00:00",
- "build_seconds": 25.9,
+ "generated_at": "2026-09-08T03:57:50+00:00",
+ "build_seconds": 24.2,
  "settings": {
   "margin_of_safety_pct": 30,
   "discount_rate_pct": 10.0,
@@ -11164,12 +11164,353 @@
  "brief": "The US stock market as a whole is worth about 218% of everything the country produces in a year, which is high by any historical standard and is the measure Buffett has pointed to as a warning sign. Government bonds pay 4.77%, which is the return a share has to beat before it is worth taking on the extra risk. Nothing of note has changed since the last check: no large price moves, no new company filings, and nothing crossed into or out of value territory. Quiet days are the normal state of a portfolio meant to be held for years. Of the 23 companies tracked, 4 currently sit below the margin of safety set in the settings: NUE, CB, LEN, DVA. That is this dashboard's arithmetic on its default assumptions rather than a recommendation, so open each one and judge whether the assumptions behind it look right to you.",
  "israel": {
   "money_market": {
-   "available": false,
-   "reason": "https://www.funder.co.il/kaspit -> HTTP Error 403: Forbidden"
+   "available": true,
+   "count": 44,
+   "total_size_mils": 180985.4,
+   "median_year_pct": 3.97,
+   "best_year_pct": 4.1,
+   "median_fee_pct": 0.169,
+   "as_of": "2026-09-07",
+   "rows": [
+    {
+     "name": "\u05d0\u05dc\u05d8\u05e9\u05d5\u05dc\u05e8 \u05e9\u05d7\u05dd \u05db\u05e1\u05e4\u05d9\u05ea \u05e0\u05d9\u05d4\u05d5\u05dc \u05e0\u05d6\u05d9\u05dc\u05d5\u05ea",
+     "manager": "\u05d0\u05dc\u05d8\u05e9\u05d5\u05dc\u05e8 \u05e9\u05d7\u05dd",
+     "day_pct": 0.02,
+     "month_pct": 0.08,
+     "ytd_pct": 2.66,
+     "year_pct": 4.04,
+     "fee_pct": 0.06,
+     "size_musd": 11826.3,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5140918"
+    },
+    {
+     "name": "\u05d4\u05e8\u05d0\u05dc \u05db\u05e1\u05e4\u05d9\u05ea \u05de\u05d2\u05de\u05ea \u05e8\u05d9\u05d1\u05d9\u05ea",
+     "manager": "\u05d4\u05e8\u05d0\u05dc",
+     "day_pct": 0.02,
+     "month_pct": 0.08,
+     "ytd_pct": 2.57,
+     "year_pct": 3.88,
+     "fee_pct": 0.18,
+     "size_musd": 10586.4,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5127790"
+    },
+    {
+     "name": "\u05d9\u05dc\u05d9\u05df \u05dc\u05e4\u05d9\u05d3\u05d5\u05ea \u05db\u05e1\u05e4\u05d9\u05ea \u05e0\u05d9\u05d4\u05d5\u05dc \u05e0\u05d6\u05d9\u05dc\u05d5\u05ea",
+     "manager": "\u05d9\u05dc\u05d9\u05df \u05dc\u05e4\u05d9\u05d3\u05d5\u05ea",
+     "day_pct": 0.02,
+     "month_pct": 0.07,
+     "ytd_pct": 2.66,
+     "year_pct": 4.05,
+     "fee_pct": 0.19,
+     "size_musd": 9575.9,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5139258"
+    },
+    {
+     "name": "\u05de\u05d9\u05d8\u05d1 \u05db\u05e1\u05e4\u05d9\u05ea \u05e9\u05e7\u05dc\u05d9\u05ea \u05db\u05e9\u05e8\u05d4",
+     "manager": "\u05de\u05d9\u05d8\u05d1",
+     "day_pct": 0.02,
+     "month_pct": 0.08,
+     "ytd_pct": 2.71,
+     "year_pct": 4.07,
+     "fee_pct": 0.16,
+     "size_musd": 9167.3,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5136544"
+    },
+    {
+     "name": "\u05e7\u05e1\u05dd \u05d0\u05e7\u05d8\u05d9\u05d1 \u05db\u05e1\u05e4\u05d9\u05ea \u05e9\u05e7\u05dc\u05d9\u05ea",
+     "manager": "\u05e7\u05e1\u05dd",
+     "day_pct": 0.03,
+     "month_pct": 0.07,
+     "ytd_pct": 2.58,
+     "year_pct": 3.89,
+     "fee_pct": 0.19,
+     "size_musd": 8557.6,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5137740"
+    },
+    {
+     "name": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df \u05db\u05e1\u05e4\u05d9\u05ea",
+     "manager": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df",
+     "day_pct": 0.02,
+     "month_pct": 0.07,
+     "ytd_pct": 2.64,
+     "year_pct": 4.02,
+     "fee_pct": 0.18,
+     "size_musd": 8055.9,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5117700"
+    },
+    {
+     "name": "\u05d0\u05e0\u05dc\u05d9\u05e1\u05d8 \u05db\u05e1\u05e4\u05d9\u05ea \u05e9\u05e7\u05dc\u05d9\u05ea",
+     "manager": "\u05d0\u05e0\u05dc\u05d9\u05e1\u05d8",
+     "day_pct": 0.02,
+     "month_pct": 0.08,
+     "ytd_pct": 2.63,
+     "year_pct": 3.97,
+     "fee_pct": 0.169,
+     "size_musd": 6694.3,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5120852"
+    },
+    {
+     "name": "\u05e7\u05e1\u05dd \u05d0\u05e7\u05d8\u05d9\u05d1 \u05db\u05e1\u05e4\u05d9\u05ea \u05e4\u05d8\u05d5\u05e8\u05d4",
+     "manager": "\u05e7\u05e1\u05dd",
+     "day_pct": 0.03,
+     "month_pct": 0.06,
+     "ytd_pct": 2.57,
+     "year_pct": 3.86,
+     "fee_pct": 0.24,
+     "size_musd": 6193.8,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5127881"
+    },
+    {
+     "name": "\u05d0\u05d9.\u05d1\u05d9.\u05d0\u05d9. \u05db\u05e1\u05e4\u05d9\u05ea \u05e0\u05d9\u05d4\u05d5\u05dc \u05e0\u05d6\u05d9\u05dc\u05d5\u05ea",
+     "manager": "\u05d0\u05d9.\u05d1\u05d9.\u05d0\u05d9",
+     "day_pct": 0.02,
+     "month_pct": 0.07,
+     "ytd_pct": 2.63,
+     "year_pct": 3.97,
+     "fee_pct": 0.169,
+     "size_musd": 5963.8,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5137732"
+    },
+    {
+     "name": "\u05de\u05d2\u05d3\u05dc \u05db\u05e1\u05e4\u05d9\u05ea \u05e9\u05e7\u05dc\u05d9\u05ea",
+     "manager": "\u05de\u05d2\u05d3\u05dc",
+     "day_pct": 0.02,
+     "month_pct": 0.07,
+     "ytd_pct": 2.62,
+     "year_pct": 3.92,
+     "fee_pct": 0.239,
+     "size_musd": 5720.8,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5102991"
+    },
+    {
+     "name": "\u05de\u05d2\u05d3\u05dc \u05db\u05e1\u05e4\u05d9\u05ea \u05e9\u05e7\u05dc\u05d9\u05ea \u05db\u05e9\u05e8\u05d4",
+     "manager": "\u05de\u05d2\u05d3\u05dc",
+     "day_pct": 0.02,
+     "month_pct": 0.06,
+     "ytd_pct": 2.66,
+     "year_pct": 4.04,
+     "fee_pct": 0.149,
+     "size_musd": 5673.8,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5138094"
+    },
+    {
+     "name": "\u05d3\u05d5\u05dc\u05e4\u05d9\u05df \u05db\u05e1\u05e4\u05d9\u05ea",
+     "manager": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df",
+     "day_pct": 0.03,
+     "month_pct": 0.08,
+     "ytd_pct": 2.63,
+     "year_pct": 3.98,
+     "fee_pct": 0.149,
+     "size_musd": 5603.5,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5138698"
+    }
+   ],
+   "source": "https://www.funder.co.il/kaspit"
   },
   "hedge": {
-   "available": false,
-   "reason": "https://www.funder.co.il/gidurList -> HTTP Error 403: Forbidden"
+   "available": true,
+   "count": 46,
+   "with_year_history": 46,
+   "median_year_pct": 14.6,
+   "best_year_pct": 55.57,
+   "worst_year_pct": -11.13,
+   "negative_year_count": 5,
+   "typical_performance_fee_pct": 20.0,
+   "rows": [
+    {
+     "name": "\u05e7\u05e1\u05dd \u05d0\u05e7\u05d8\u05d9\u05d1 (5B) \u05dc\u05d5\u05e0\u05d2/\u05e9\u05d5\u05e8\u05d8 \u05de\u05e0\u05d9\u05d5\u05ea \u05d9\u05e9\u05e8\u05d0\u05dc \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05e7\u05e1\u05dd \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "5B",
+     "month_pct": 0.0146,
+     "ytd_pct": 21.8262,
+     "year_pct": 55.5682,
+     "two_year_pct": null,
+     "three_year_pct": null,
+     "since_start_pct": 105.07,
+     "fee_pct": 1.1,
+     "performance_fee_pct": 20.0,
+     "size_mils": 210.3204,
+     "url": "https://www.funder.co.il/fund/1215375"
+    },
+    {
+     "name": "\u05de\u05d2\u05d3\u05dc (5E) \u05de\u05e0\u05d9\u05d5\u05ea Long Short - \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05de\u05d2\u05d3\u05dc \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "5E",
+     "month_pct": 0.1494,
+     "ytd_pct": 15.529,
+     "year_pct": 41.7146,
+     "two_year_pct": 124.7951,
+     "three_year_pct": null,
+     "since_start_pct": 141.34,
+     "fee_pct": 0.35,
+     "performance_fee_pct": 20.0,
+     "size_mils": 70.00436,
+     "url": "https://www.funder.co.il/fund/1201565"
+    },
+    {
+     "name": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df \u05d6\u05d1\u05d5\u05dc\u05d5\u05df (5E) \u05dc\u05d5\u05e0\u05d2 \u05e9\u05d5\u05e8\u05d8 \u05d2\u05dc\u05d5\u05d1\u05dc\u05d9 \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "5E",
+     "month_pct": 9.3785,
+     "ytd_pct": 13.6892,
+     "year_pct": 37.326,
+     "two_year_pct": 116.5582,
+     "three_year_pct": null,
+     "since_start_pct": 122.99,
+     "fee_pct": 1.0,
+     "performance_fee_pct": 20.0,
+     "size_mils": 143.0105,
+     "url": "https://www.funder.co.il/fund/1204783"
+    },
+    {
+     "name": "\u05d4\u05e8\u05d0\u05dc (4D)\u05d9Multi-Strategy - \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05d4\u05e8\u05d0\u05dc \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "4D",
+     "month_pct": -0.2614,
+     "ytd_pct": 10.8571,
+     "year_pct": 35.5795,
+     "two_year_pct": 166.8026,
+     "three_year_pct": 206.21,
+     "since_start_pct": 220.51,
+     "fee_pct": 1.5,
+     "performance_fee_pct": 20.0,
+     "size_mils": 1179.838,
+     "url": "https://www.funder.co.il/fund/1194141"
+    },
+    {
+     "name": "\u05de\u05d9\u05d8\u05d1 (4D) \u05dc\u05d5\u05e0\u05d2 \u05e9\u05d5\u05e8\u05d8 \u05de\u05e0\u05d9\u05d5\u05ea \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05de\u05d9\u05d8\u05d1 \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "4D",
+     "month_pct": -4.1299,
+     "ytd_pct": 14.4517,
+     "year_pct": 35.5456,
+     "two_year_pct": 113.3022,
+     "three_year_pct": 135.5811,
+     "since_start_pct": 146.3,
+     "fee_pct": 1.35,
+     "performance_fee_pct": 20.0,
+     "size_mils": 225.6852,
+     "url": "https://www.funder.co.il/fund/1194232"
+    },
+    {
+     "name": "\u05e4\u05d5\u05e8\u05e6\"\u05df (6F)\u05d9 Multi-Strategy - \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "6F",
+     "month_pct": -2.4807,
+     "ytd_pct": 23.7037,
+     "year_pct": 34.3854,
+     "two_year_pct": null,
+     "three_year_pct": null,
+     "since_start_pct": 74.15,
+     "fee_pct": 1.5,
+     "performance_fee_pct": 20.0,
+     "size_mils": 29.1895,
+     "url": "https://www.funder.co.il/fund/1207646"
+    },
+    {
+     "name": "\u05d0\u05d9\u05de\u05e4\u05e7\u05d8 (6F) \u05dc\u05d5\u05e0\u05d2/\u05e9\u05d5\u05e8\u05d8 - \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "6F",
+     "month_pct": -4.9801,
+     "ytd_pct": 13.7802,
+     "year_pct": 31.9838,
+     "two_year_pct": 66.1803,
+     "three_year_pct": 82.2282,
+     "since_start_pct": 89.08,
+     "fee_pct": 1.5,
+     "performance_fee_pct": 20.0,
+     "size_mils": 64.25948,
+     "url": "https://www.funder.co.il/fund/1194315"
+    },
+    {
+     "name": "\u05d9\u05dc\u05d9\u05df \u05dc\u05e4\u05d9\u05d3\u05d5\u05ea (6F)\u05d9 Multi-Strategy \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05d9\u05dc\u05d9\u05df \u05dc\u05e4\u05d9\u05d3\u05d5\u05ea-\u05e0\u05d9\u05d4\u05d5\u05dc \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "6F",
+     "month_pct": -0.8436,
+     "ytd_pct": 12.4773,
+     "year_pct": 31.7484,
+     "two_year_pct": 124.7368,
+     "three_year_pct": 125.8592,
+     "since_start_pct": 166.83,
+     "fee_pct": 1.5,
+     "performance_fee_pct": 20.0,
+     "size_mils": 186.668,
+     "url": "https://www.funder.co.il/fund/1194216"
+    },
+    {
+     "name": "\u05e4\u05d5\u05e7\u05d5\u05e1 (5D) \u05dc\u05d5\u05e0\u05d2/\u05e9\u05d5\u05e8\u05d8 - \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "5D",
+     "month_pct": 4.5244,
+     "ytd_pct": 8.7907,
+     "year_pct": 30.9606,
+     "two_year_pct": null,
+     "three_year_pct": null,
+     "since_start_pct": 71.65,
+     "fee_pct": 1.5,
+     "performance_fee_pct": 15.0,
+     "size_mils": 16.32097,
+     "url": "https://www.funder.co.il/fund/1207885"
+    },
+    {
+     "name": "\u05ea\u05de\u05d9\u05e8 \u05e4\u05d9\u05e9\u05de\u05df (6F)\u05d9 Long-Short \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05ea\u05de\u05d9\u05e8 \u05e4\u05d9\u05e9\u05de\u05df \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "6F",
+     "month_pct": 0.5546,
+     "ytd_pct": 16.5694,
+     "year_pct": 29.6056,
+     "two_year_pct": null,
+     "three_year_pct": null,
+     "since_start_pct": 57.73,
+     "fee_pct": 1.0,
+     "performance_fee_pct": 20.0,
+     "size_mils": 21.92806,
+     "url": "https://www.funder.co.il/fund/1218692"
+    },
+    {
+     "name": "\u05e7\u05e1\u05dd \u05d0\u05e7\u05d8\u05d9\u05d1 (5E) \u05dc\u05d5\u05e0\u05d2/\u05e9\u05d5\u05e8\u05d8 \u05de\u05e0\u05d9\u05d5\u05ea \u05d0\u05e8\u05d4\"\u05d1 \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05e7\u05e1\u05dd \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "5E",
+     "month_pct": 4.2605,
+     "ytd_pct": 22.442,
+     "year_pct": 29.5151,
+     "two_year_pct": null,
+     "three_year_pct": null,
+     "since_start_pct": 57.84,
+     "fee_pct": 1.1,
+     "performance_fee_pct": 20.0,
+     "size_mils": 42.42766,
+     "url": "https://www.funder.co.il/fund/1215383"
+    },
+    {
+     "name": "\u05e1\u05d9\u05d2\u05de\u05d0 (5E)\u05d9 Multi-Strategy \u05d9\u05e9\u05e8\u05d0\u05dc \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05e1\u05d9\u05d2\u05de\u05d0 \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "5E",
+     "month_pct": 0.9729,
+     "ytd_pct": 9.5644,
+     "year_pct": 28.7569,
+     "two_year_pct": null,
+     "three_year_pct": null,
+     "since_start_pct": 55.68,
+     "fee_pct": 1.35,
+     "performance_fee_pct": 20.0,
+     "size_mils": 28.77682,
+     "url": "https://www.funder.co.il/fund/1216050"
+    }
+   ],
+   "source": "https://www.funder.co.il/gidurList"
   },
   "indices": [
    {
@@ -11194,8 +11535,8 @@
    }
   ],
   "shekel": {
-   "rate": 3.0087,
-   "change_pct": -0.09,
+   "rate": 3.0091,
+   "change_pct": -0.08,
    "high_52w": 3.3565,
    "low_52w": 2.8005,
    "as_of": "2026-09-08"
@@ -11223,7 +11564,7 @@
    }
   ],
   "attribution": "Fund data from funder.co.il, shown as a digest with the full lists linked. Index levels and the shekel rate from Yahoo Finance.",
-  "brief": "TA-125 is up 0.71% at 4,230, 5.6% below its 12-month high. A dollar buys 3.009 shekels. None of the Buffett tests on the other tabs apply here. Those measure operating businesses through their accounts; these are funds, and what matters instead is the fee, the risk taken to earn the return, and how the return compares with simply holding cash."
+  "brief": "TA-125 is up 0.71% at 4,230, 5.6% below its 12-month high. A dollar buys 3.009 shekels. The 44 shekel money-market funds returned a median of 3.97% over the past year, at a typical management fee of 0.17%. These are the closest thing to cash: very low risk, no lock-up, and the yield moves with the Bank of Israel's rate. Among the 46 hedge funds sold in trust, the median one-year return was 14.6%, spread from -11.1% to 55.6%, with 5 of 46 losing money. Most charge a performance fee of around 20% on top of the management fee, so the headline return is not what reaches you. None of the Buffett tests on the other tabs apply here. Those measure operating businesses through their accounts; these are funds, and what matters instead is the fee, the risk taken to earn the return, and how the return compares with simply holding cash."
  },
  "glossary": [
   {
@@ -11269,7 +11610,7 @@
      "definition": "What is left after every cost, including tax. Also called profit, earnings, or the bottom line."
     },
     {
-     "term": "Equity (book value)",
+     "term": "Book equity (book value)",
      "definition": "What the owners would in theory have left if the company sold everything and paid off all its debts. It comes from the accounts, not the stock market."
     },
     {
@@ -11361,12 +11702,16 @@
      "definition": "A basket tracking many companies at once, used as shorthand for how a whole market is doing. The S&P 500 holds 500 large American firms; TA-125 holds the 125 largest in Tel Aviv."
     },
     {
-     "term": "Buffett Indicator",
-     "definition": "The value of every listed company added together, divided by the country's annual economic output. Buffett called it the best single measure of whether the market is expensive. Around 100% is historically normal; the reading today is far above that."
+     "term": "GDP",
+     "definition": "Gross domestic product: the total value of everything a country produces in a year. It is the standard measure of how big an economy is, and it is the figure the stock market gets compared against just below."
     },
     {
-     "term": "Government bond yield",
-     "definition": "What you earn lending money to the government, considered the safest return available. Buffett calls it gravity: every share has to beat it, or you should just buy the bond."
+     "term": "Buffett Indicator",
+     "definition": "The value of every listed company added together, divided by GDP. So a reading of 200% means the stock market is worth twice everything the country produces in a year. Buffett called it the best single measure of whether shares are expensive. Around 100% is historically normal; today's reading is far above that."
+    },
+    {
+     "term": "US Treasury (government bond yield)",
+     "definition": "A Treasury is a loan to the American government, and its yield is what that loan pays you. It counts as the safest return available, so Buffett calls it gravity: every share has to beat it, or you should simply buy the bond instead. The 10-year Treasury is the one quoted on this page."
     },
     {
      "term": "VIX",
@@ -11375,6 +11720,10 @@
     {
      "term": "Market capitalisation",
      "definition": "The price of one share multiplied by the number of shares: what the market says the whole company is worth."
+    },
+    {
+     "term": "Survivorship bias",
+     "definition": "The trap of judging by the winners because the losers have quietly disappeared from the list. A table of the best-performing funds looks wonderful precisely because the failures are not in it. Any ranked list on this page, including the fund tables, has to be read with that in mind."
     }
    ]
   },
@@ -11473,6 +11822,10 @@
     {
      "term": "Tel Bond (\u05ea\u05dc \u05d1\u05d5\u05e0\u05d3)",
      "definition": "The family of Tel Aviv indices tracking corporate bonds rather than shares."
+    },
+    {
+     "term": "Bank of Israel rate",
+     "definition": "The interest rate Israel's central bank sets, which is the anchor for what every safe shekel investment pays. When it rises, money-market funds pay more within weeks; when it falls, they pay less. It is the Israeli equivalent of the Treasury yield as a hurdle."
     },
     {
      "term": "Shekel rate (USD/ILS)",

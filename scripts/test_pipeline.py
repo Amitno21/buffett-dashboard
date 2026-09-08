@@ -8,6 +8,7 @@ comments say which, so nobody re-introduces one by "simplifying" the code.
 """
 from __future__ import annotations
 
+import re
 import sys
 import unittest
 from datetime import date
@@ -554,13 +555,57 @@ class TestGlossary(unittest.TestCase):
         self.assertEqual(set(first["terms"][0]), {"term", "definition"})
         self.assertEqual(sum(len(g["terms"]) for g in payload), glossary.term_count())
 
-    def test_the_jargon_the_dashboard_shows_is_all_covered(self):
-        # If a label appears in the interface it needs an entry here.
-        text = " ".join(t.lower() for s in glossary.GLOSSARY for t, _ in s["terms"])
-        for required in ["owner earnings", "margin of safety", "moat", "return on equity",
-                         "discounted cash flow", "terminal value", "buffett indicator",
-                         "rsi", "13f", "10-k", "money-market", "performance fee"]:
-            self.assertIn(required, text, f"{required} is used in the UI but not defined")
+    # Terms that mean nothing to a newcomer. If the interface uses one, the
+    # glossary has to explain it.
+    JARGON = [
+        "GDP", "survivorship", "Form 4", "Bank of Israel", "owner earnings",
+        "margin of safety", "moat", "intrinsic value", "circle of competence",
+        "return on equity", "return on invested capital", "ROE", "ROIC",
+        "gross margin", "capex", "capital expenditure", "depreciation",
+        "impairment", "buyback", "retained earnings", "free cash flow",
+        "book equity", "diluted", "shares outstanding", "discounted cash flow",
+        "discount rate", "terminal value", "terminal growth", "earnings yield",
+        "P/E", "bear", "bull", "Buffett Indicator", "VIX", "Treasury",
+        "market cap", "index", "moving average", "RSI", "ATR", "52-week",
+        "SEC", "EDGAR", "XBRL", "10-K", "10-Q", "8-K", "13F", "Berkshire",
+        "money-market", "hedge fund", "management fee", "performance fee",
+        "exposure profile", "long/short", "TA-125", "TA-35", "Tel Bond", "shekel",
+    ]
+
+    @staticmethod
+    def _whole_word(term: str):
+        return re.compile(r"(?<![a-z0-9])" + re.escape(term.lower()) + r"(?![a-z0-9])")
+
+    def test_no_jargon_reaches_the_reader_undefined(self):
+        """Scan what the interface actually says, not a list written from memory.
+
+        The earlier version of this test checked a handful of terms chosen by
+        hand, so it passed while the page displayed "218% of GDP" with GDP
+        defined nowhere. This reads the real interface sources instead.
+        """
+        root = Path(__file__).resolve().parent.parent
+        sources = [
+            root / "docs" / "index.html",   # the page shell
+            root / "docs" / "app.js",       # every literal string the renderer writes
+            root / "scripts" / "summary.py",  # generated company and daily prose
+            root / "scripts" / "israel.py",   # generated Israeli prose
+        ]
+        ui_text = "\n".join(p.read_text(encoding="utf-8") for p in sources if p.exists()).lower()
+        # Match against the glossary *headings* only. Checking the whole
+        # glossary text is too lax: "GDP" appeared inside the Buffett Indicator
+        # definition, which let an earlier version of this test pass while GDP
+        # itself had no entry. A word mentioned in passing is not defined.
+        headings = " | ".join(
+            term for section in glossary.GLOSSARY for term, _ in section["terms"]
+        ).lower()
+
+        undefined = [
+            term for term in self.JARGON
+            if self._whole_word(term).search(ui_text)
+            and not self._whole_word(term).search(headings)
+        ]
+        self.assertEqual(undefined, [],
+                         f"used in the interface but has no glossary entry: {undefined}")
 
 
 

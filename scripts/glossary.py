@@ -44,7 +44,7 @@ GLOSSARY: list[dict] = [
                         "called sales or the top line."),
             ("Net income", "What is left after every cost, including tax. Also called profit, "
                            "earnings, or the bottom line."),
-            ("Equity (book value)", "What the owners would in theory have left if the company sold "
+            ("Book equity (book value)", "What the owners would in theory have left if the company sold "
                                     "everything and paid off all its debts. It comes from the "
                                     "accounts, not the stock market."),
             ("Return on equity (ROE)", "Profit divided by that owners' stake: how much the company "
@@ -128,17 +128,30 @@ GLOSSARY: list[dict] = [
                                         "shorthand for how a whole market is doing. The S&P 500 "
                                         "holds 500 large American firms; TA-125 holds the 125 "
                                         "largest in Tel Aviv."),
-            ("Buffett Indicator", "The value of every listed company added together, divided by the "
-                                  "country's annual economic output. Buffett called it the best "
-                                  "single measure of whether the market is expensive. Around 100% "
-                                  "is historically normal; the reading today is far above that."),
-            ("Government bond yield", "What you earn lending money to the government, considered "
-                                      "the safest return available. Buffett calls it gravity: every "
-                                      "share has to beat it, or you should just buy the bond."),
+            ("GDP", "Gross domestic product: the total value of everything a country produces in a "
+                    "year. It is the standard measure of how big an economy is, and it is the "
+                    "figure the stock market gets compared against just below."),
+            ("Buffett Indicator", "The value of every listed company added together, divided by "
+                                  "GDP. So a reading of 200% means the stock market is worth twice "
+                                  "everything the country produces in a year. Buffett called it "
+                                  "the best single measure of whether shares are expensive. Around "
+                                  "100% is historically normal; today's reading is far above that."),
+            ("US Treasury (government bond yield)", "A Treasury is a loan to the American "
+                                                    "government, and its yield is what that loan "
+                                                    "pays you. It counts as the safest return "
+                                                    "available, so Buffett calls it gravity: every "
+                                                    "share has to beat it, or you should simply buy "
+                                                    "the bond instead. The 10-year Treasury is the "
+                                                    "one quoted on this page."),
             ("VIX", "A gauge of how much turbulence traders expect in the next month. High means "
                     "fear, low means calm — and calm markets are usually expensive ones."),
             ("Market capitalisation", "The price of one share multiplied by the number of shares: "
                                       "what the market says the whole company is worth."),
+            ("Survivorship bias", "The trap of judging by the winners because the losers have "
+                                  "quietly disappeared from the list. A table of the best-performing "
+                                  "funds looks wonderful precisely because the failures are not in "
+                                  "it. Any ranked list on this page, including the fund tables, has "
+                                  "to be read with that in mind."),
         ],
     },
     {
@@ -217,6 +230,11 @@ GLOSSARY: list[dict] = [
                                "companies, and the 35 largest within them."),
             ("Tel Bond (תל בונד)", "The family of Tel Aviv indices tracking corporate bonds rather "
                                    "than shares."),
+            ("Bank of Israel rate", "The interest rate Israel's central bank sets, which is the "
+                                    "anchor for what every safe shekel investment pays. When it "
+                                    "rises, money-market funds pay more within weeks; when it "
+                                    "falls, they pay less. It is the Israeli equivalent of the "
+                                    "Treasury yield as a hurdle."),
             ("Shekel rate (USD/ILS)", "How many shekels one US dollar buys. It matters because the "
                                       "American companies on the other tabs are priced in dollars, "
                                       "so a stronger shekel quietly reduces their value to you."),
