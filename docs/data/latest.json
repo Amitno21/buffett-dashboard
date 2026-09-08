@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-08T03:37:13+00:00",
- "build_seconds": 26.7,
+ "generated_at": "2026-09-08T03:54:04+00:00",
+ "build_seconds": 25.9,
  "settings": {
   "margin_of_safety_pct": 30,
   "discount_rate_pct": 10.0,
@@ -11194,8 +11194,8 @@
    }
   ],
   "shekel": {
-   "rate": 3.0072,
-   "change_pct": -0.14,
+   "rate": 3.0087,
+   "change_pct": -0.09,
    "high_52w": 3.3565,
    "low_52w": 2.8005,
    "as_of": "2026-09-08"
@@ -11223,7 +11223,7 @@
    }
   ],
   "attribution": "Fund data from funder.co.il, shown as a digest with the full lists linked. Index levels and the shekel rate from Yahoo Finance.",
-  "brief": "TA-125 is up 0.71% at 4,230, 5.6% below its 12-month high. A dollar buys 3.007 shekels. None of the Buffett tests on the other tabs apply here. Those measure operating businesses through their accounts; these are funds, and what matters instead is the fee, the risk taken to earn the return, and how the return compares with simply holding cash."
+  "brief": "TA-125 is up 0.71% at 4,230, 5.6% below its 12-month high. A dollar buys 3.009 shekels. None of the Buffett tests on the other tabs apply here. Those measure operating businesses through their accounts; these are funds, and what matters instead is the fee, the risk taken to earn the return, and how the return compares with simply holding cash."
  },
  "glossary": [
   {
@@ -11488,6 +11488,6 @@
   "index": 7,
   "total": 20
  },
- "previous_generated_at": "2026-09-08T03:36:29+00:00",
+ "previous_generated_at": "2026-09-08T03:37:13+00:00",
  "disclaimer": "This dashboard reports public filings and applies published screening criteria. It is not investment advice, does not know your circumstances, and makes no recommendation to buy or sell anything. Every estimate here depends on assumptions that are shown alongside it and that you should judge for yourself."
 }
