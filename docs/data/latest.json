@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-08T04:12:03+00:00",
- "build_seconds": 47.9,
+ "generated_at": "2026-09-08T12:05:59+00:00",
+ "build_seconds": 38.3,
  "settings": {
   "margin_of_safety_pct": 30,
   "discount_rate_pct": 10.0,
@@ -33,9 +33,9 @@
    "low_52w": 6343.7202
   },
   "vix": {
-   "price": 15.3,
-   "change_pct": 5.3,
-   "from_high_pct": -50.72,
+   "price": 15.73,
+   "change_pct": 2.81,
+   "from_high_pct": -49.34,
    "high_52w": 31.05,
    "low_52w": 13.47
   }
@@ -8969,6 +8969,14 @@
    },
    "filings": [
     {
+     "form": "424B2",
+     "filed": "2026-09-08",
+     "report_date": "",
+     "accession": "0001918704-26-026716",
+     "document": "form424b2.htm",
+     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426026716/form424b2.htm"
+    },
+    {
      "form": "4",
      "filed": "2026-09-04",
      "report_date": "2026-03-10",
@@ -9023,14 +9031,6 @@
      "accession": "0001918704-26-026701",
      "document": "form424b2.htm",
      "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426026701/form424b2.htm"
-    },
-    {
-     "form": "424B2",
-     "filed": "2026-09-04",
-     "report_date": "",
-     "accession": "0001918704-26-026693",
-     "document": "form424b2.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426026693/form424b2.htm"
     }
    ],
    "summary": "Bank of America Corp scores 27.6 out of 100, which makes it a poor business by these tests. It has not once beaten a 15% return on shareholders' money in 11 years and it owes about 10.4 years of earnings in long-term debt. It does score well on one measure: every $1 it held back rather than paying out has become about $2.08 of market value. On the dashboard's default assumptions its shares work out at around $49.55 each, against a market price of $62.68. That is roughly 26% more than the estimate supports, so it is the price rather than the business that stands out. One caution: this looks like a financial company. Gross margin and maintenance capital expenditure do not apply to banks and insurers, so the margin-stability and owner-earnings components understate it. Judge it on return on equity, consistency and book value instead.",
@@ -11175,27 +11175,27 @@
    {
     "label": "TA-125",
     "description": "The 125 largest companies on the Tel Aviv exchange",
-    "price": 4230.05,
-    "change_pct": 0.71,
-    "from_high_pct": -5.6,
+    "price": 4193.39,
+    "change_pct": -0.87,
+    "from_high_pct": -6.42,
     "high_52w": 4481.04,
     "low_52w": 3044.46,
-    "as_of": "2026-09-07"
+    "as_of": "2026-09-08"
    },
    {
     "label": "TA-35",
     "description": "The 35 largest, Israel's blue-chip index",
-    "price": 4311.01,
-    "change_pct": 1.12,
-    "from_high_pct": -4.76,
+    "price": 4282.34,
+    "change_pct": -0.67,
+    "from_high_pct": -5.39,
     "high_52w": 4526.4502,
     "low_52w": 3000.1699,
-    "as_of": "2026-09-07"
+    "as_of": "2026-09-08"
    }
   ],
   "shekel": {
-   "rate": 3.0091,
-   "change_pct": -0.08,
+   "rate": 3.0123,
+   "change_pct": 0.03,
    "high_52w": 3.3565,
    "low_52w": 2.8005,
    "as_of": "2026-09-08"
@@ -11223,7 +11223,7 @@
    }
   ],
   "attribution": "Fund data from funder.co.il, shown as a digest with the full lists linked. Index levels and the shekel rate from Yahoo Finance.",
-  "brief": "TA-125 is up 0.71% at 4,230, 5.6% below its 12-month high. A dollar buys 3.009 shekels. None of the Buffett tests on the other tabs apply here. Those measure operating businesses through their accounts; these are funds, and what matters instead is the fee, the risk taken to earn the return, and how the return compares with simply holding cash."
+  "brief": "TA-125 is down 0.87% at 4,193, 6.4% below its 12-month high. A dollar buys 3.012 shekels. None of the Buffett tests on the other tabs apply here. Those measure operating businesses through their accounts; these are funds, and what matters instead is the fee, the risk taken to earn the return, and how the return compares with simply holding cash."
  },
  "etfs": {
   "us": [
@@ -11650,6 +11650,6 @@
   "index": 7,
   "total": 20
  },
- "previous_generated_at": "2026-09-08T04:11:23+00:00",
+ "previous_generated_at": "2026-09-08T04:12:03+00:00",
  "disclaimer": "This dashboard reports public filings and applies published screening criteria. It is not investment advice, does not know your circumstances, and makes no recommendation to buy or sell anything. Every estimate here depends on assumptions that are shown alongside it and that you should judge for yourself."
 }
