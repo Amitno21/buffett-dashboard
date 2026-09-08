@@ -20,7 +20,9 @@ its assumptions so you can disagree with them.
 | **S&P 500 screen** | What else should I look at? A coarse return-on-equity screen over all 500 constituents. |
 | **Berkshire** | What is Buffett actually doing? Latest 13F holdings and quarter-on-quarter changes. |
 | **My positions** | Does my thesis still hold? Your holdings re-checked against the same criteria. |
+| **Israel** | Tel Aviv indices, the shekel, Israeli money-market and hedge funds. |
 | **Learn** | One principle a day, with the letter it comes from. |
+| **Glossary** | Every term on the page, explained for someone new to investing. |
 
 Click any company row for the full scoring breakdown, a ten-year history, and a
 **discounted cash flow with sliders** — move the growth and discount assumptions
@@ -72,6 +74,25 @@ All free, none needing an API key.
 | Yahoo Finance chart API | Daily prices, moving averages, RSI |
 | FRED (`fredgraph.csv`) | 10-year Treasury, Buffett Indicator inputs |
 | `datasets/s-and-p-500-companies` | Index constituents |
+| `funder.co.il` | Israeli money-market and hedge funds (digest, full lists linked) |
+| Yahoo Finance | TA-125, TA-35 and the shekel rate |
+
+### A note on the Israeli data
+
+`funder.co.il` embeds each table as JSON in the page, so `scripts/israel.py`
+reads that directly rather than parsing markup. Two things shaped it:
+
+- **Index levels are never in the served HTML.** The page fills them from a live
+  feed after JavaScript runs; the static copy carries zeros and `"miss"`
+  placeholders. Levels therefore come from Yahoo, which agrees with funder to
+  the decimal on TA-125.
+- **Only a digest of each table is stored**, not the whole database. The twelve
+  largest money-market funds and twelve best-performing hedge funds are kept,
+  with every panel linking back to the full list on funder.co.il.
+
+None of the Buffett scoring applies to these instruments — they are funds, not
+operating businesses, with no accounts to read and no owner earnings to value.
+The interface says so on the panel itself.
 
 Two quirks worth knowing, both handled in `scripts/common.py`: FRED stalls on a
 browser-style `User-Agent` and needs a curl-like minimal header set, while Yahoo

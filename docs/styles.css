@@ -425,3 +425,51 @@ td.num, th.num { text-align: right; }
   .brief { padding: 15px 16px; }
   .brief p { font-size: 14.5px; }
 }
+
+/* -------------------------------------------------------------- glossary */
+
+.src-links { display: flex; flex-wrap: wrap; gap: 9px; }
+.src-link {
+  display: inline-flex; align-items: baseline; gap: 7px;
+  background: var(--card); border: 1px solid var(--rule); border-radius: var(--r-sm);
+  padding: 9px 14px; font-size: 13px; text-decoration: none; color: var(--ink-2);
+  transition: border-color .15s, background .15s;
+}
+.src-link:hover { border-color: var(--accent); background: var(--accent-sub); color: var(--accent); }
+
+.glossary { margin-top: 10px; }
+.gloss-group {
+  background: var(--card); border: 1px solid var(--rule); border-radius: var(--r-md);
+  margin-bottom: 9px; overflow: hidden;
+}
+.gloss-group > summary {
+  cursor: pointer; padding: 13px 17px; list-style: none;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  transition: background .15s;
+}
+.gloss-group > summary::-webkit-details-marker { display: none; }
+.gloss-group > summary:hover { background: var(--accent-sub); }
+.gloss-title { font-weight: 650; font-size: 14.5px; color: var(--ink); }
+.gloss-title::before {
+  content: "\25B8"; color: var(--accent); margin-right: 9px;
+  display: inline-block; transition: transform .15s;
+}
+.gloss-group[open] .gloss-title::before { transform: rotate(90deg); }
+.gloss-count {
+  background: var(--paper-2); color: var(--muted); border-radius: 999px;
+  padding: 1px 9px; font-size: 11px; font-weight: 600; flex: none;
+}
+.gloss-blurb {
+  margin: 0; padding: 0 17px 4px 17px; font-size: 13px;
+  color: var(--muted); max-width: 76ch; font-style: italic;
+}
+.gloss-list { margin: 0; padding: 10px 17px 17px; }
+.gloss-list dt {
+  font-weight: 650; font-size: 13.5px; color: var(--accent);
+  margin-top: 14px;
+}
+.gloss-list dt:first-child { margin-top: 0; }
+.gloss-list dd {
+  margin: 3px 0 0; font-size: 14px; line-height: 1.62;
+  color: var(--ink-2); max-width: 78ch;
+}

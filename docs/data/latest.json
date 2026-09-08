@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-07T13:28:02+00:00",
- "build_seconds": 6.7,
+ "generated_at": "2026-09-08T03:33:00+00:00",
+ "build_seconds": 23.1,
  "settings": {
   "margin_of_safety_pct": 30,
   "discount_rate_pct": 10.0,
@@ -33,9 +33,9 @@
    "low_52w": 6343.7202
   },
   "vix": {
-   "price": 15.14,
-   "change_pct": 4.2,
-   "from_high_pct": -51.24,
+   "price": 15.3,
+   "change_pct": 5.3,
+   "from_high_pct": -50.72,
    "high_52w": 31.05,
    "low_52w": 13.47
   }
@@ -11162,13 +11162,673 @@
   "total_gain_pct": null
  },
  "brief": "The US stock market as a whole is worth about 218% of everything the country produces in a year, which is high by any historical standard and is the measure Buffett has pointed to as a warning sign. Government bonds pay 4.77%, which is the return a share has to beat before it is worth taking on the extra risk. Nothing of note has changed since the last check: no large price moves, no new company filings, and nothing crossed into or out of value territory. Quiet days are the normal state of a portfolio meant to be held for years. Of the 23 companies tracked, 4 currently sit below the margin of safety set in the settings: NUE, CB, LEN, DVA. That is this dashboard's arithmetic on its default assumptions rather than a recommendation, so open each one and judge whether the assumptions behind it look right to you.",
+ "israel": {
+  "money_market": {
+   "available": true,
+   "count": 44,
+   "total_size_mils": 180985.4,
+   "median_year_pct": 3.97,
+   "best_year_pct": 4.1,
+   "median_fee_pct": 0.169,
+   "as_of": "2026-09-07",
+   "rows": [
+    {
+     "name": "\u05d0\u05dc\u05d8\u05e9\u05d5\u05dc\u05e8 \u05e9\u05d7\u05dd \u05db\u05e1\u05e4\u05d9\u05ea \u05e0\u05d9\u05d4\u05d5\u05dc \u05e0\u05d6\u05d9\u05dc\u05d5\u05ea",
+     "manager": "\u05d0\u05dc\u05d8\u05e9\u05d5\u05dc\u05e8 \u05e9\u05d7\u05dd",
+     "day_pct": 0.02,
+     "month_pct": 0.08,
+     "ytd_pct": 2.66,
+     "year_pct": 4.04,
+     "fee_pct": 0.06,
+     "size_musd": 11826.3,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5140918"
+    },
+    {
+     "name": "\u05d4\u05e8\u05d0\u05dc \u05db\u05e1\u05e4\u05d9\u05ea \u05de\u05d2\u05de\u05ea \u05e8\u05d9\u05d1\u05d9\u05ea",
+     "manager": "\u05d4\u05e8\u05d0\u05dc",
+     "day_pct": 0.02,
+     "month_pct": 0.08,
+     "ytd_pct": 2.57,
+     "year_pct": 3.88,
+     "fee_pct": 0.18,
+     "size_musd": 10586.4,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5127790"
+    },
+    {
+     "name": "\u05d9\u05dc\u05d9\u05df \u05dc\u05e4\u05d9\u05d3\u05d5\u05ea \u05db\u05e1\u05e4\u05d9\u05ea \u05e0\u05d9\u05d4\u05d5\u05dc \u05e0\u05d6\u05d9\u05dc\u05d5\u05ea",
+     "manager": "\u05d9\u05dc\u05d9\u05df \u05dc\u05e4\u05d9\u05d3\u05d5\u05ea",
+     "day_pct": 0.02,
+     "month_pct": 0.07,
+     "ytd_pct": 2.66,
+     "year_pct": 4.05,
+     "fee_pct": 0.19,
+     "size_musd": 9575.9,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5139258"
+    },
+    {
+     "name": "\u05de\u05d9\u05d8\u05d1 \u05db\u05e1\u05e4\u05d9\u05ea \u05e9\u05e7\u05dc\u05d9\u05ea \u05db\u05e9\u05e8\u05d4",
+     "manager": "\u05de\u05d9\u05d8\u05d1",
+     "day_pct": 0.02,
+     "month_pct": 0.08,
+     "ytd_pct": 2.71,
+     "year_pct": 4.07,
+     "fee_pct": 0.16,
+     "size_musd": 9167.3,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5136544"
+    },
+    {
+     "name": "\u05e7\u05e1\u05dd \u05d0\u05e7\u05d8\u05d9\u05d1 \u05db\u05e1\u05e4\u05d9\u05ea \u05e9\u05e7\u05dc\u05d9\u05ea",
+     "manager": "\u05e7\u05e1\u05dd",
+     "day_pct": 0.03,
+     "month_pct": 0.07,
+     "ytd_pct": 2.58,
+     "year_pct": 3.89,
+     "fee_pct": 0.19,
+     "size_musd": 8557.6,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5137740"
+    },
+    {
+     "name": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df \u05db\u05e1\u05e4\u05d9\u05ea",
+     "manager": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df",
+     "day_pct": 0.02,
+     "month_pct": 0.07,
+     "ytd_pct": 2.64,
+     "year_pct": 4.02,
+     "fee_pct": 0.18,
+     "size_musd": 8055.9,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5117700"
+    },
+    {
+     "name": "\u05d0\u05e0\u05dc\u05d9\u05e1\u05d8 \u05db\u05e1\u05e4\u05d9\u05ea \u05e9\u05e7\u05dc\u05d9\u05ea",
+     "manager": "\u05d0\u05e0\u05dc\u05d9\u05e1\u05d8",
+     "day_pct": 0.02,
+     "month_pct": 0.08,
+     "ytd_pct": 2.63,
+     "year_pct": 3.97,
+     "fee_pct": 0.169,
+     "size_musd": 6694.3,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5120852"
+    },
+    {
+     "name": "\u05e7\u05e1\u05dd \u05d0\u05e7\u05d8\u05d9\u05d1 \u05db\u05e1\u05e4\u05d9\u05ea \u05e4\u05d8\u05d5\u05e8\u05d4",
+     "manager": "\u05e7\u05e1\u05dd",
+     "day_pct": 0.03,
+     "month_pct": 0.06,
+     "ytd_pct": 2.57,
+     "year_pct": 3.86,
+     "fee_pct": 0.24,
+     "size_musd": 6193.8,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5127881"
+    },
+    {
+     "name": "\u05d0\u05d9.\u05d1\u05d9.\u05d0\u05d9. \u05db\u05e1\u05e4\u05d9\u05ea \u05e0\u05d9\u05d4\u05d5\u05dc \u05e0\u05d6\u05d9\u05dc\u05d5\u05ea",
+     "manager": "\u05d0\u05d9.\u05d1\u05d9.\u05d0\u05d9",
+     "day_pct": 0.02,
+     "month_pct": 0.07,
+     "ytd_pct": 2.63,
+     "year_pct": 3.97,
+     "fee_pct": 0.169,
+     "size_musd": 5963.8,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5137732"
+    },
+    {
+     "name": "\u05de\u05d2\u05d3\u05dc \u05db\u05e1\u05e4\u05d9\u05ea \u05e9\u05e7\u05dc\u05d9\u05ea",
+     "manager": "\u05de\u05d2\u05d3\u05dc",
+     "day_pct": 0.02,
+     "month_pct": 0.07,
+     "ytd_pct": 2.62,
+     "year_pct": 3.92,
+     "fee_pct": 0.239,
+     "size_musd": 5720.8,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5102991"
+    },
+    {
+     "name": "\u05de\u05d2\u05d3\u05dc \u05db\u05e1\u05e4\u05d9\u05ea \u05e9\u05e7\u05dc\u05d9\u05ea \u05db\u05e9\u05e8\u05d4",
+     "manager": "\u05de\u05d2\u05d3\u05dc",
+     "day_pct": 0.02,
+     "month_pct": 0.06,
+     "ytd_pct": 2.66,
+     "year_pct": 4.04,
+     "fee_pct": 0.149,
+     "size_musd": 5673.8,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5138094"
+    },
+    {
+     "name": "\u05d3\u05d5\u05dc\u05e4\u05d9\u05df \u05db\u05e1\u05e4\u05d9\u05ea",
+     "manager": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df",
+     "day_pct": 0.03,
+     "month_pct": 0.08,
+     "ytd_pct": 2.63,
+     "year_pct": 3.98,
+     "fee_pct": 0.149,
+     "size_musd": 5603.5,
+     "as_of": "2026-09-07",
+     "url": "https://www.funder.co.il/fund/5138698"
+    }
+   ],
+   "source": "https://www.funder.co.il/kaspit"
+  },
+  "hedge": {
+   "available": true,
+   "count": 46,
+   "with_year_history": 46,
+   "median_year_pct": 14.6,
+   "best_year_pct": 55.57,
+   "worst_year_pct": -11.13,
+   "negative_year_count": 5,
+   "typical_performance_fee_pct": 20.0,
+   "rows": [
+    {
+     "name": "\u05e7\u05e1\u05dd \u05d0\u05e7\u05d8\u05d9\u05d1 (5B) \u05dc\u05d5\u05e0\u05d2/\u05e9\u05d5\u05e8\u05d8 \u05de\u05e0\u05d9\u05d5\u05ea \u05d9\u05e9\u05e8\u05d0\u05dc \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05e7\u05e1\u05dd \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "5B",
+     "month_pct": 0.0146,
+     "ytd_pct": 21.8262,
+     "year_pct": 55.5682,
+     "two_year_pct": null,
+     "three_year_pct": null,
+     "since_start_pct": 105.07,
+     "fee_pct": 1.1,
+     "performance_fee_pct": 20.0,
+     "size_mils": 210.3204,
+     "url": "https://www.funder.co.il/fund/1215375"
+    },
+    {
+     "name": "\u05de\u05d2\u05d3\u05dc (5E) \u05de\u05e0\u05d9\u05d5\u05ea Long Short - \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05de\u05d2\u05d3\u05dc \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "5E",
+     "month_pct": 0.1494,
+     "ytd_pct": 15.529,
+     "year_pct": 41.7146,
+     "two_year_pct": 124.7951,
+     "three_year_pct": null,
+     "since_start_pct": 141.34,
+     "fee_pct": 0.35,
+     "performance_fee_pct": 20.0,
+     "size_mils": 70.00436,
+     "url": "https://www.funder.co.il/fund/1201565"
+    },
+    {
+     "name": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df \u05d6\u05d1\u05d5\u05dc\u05d5\u05df (5E) \u05dc\u05d5\u05e0\u05d2 \u05e9\u05d5\u05e8\u05d8 \u05d2\u05dc\u05d5\u05d1\u05dc\u05d9 \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "5E",
+     "month_pct": 9.3785,
+     "ytd_pct": 13.6892,
+     "year_pct": 37.326,
+     "two_year_pct": 116.5582,
+     "three_year_pct": null,
+     "since_start_pct": 122.99,
+     "fee_pct": 1.0,
+     "performance_fee_pct": 20.0,
+     "size_mils": 143.0105,
+     "url": "https://www.funder.co.il/fund/1204783"
+    },
+    {
+     "name": "\u05d4\u05e8\u05d0\u05dc (4D)\u05d9Multi-Strategy - \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05d4\u05e8\u05d0\u05dc \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "4D",
+     "month_pct": -0.2614,
+     "ytd_pct": 10.8571,
+     "year_pct": 35.5795,
+     "two_year_pct": 166.8026,
+     "three_year_pct": 206.21,
+     "since_start_pct": 220.51,
+     "fee_pct": 1.5,
+     "performance_fee_pct": 20.0,
+     "size_mils": 1179.838,
+     "url": "https://www.funder.co.il/fund/1194141"
+    },
+    {
+     "name": "\u05de\u05d9\u05d8\u05d1 (4D) \u05dc\u05d5\u05e0\u05d2 \u05e9\u05d5\u05e8\u05d8 \u05de\u05e0\u05d9\u05d5\u05ea \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05de\u05d9\u05d8\u05d1 \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "4D",
+     "month_pct": -4.1299,
+     "ytd_pct": 14.4517,
+     "year_pct": 35.5456,
+     "two_year_pct": 113.3022,
+     "three_year_pct": 135.5811,
+     "since_start_pct": 146.3,
+     "fee_pct": 1.35,
+     "performance_fee_pct": 20.0,
+     "size_mils": 225.6852,
+     "url": "https://www.funder.co.il/fund/1194232"
+    },
+    {
+     "name": "\u05e4\u05d5\u05e8\u05e6\"\u05df (6F)\u05d9 Multi-Strategy - \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "6F",
+     "month_pct": -2.4807,
+     "ytd_pct": 23.7037,
+     "year_pct": 34.3854,
+     "two_year_pct": null,
+     "three_year_pct": null,
+     "since_start_pct": 74.15,
+     "fee_pct": 1.5,
+     "performance_fee_pct": 20.0,
+     "size_mils": 29.1895,
+     "url": "https://www.funder.co.il/fund/1207646"
+    },
+    {
+     "name": "\u05d0\u05d9\u05de\u05e4\u05e7\u05d8 (6F) \u05dc\u05d5\u05e0\u05d2/\u05e9\u05d5\u05e8\u05d8 - \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "6F",
+     "month_pct": -4.9801,
+     "ytd_pct": 13.7802,
+     "year_pct": 31.9838,
+     "two_year_pct": 66.1803,
+     "three_year_pct": 82.2282,
+     "since_start_pct": 89.08,
+     "fee_pct": 1.5,
+     "performance_fee_pct": 20.0,
+     "size_mils": 64.25948,
+     "url": "https://www.funder.co.il/fund/1194315"
+    },
+    {
+     "name": "\u05d9\u05dc\u05d9\u05df \u05dc\u05e4\u05d9\u05d3\u05d5\u05ea (6F)\u05d9 Multi-Strategy \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05d9\u05dc\u05d9\u05df \u05dc\u05e4\u05d9\u05d3\u05d5\u05ea-\u05e0\u05d9\u05d4\u05d5\u05dc \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "6F",
+     "month_pct": -0.8436,
+     "ytd_pct": 12.4773,
+     "year_pct": 31.7484,
+     "two_year_pct": 124.7368,
+     "three_year_pct": 125.8592,
+     "since_start_pct": 166.83,
+     "fee_pct": 1.5,
+     "performance_fee_pct": 20.0,
+     "size_mils": 186.668,
+     "url": "https://www.funder.co.il/fund/1194216"
+    },
+    {
+     "name": "\u05e4\u05d5\u05e7\u05d5\u05e1 (5D) \u05dc\u05d5\u05e0\u05d2/\u05e9\u05d5\u05e8\u05d8 - \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05d0\u05d9\u05d9\u05dc\u05d5\u05df \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "5D",
+     "month_pct": 4.5244,
+     "ytd_pct": 8.7907,
+     "year_pct": 30.9606,
+     "two_year_pct": null,
+     "three_year_pct": null,
+     "since_start_pct": 71.65,
+     "fee_pct": 1.5,
+     "performance_fee_pct": 15.0,
+     "size_mils": 16.32097,
+     "url": "https://www.funder.co.il/fund/1207885"
+    },
+    {
+     "name": "\u05ea\u05de\u05d9\u05e8 \u05e4\u05d9\u05e9\u05de\u05df (6F)\u05d9 Long-Short \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05ea\u05de\u05d9\u05e8 \u05e4\u05d9\u05e9\u05de\u05df \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "6F",
+     "month_pct": 0.5546,
+     "ytd_pct": 16.5694,
+     "year_pct": 29.6056,
+     "two_year_pct": null,
+     "three_year_pct": null,
+     "since_start_pct": 57.73,
+     "fee_pct": 1.0,
+     "performance_fee_pct": 20.0,
+     "size_mils": 21.92806,
+     "url": "https://www.funder.co.il/fund/1218692"
+    },
+    {
+     "name": "\u05e7\u05e1\u05dd \u05d0\u05e7\u05d8\u05d9\u05d1 (5E) \u05dc\u05d5\u05e0\u05d2/\u05e9\u05d5\u05e8\u05d8 \u05de\u05e0\u05d9\u05d5\u05ea \u05d0\u05e8\u05d4\"\u05d1 \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05e7\u05e1\u05dd \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "5E",
+     "month_pct": 4.2605,
+     "ytd_pct": 22.442,
+     "year_pct": 29.5151,
+     "two_year_pct": null,
+     "three_year_pct": null,
+     "since_start_pct": 57.84,
+     "fee_pct": 1.1,
+     "performance_fee_pct": 20.0,
+     "size_mils": 42.42766,
+     "url": "https://www.funder.co.il/fund/1215383"
+    },
+    {
+     "name": "\u05e1\u05d9\u05d2\u05de\u05d0 (5E)\u05d9 Multi-Strategy \u05d9\u05e9\u05e8\u05d0\u05dc \u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+     "manager": "\u05e1\u05d9\u05d2\u05de\u05d0 \u05e7\u05e8\u05e0\u05d5\u05ea \u05e0\u05d0\u05de\u05e0\u05d5\u05ea \u05d1\u05e2\"\u05de",
+     "profile": "5E",
+     "month_pct": 0.9729,
+     "ytd_pct": 9.5644,
+     "year_pct": 28.7569,
+     "two_year_pct": null,
+     "three_year_pct": null,
+     "since_start_pct": 55.68,
+     "fee_pct": 1.35,
+     "performance_fee_pct": 20.0,
+     "size_mils": 28.77682,
+     "url": "https://www.funder.co.il/fund/1216050"
+    }
+   ],
+   "source": "https://www.funder.co.il/gidurList"
+  },
+  "indices": [
+   {
+    "label": "TA-125",
+    "description": "The 125 largest companies on the Tel Aviv exchange",
+    "price": 4230.05,
+    "change_pct": 0.71,
+    "from_high_pct": -5.6,
+    "high_52w": 4481.04,
+    "low_52w": 3044.46,
+    "as_of": "2026-09-07"
+   },
+   {
+    "label": "TA-35",
+    "description": "The 35 largest, Israel's blue-chip index",
+    "price": 4311.01,
+    "change_pct": 1.12,
+    "from_high_pct": -4.76,
+    "high_52w": 4526.4502,
+    "low_52w": 3000.1699,
+    "as_of": "2026-09-07"
+   }
+  ],
+  "shekel": {
+   "rate": 3.0073,
+   "change_pct": -0.14,
+   "high_52w": 3.3565,
+   "low_52w": 2.8005,
+   "as_of": "2026-09-08"
+  },
+  "links": [
+   {
+    "label": "Market movers and indices",
+    "hebrew": "\u05e2\u05d5\u05dc\u05d5\u05ea \u05d5\u05d9\u05d5\u05e8\u05d3\u05d5\u05ea",
+    "url": "https://www.funder.co.il/secDash"
+   },
+   {
+    "label": "Tel Aviv index list",
+    "hebrew": "\u05de\u05d3\u05d3\u05d9 \u05d4\u05d1\u05d5\u05e8\u05e1\u05d4",
+    "url": "https://www.funder.co.il/madadim"
+   },
+   {
+    "label": "Money-market funds",
+    "hebrew": "\u05e7\u05e8\u05e0\u05d5\u05ea \u05db\u05e1\u05e4\u05d9\u05d5\u05ea",
+    "url": "https://www.funder.co.il/kaspit"
+   },
+   {
+    "label": "Hedge funds in trust",
+    "hebrew": "\u05e7\u05e8\u05e0\u05d5\u05ea \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea",
+    "url": "https://www.funder.co.il/gidurList"
+   }
+  ],
+  "attribution": "Fund data from funder.co.il, shown as a digest with the full lists linked. Index levels and the shekel rate from Yahoo Finance.",
+  "brief": "TA-125 is up 0.71% at 4,230, 5.6% below its 12-month high. A dollar buys 3.007 shekels. The 44 shekel money-market funds returned a median of 3.97% over the past year, at a typical management fee of 0.17%. These are the closest thing to cash: very low risk, no lock-up, and the yield moves with the Bank of Israel's rate. Among the 46 hedge funds sold in trust, the median one-year return was 14.6%, spread from -11.1% to 55.6%, with 5 of 46 losing money. Most charge a performance fee of around 20% on top of the management fee, so the headline return is not what reaches you. None of the Buffett tests on the other tabs apply here. Those measure operating businesses through their accounts; these are funds, and what matters instead is the fee, the risk taken to earn the return, and how the return compares with simply holding cash."
+ },
+ "glossary": [
+  {
+   "group": "The idea behind the whole dashboard",
+   "blurb": "Warren Buffett buys pieces of businesses, not tickets on share prices. Everything here follows from that.",
+   "terms": [
+    {
+     "term": "A share",
+     "definition": "A slice of ownership in a real company. Owning one share of a company with a million shares means you own a millionth of its profits, its buildings and its debts. The price on the screen is just what somebody will pay you for that slice today."
+    },
+    {
+     "term": "Value investing",
+     "definition": "Working out what a business is genuinely worth, then buying only if the market is asking less than that. The opposite is guessing which way the price will move next."
+    },
+    {
+     "term": "Intrinsic value",
+     "definition": "What the business is actually worth, based on the cash it will produce for its owners over its life. Nobody can know it exactly; every figure on this dashboard is an estimate with its assumptions shown."
+    },
+    {
+     "term": "Margin of safety",
+     "definition": "Only buying at a decent discount to your estimate, because your estimate might be wrong. If you think a business is worth $100 a share and you insist on paying under $70, you can be 30% too optimistic and still not lose money."
+    },
+    {
+     "term": "Moat",
+     "definition": "Whatever stops competitors from stealing a company's profits: a brand people insist on, costs nobody can match, or the sheer hassle of switching away. Without one, high profits attract rivals until the profits are gone."
+    },
+    {
+     "term": "Circle of competence",
+     "definition": "The set of businesses you actually understand well enough to judge. Buffett treats staying inside it as non-negotiable, and it is the one test no dashboard can run for you."
+    }
+   ]
+  },
+  {
+   "group": "Reading a company's accounts",
+   "blurb": "Companies must publish their finances. These are the numbers the dashboard pulls out of those filings.",
+   "terms": [
+    {
+     "term": "Revenue",
+     "definition": "All the money that came in from selling things, before any costs. Also called sales or the top line."
+    },
+    {
+     "term": "Net income",
+     "definition": "What is left after every cost, including tax. Also called profit, earnings, or the bottom line."
+    },
+    {
+     "term": "Equity (book value)",
+     "definition": "What the owners would in theory have left if the company sold everything and paid off all its debts. It comes from the accounts, not the stock market."
+    },
+    {
+     "term": "Return on equity (ROE)",
+     "definition": "Profit divided by that owners' stake: how much the company earns on the money shareholders have left in it. Buffett looks for 15% or more, held for years. A company earning $15 on every $100 of owners' money is a far better machine than one earning $3."
+    },
+    {
+     "term": "Return on invested capital (ROIC)",
+     "definition": "The same idea, but counting borrowed money too. The dashboard switches to this when a company has bought back so much of its own stock that its book equity is near zero and ROE stops meaning anything."
+    },
+    {
+     "term": "Gross margin",
+     "definition": "Of every $100 of sales, how much survives after the direct cost of making the product. A steady gross margin over ten years is the best outside evidence that a moat is real."
+    },
+    {
+     "term": "Capital expenditure (capex)",
+     "definition": "Money spent on physical things the business needs: factories, machines, shops, servers. It is real cash leaving the company even though it is not counted as a cost in the profit line straight away."
+    },
+    {
+     "term": "Depreciation",
+     "definition": "The accountant's way of spreading the cost of equipment over the years it is used, rather than all at once. It is a bookkeeping entry, not cash going out of the door this year."
+    },
+    {
+     "term": "Owner earnings",
+     "definition": "Buffett's own measure, and the one this dashboard values companies on: profit, plus bookkeeping charges like depreciation that did not really cost cash, minus the capital spending genuinely needed to keep the business where it is. It answers what an owner could actually take out each year without the business shrinking."
+    },
+    {
+     "term": "Free cash flow",
+     "definition": "A close cousin: the cash generated by operations minus all capital spending, including spending on growth."
+    },
+    {
+     "term": "Impairment / write-down",
+     "definition": "An admission that something the company owns is worth less than the books said, often a business it overpaid for. It hits reported profit hard but no cash moves, which is why the dashboard adds it back."
+    },
+    {
+     "term": "Shares outstanding",
+     "definition": "How many slices the company is divided into. It matters enormously: the same business split into twice as many shares means each share is worth half as much."
+    },
+    {
+     "term": "Buyback",
+     "definition": "A company using its cash to purchase its own shares and cancel them, so each remaining share owns a bigger slice. Good value when the shares are cheap, wasteful when they are expensive."
+    },
+    {
+     "term": "Retained earnings",
+     "definition": "Profits the company kept and reinvested instead of paying out. Buffett's test is that every $1 kept should eventually create at least $1 of market value, or shareholders would have been better off with the cash."
+    }
+   ]
+  },
+  {
+   "group": "Working out what a business is worth",
+   "blurb": "How the dashboard turns those numbers into a price per share.",
+   "terms": [
+    {
+     "term": "Discounted cash flow (DCF)",
+     "definition": "The method behind the estimate. Add up the cash the business should produce over the next ten years plus a value for everything after that, then shrink those future amounts to reflect that money later is worth less than money now."
+    },
+    {
+     "term": "Discount rate",
+     "definition": "The annual return you insist on for taking the risk, used to shrink those future amounts. Higher discount rate, lower value today. The dashboard defaults to 10% and lets you change it with a slider."
+    },
+    {
+     "term": "Terminal value",
+     "definition": "The lump that stands for everything the business earns beyond year ten. It is usually half or more of any DCF result, which is worth knowing: most of the 'value' rests on a guess about the distant future. Each company page shows what share it makes up."
+    },
+    {
+     "term": "Terminal growth",
+     "definition": "How fast you assume the business grows forever after year ten. It has to be modest, because nothing grows faster than the whole economy indefinitely. The default here is 2.5%."
+    },
+    {
+     "term": "Earnings yield",
+     "definition": "Profit divided by the price you pay, expressed as a percentage. It lets you compare a share directly with a savings account or a government bond."
+    },
+    {
+     "term": "P/E ratio",
+     "definition": "Price divided by annual profit per share. A P/E of 25 means you are paying 25 years of current profit for the stake. Lower is cheaper, all else being equal, but all else rarely is."
+    },
+    {
+     "term": "Bear, base and bull case",
+     "definition": "The same calculation run on pessimistic, middling and optimistic growth assumptions, so you see a range rather than one falsely precise number."
+    }
+   ]
+  },
+  {
+   "group": "The wider market",
+   "blurb": "Context for whether shares in general are cheap or dear right now.",
+   "terms": [
+    {
+     "term": "Index (S&P 500, TA-125)",
+     "definition": "A basket tracking many companies at once, used as shorthand for how a whole market is doing. The S&P 500 holds 500 large American firms; TA-125 holds the 125 largest in Tel Aviv."
+    },
+    {
+     "term": "Buffett Indicator",
+     "definition": "The value of every listed company added together, divided by the country's annual economic output. Buffett called it the best single measure of whether the market is expensive. Around 100% is historically normal; the reading today is far above that."
+    },
+    {
+     "term": "Government bond yield",
+     "definition": "What you earn lending money to the government, considered the safest return available. Buffett calls it gravity: every share has to beat it, or you should just buy the bond."
+    },
+    {
+     "term": "VIX",
+     "definition": "A gauge of how much turbulence traders expect in the next month. High means fear, low means calm \u2014 and calm markets are usually expensive ones."
+    },
+    {
+     "term": "Market capitalisation",
+     "definition": "The price of one share multiplied by the number of shares: what the market says the whole company is worth."
+    }
+   ]
+  },
+  {
+   "group": "Short-term measures",
+   "blurb": "A different discipline entirely. These say nothing about what a business is worth, and are on the dashboard only for timing a purchase you have already decided on.",
+   "terms": [
+    {
+     "term": "Moving average",
+     "definition": "The average closing price over the last 50 or 200 days, which smooths out the daily noise. Price above the long average is conventionally read as an uptrend."
+    },
+    {
+     "term": "RSI",
+     "definition": "A 0-100 score of how hard a share has been bought or sold lately. Above 70 is called overbought, below 30 oversold. It is a crowd-mood reading, not a statement about the business."
+    },
+    {
+     "term": "ATR / volatility",
+     "definition": "How much the price typically moves in a day. Useful for deciding how large a position you can hold without a normal wobble forcing you to sell."
+    },
+    {
+     "term": "52-week high and low",
+     "definition": "The highest and lowest the price has been in the past year. A share near its low is not automatically cheap, but it is a reasonable place to start looking."
+    }
+   ]
+  },
+  {
+   "group": "Where the numbers come from",
+   "blurb": "American companies must file their accounts publicly. This dashboard reads those filings directly rather than trusting a summary.",
+   "terms": [
+    {
+     "term": "SEC",
+     "definition": "The US Securities and Exchange Commission, the regulator that requires listed companies to publish their finances honestly and on time."
+    },
+    {
+     "term": "EDGAR",
+     "definition": "The SEC's free public archive where all those filings live."
+    },
+    {
+     "term": "10-K",
+     "definition": "The annual report: a company's full audited accounts for the year, plus a discussion of its risks and business."
+    },
+    {
+     "term": "10-Q",
+     "definition": "The lighter quarterly version, filed three times a year."
+    },
+    {
+     "term": "8-K",
+     "definition": "A one-off announcement of something significant between reports, such as an acquisition or a chief executive leaving."
+    },
+    {
+     "term": "13F",
+     "definition": "A quarterly list every large investment manager must file showing what US shares they own. This is how the dashboard knows what Berkshire Hathaway holds \u2014 though it arrives up to 45 days late."
+    },
+    {
+     "term": "Berkshire Hathaway",
+     "definition": "The company Buffett has run since 1965, and the vehicle through which he invests."
+    },
+    {
+     "term": "XBRL",
+     "definition": "The machine-readable tagging inside modern filings that lets software read a balance sheet without a human retyping it."
+    }
+   ]
+  },
+  {
+   "group": "The Israeli page",
+   "blurb": "Israeli terms used on the Israel tab. These are funds rather than operating companies, so none of the Buffett tests above apply to them.",
+   "terms": [
+    {
+     "term": "Money-market fund (\u05e7\u05e8\u05df \u05db\u05e1\u05e4\u05d9\u05ea)",
+     "definition": "A fund holding very short-term, very safe debt. The closest thing to cash that still pays interest: no lock-up, minimal risk, and a yield that follows the Bank of Israel's rate. Useful as the benchmark anything riskier has to beat."
+    },
+    {
+     "term": "Hedge fund in trust (\u05e7\u05e8\u05df \u05d2\u05d9\u05d3\u05d5\u05e8 \u05d1\u05e0\u05d0\u05de\u05e0\u05d5\u05ea)",
+     "definition": "An Israeli fund allowed to use strategies ordinary funds cannot, such as betting that a share will fall. Sold to the public in a regulated wrapper, but with higher fees and much wider outcomes."
+    },
+    {
+     "term": "Management fee (\u05d3\u05de\u05d9 \u05e0\u05d9\u05d4\u05d5\u05dc)",
+     "definition": "The percentage the manager charges every year, whether or not they make you money. On a money-market fund it matters enormously, because it comes straight out of a small return."
+    },
+    {
+     "term": "Performance fee (\u05d3\u05de\u05d9 \u05d4\u05e6\u05dc\u05d7\u05d4)",
+     "definition": "An extra cut of the profits, typically 20% among the Israeli hedge funds listed here. It means the return you read in the table is not the return that reaches your pocket."
+    },
+    {
+     "term": "Exposure profile (e.g. 5E)",
+     "definition": "An Israeli labelling rule. The digit is how much can be in shares (0 = none, 6 = up to 200%), and the letter is foreign-currency exposure (A = none, F = up to 200%). So 5E means a lot of both."
+    },
+    {
+     "term": "Long/short",
+     "definition": "A fund that both owns shares it expects to rise and bets against shares it expects to fall. It can profit in a falling market, and can also lose in a rising one."
+    },
+    {
+     "term": "TA-125 / TA-35",
+     "definition": "The main Tel Aviv indices: the 125 largest listed Israeli companies, and the 35 largest within them."
+    },
+    {
+     "term": "Tel Bond (\u05ea\u05dc \u05d1\u05d5\u05e0\u05d3)",
+     "definition": "The family of Tel Aviv indices tracking corporate bonds rather than shares."
+    },
+    {
+     "term": "Shekel rate (USD/ILS)",
+     "definition": "How many shekels one US dollar buys. It matters because the American companies on the other tabs are priced in dollars, so a stronger shekel quietly reduces their value to you."
+    }
+   ]
+  }
+ ],
  "principle": {
-  "title": "The one-dollar premise",
-  "body": "For every dollar a company keeps rather than pays out, it should create at least a dollar of market value over time. Retained earnings that fail this test would have been worth more in the shareholders' hands.",
-  "source": "1984 shareholder letter",
-  "index": 6,
+  "title": "Be fearful when others are greedy",
+  "body": "The market's mood is the source of opportunity, not information. Falling prices make a genuinely good business cheaper to own, which is good news for a buyer and bad news only for someone who has to sell.",
+  "source": "1986 shareholder letter; New York Times op-ed, October 2008",
+  "index": 7,
   "total": 20
  },
- "previous_generated_at": "2026-09-07T06:45:12+00:00",
+ "previous_generated_at": "2026-09-08T03:31:48+00:00",
  "disclaimer": "This dashboard reports public filings and applies published screening criteria. It is not investment advice, does not know your circumstances, and makes no recommendation to buy or sell anything. Every estimate here depends on assumptions that are shown alongside it and that you should judge for yourself."
 }

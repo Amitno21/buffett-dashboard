@@ -706,6 +706,156 @@ function renderLearn() {
     </div>`;
 }
 
+
+/* ---------------------------------------------------------------- israel */
+
+/* Fund names arrive in Hebrew. dir="auto" lets the browser lay each one out
+   right-to-left on its own, without flipping the surrounding English table. */
+const heb = s => `<span dir="auto">${esc(s)}</span>`;
+
+function renderIsrael() {
+  const d = state.data.israel || {};
+  const el = document.getElementById('tab-israel');
+  const money = d.money_market || {};
+  const hedge = d.hedge || {};
+
+  const tiles = [];
+  for (const idx of (d.indices || [])) {
+    tiles.push(`<div class="stat">
+      <div class="stat-label">${esc(idx.label)}</div>
+      <div class="stat-value">${nf(idx.price, 0)}</div>
+      <div class="stat-note ${cls(idx.change_pct)}">${signed(idx.change_pct)} &middot; ${signed(idx.from_high_pct)} from high</div>
+    </div>`);
+  }
+  if (d.shekel && d.shekel.rate) {
+    tiles.push(`<div class="stat">
+      <div class="stat-label">US dollar</div>
+      <div class="stat-value">&#8362;${d.shekel.rate.toFixed(3)}</div>
+      <div class="stat-note ${cls(d.shekel.change_pct)}">${signed(d.shekel.change_pct)} today</div>
+    </div>`);
+  }
+  if (money.available) {
+    tiles.push(`<div class="stat">
+      <div class="stat-label">Cash-equivalent yield</div>
+      <div class="stat-value">${pct(money.median_year_pct, 2)}</div>
+      <div class="stat-note">median money-market fund, 1 year</div>
+    </div>`);
+  }
+
+  const moneyRows = (money.rows || []).map(f => `
+    <tr><td>${heb(f.name)}<br><span class="co-name" dir="auto">${esc(f.manager)}</span></td>
+      <td class="num ${cls(f.year_pct)}">${pct(f.year_pct, 2)}</td>
+      <td class="num">${pct(f.ytd_pct, 2)}</td>
+      <td class="num">${pct(f.month_pct, 2)}</td>
+      <td class="num">${pct(f.fee_pct, 2)}</td>
+      <td class="num">&#8362;${nf(f.size_musd, 0)}M</td></tr>`).join('');
+
+  const hedgeRows = (hedge.rows || []).map(f => `
+    <tr><td>${heb(f.name)}<br><span class="co-name" dir="auto">${esc(f.manager)}</span></td>
+      <td class="num">${esc(f.profile || '--')}</td>
+      <td class="num ${cls(f.year_pct)}">${pct(f.year_pct)}</td>
+      <td class="num ${cls(f.ytd_pct)}">${pct(f.ytd_pct)}</td>
+      <td class="num ${cls(f.three_year_pct)}">${f.three_year_pct === null ? '--' : pct(f.three_year_pct)}</td>
+      <td class="num">${pct(f.fee_pct, 2)}</td>
+      <td class="num">${pct(f.performance_fee_pct, 0)}</td></tr>`).join('');
+
+  const links = (d.links || []).map(l =>
+    `<a class="src-link" href="${esc(l.url)}" target="_blank" rel="noopener">
+       ${esc(l.label)} <span dir="auto" class="co-name">${esc(l.hebrew)}</span></a>`).join('');
+
+  el.innerHTML = `
+    <h2 class="section">Israel</h2>
+    <p class="lede">Tel Aviv indices, the shekel, and the two fund categories you asked for.
+      These are funds rather than operating businesses, so none of the Buffett scoring on the
+      other tabs applies to them &mdash; there are no accounts to read and nothing to value.
+      What matters here is the fee, the risk taken, and whether the return beats simply
+      holding cash.</p>
+
+    ${d.brief ? `<div class="brief"><div class="brief-label">The short version</div>
+       <p>${esc(d.brief)}</p></div>` : ''}
+
+    ${tiles.length ? `<div class="weather" style="margin-bottom:22px">${tiles.join('')}</div>` : ''}
+
+    ${money.available ? `
+      <div class="section-head">
+        <h2 class="section" style="font-size:16px">Money-market funds</h2>
+        <span class="co-name">${money.count} funds &middot; &#8362;${nf(money.total_size_mils, 0)}M in total &middot; as at ${esc(money.as_of)}</span>
+      </div>
+      <p class="lede">The closest thing to cash: no lock-up, minimal risk, and a yield that
+        follows the Bank of Israel's rate. Because the return is small, the management fee
+        eats a real share of it &mdash; which is why the fee column is worth as much attention
+        as the return. Showing the ${(money.rows || []).length} largest by size.</p>
+      <div class="card"><div class="table-wrap"><table>
+        <thead><tr><th>Fund</th><th class="num">1 year</th><th class="num">This year</th>
+          <th class="num">This month</th><th class="num">Fee</th><th class="num">Size</th></tr></thead>
+        <tbody>${moneyRows}</tbody></table></div></div>`
+    : `<div class="card"><div class="empty"><div class="big">Money-market funds unavailable</div>
+        <div>${esc(money.reason || 'The source page could not be read on this run.')}</div></div></div>`}
+
+    ${hedge.available ? `
+      <div class="section-head" style="margin-top:26px">
+        <h2 class="section" style="font-size:16px">Hedge funds in trust</h2>
+        <span class="co-name">${hedge.count} funds &middot; median 1-year ${pct(hedge.median_year_pct)}</span>
+      </div>
+      <p class="lede">Funds allowed to bet against shares as well as own them, sold to the public
+        in a regulated wrapper. Note the spread: over the past year these ranged from
+        ${pct(hedge.worst_year_pct)} to ${pct(hedge.best_year_pct)}, and
+        ${hedge.negative_year_count} of ${hedge.with_year_history} lost money. Nearly all charge a
+        performance fee &mdash; typically ${pct(hedge.typical_performance_fee_pct, 0)} of the gains
+        on top of the annual fee &mdash; so the figures below are not what reaches you.
+        Showing the ${(hedge.rows || []).length} best over one year, which is survivorship at work:
+        the ones that did badly are further down the source list.</p>
+      <div class="card"><div class="table-wrap"><table>
+        <thead><tr><th>Fund</th><th class="num">Profile</th><th class="num">1 year</th>
+          <th class="num">This year</th><th class="num">3 years</th>
+          <th class="num">Fee</th><th class="num">Perf. fee</th></tr></thead>
+        <tbody>${hedgeRows}</tbody></table></div></div>`
+    : `<div class="card" style="margin-top:26px"><div class="empty"><div class="big">Hedge funds unavailable</div>
+        <div>${esc(hedge.reason || 'The source page could not be read on this run.')}</div></div></div>`}
+
+    <h2 class="section" style="font-size:16px;margin-top:26px">Sources</h2>
+    <p class="lede">${esc(d.attribution || '')}</p>
+    <div class="src-links">${links}</div>`;
+}
+
+/* -------------------------------------------------------------- glossary */
+
+function renderGlossary() {
+  const groups = state.data.glossary || [];
+  if (!groups.length) return;
+  const total = groups.reduce((n, g) => n + g.terms.length, 0);
+
+  document.getElementById('glossary').innerHTML = `
+    <div class="section-head" style="margin-top:34px">
+      <h2 class="section">Every term on this page, explained</h2>
+      <button class="icon-btn" id="glossary-all">Expand all</button>
+    </div>
+    <p class="lede">${total} concepts, in the order the dashboard reasons in, written for
+      someone who has not done this before. No term is used in a definition before it has
+      been defined.</p>
+    ${groups.map((g, i) => `
+      <details class="gloss-group"${i === 0 ? ' open' : ''}>
+        <summary>
+          <span class="gloss-title">${esc(g.group)}</span>
+          <span class="gloss-count">${g.terms.length}</span>
+        </summary>
+        <p class="gloss-blurb">${esc(g.blurb)}</p>
+        <dl class="gloss-list">
+          ${g.terms.map(t => `
+            <dt dir="auto">${esc(t.term)}</dt>
+            <dd>${esc(t.definition)}</dd>`).join('')}
+        </dl>
+      </details>`).join('')}`;
+
+  const button = document.getElementById('glossary-all');
+  button.onclick = () => {
+    const items = [...document.querySelectorAll('.gloss-group')];
+    const expand = items.some(d => !d.open);
+    items.forEach(d => { d.open = expand; });
+    button.textContent = expand ? 'Collapse all' : 'Expand all';
+  };
+}
+
 /* ------------------------------------------------------------------ shell */
 
 function switchTab(tab) {
@@ -769,8 +919,10 @@ async function init() {
   renderCompanies();
   renderScreen();
   renderBerkshire();
+  renderIsrael();
   renderPositions();
   renderLearn();
+  renderGlossary();
 
   document.getElementById('c-signals').textContent = (data.signals || []).length;
   document.getElementById('c-companies').textContent = data.companies.length;

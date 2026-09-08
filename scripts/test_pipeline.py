@@ -17,6 +17,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import edgar  # noqa: E402
 import metrics  # noqa: E402
+import glossary  # noqa: E402
+import israel  # noqa: E402
 import summary  # noqa: E402
 from common import cagr, safe_div  # noqa: E402
 from principles import PRINCIPLES, principle_of_the_day  # noqa: E402
@@ -459,6 +461,106 @@ class TestSummaries(unittest.TestCase):
         brief = summary.daily_brief(payload)
         self.assertIn("AAPL filed a new 10-K", brief)
         self.assertIn("1 other item", brief)
+
+
+
+class TestIsrael(unittest.TestCase):
+    """funder.co.il embeds each table as JSON in the page rather than as markup."""
+
+    PAGE = (
+        'blah blah\n\tvar somethingElse = {"x":[{"a":1}]};\n'
+        '\tvar kaspitData = {"x":['
+        '{"fundNum":123,"fundName":"  \u05db\u05e1\u05e4\u05d9\u05ea  \u05d0","fundMng":"\u05de\u05d9\u05d8\u05d1",'
+        '"1day":0.02,"monthBegin":0.08,"yearBegin":2.7,"1year":4.03,"nihol":0.25,'
+        '"hosafa":0.0,"rSize":4720.6,"lastUpdate":"2026-09-07"},'
+        '{"fundNum":124,"fundName":"B","fundMng":"X","1day":0.01,"monthBegin":0.06,'
+        '"yearBegin":2.6,"1year":null,"nihol":0.1,"hosafa":0.0,"rSize":100.0,'
+        '"lastUpdate":"2026-09-07"}]};\n'
+        'var after = 1;'
+    )
+
+    def test_extracts_the_named_variable_only(self):
+        rows = israel.embedded_rows(self.PAGE, "kaspitData")
+        self.assertEqual(len(rows), 2)
+        self.assertEqual(rows[0]["fundNum"], 123)
+
+    def test_missing_variable_returns_empty(self):
+        self.assertEqual(israel.embedded_rows(self.PAGE, "notThere"), [])
+
+    def test_malformed_json_does_not_raise(self):
+        self.assertEqual(israel.embedded_rows('var kaspitData = {"x":[{oops}]};', "kaspitData"), [])
+
+    def test_braces_inside_strings_do_not_end_the_object(self):
+        page = 'var kaspitData = {"x":[{"fundName":"a } b","rSize":1.0}]};'
+        rows = israel.embedded_rows(page, "kaspitData")
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["fundName"], "a } b")
+
+    def test_names_are_whitespace_normalised(self):
+        self.assertEqual(israel._clean("  \u05db\u05e1\u05e4\u05d9\u05ea   \u05d0  "),
+                         "\u05db\u05e1\u05e4\u05d9\u05ea \u05d0")
+
+    def test_num_tolerates_blanks_and_nulls(self):
+        self.assertIsNone(israel._num(None))
+        self.assertIsNone(israel._num(""))
+        self.assertIsNone(israel._num("abc"))
+        self.assertEqual(israel._num("2.5"), 2.5)
+
+    def test_brief_always_says_the_buffett_tests_do_not_apply(self):
+        # These are funds, not operating businesses. Someone arriving on this tab
+        # must not read the quality scores as applying to them.
+        brief = israel.brief({
+            "indices": [{"label": "TA-125", "price": 4230.0, "change_pct": 0.71,
+                         "from_high_pct": -5.6}],
+            "shekel": {"rate": 3.007},
+            "money_market": {"available": True, "count": 44, "median_year_pct": 3.97,
+                             "median_fee_pct": 0.169},
+            "hedge": {"available": True, "count": 46, "median_year_pct": 14.6,
+                      "worst_year_pct": -11.1, "best_year_pct": 55.6,
+                      "negative_year_count": 5, "with_year_history": 46,
+                      "typical_performance_fee_pct": 20.0},
+        })
+        self.assertIn("None of the Buffett tests", brief)
+        self.assertIn("TA-125", brief)
+        self.assertIn("performance fee", brief)
+        self.assertIn("3.97", brief)   # the money-market median reaches the text
+        self.assertIn("14.6", brief)   # and the hedge-fund median
+
+    def test_brief_survives_every_source_being_down(self):
+        brief = israel.brief({"indices": [], "shekel": {},
+                              "money_market": {"available": False},
+                              "hedge": {"available": False}})
+        self.assertTrue(brief.strip())
+
+
+class TestGlossary(unittest.TestCase):
+    def test_every_term_has_a_real_definition(self):
+        for section in glossary.GLOSSARY:
+            self.assertTrue(section["group"].strip())
+            self.assertTrue(section["blurb"].strip())
+            for term, definition in section["terms"]:
+                self.assertTrue(term.strip(), section["group"])
+                self.assertGreater(len(definition), 40, f"{term} is too thin to help")
+
+    def test_no_duplicate_terms(self):
+        seen = [t for s in glossary.GLOSSARY for t, _ in s["terms"]]
+        self.assertEqual(len(seen), len(set(seen)), "a term is defined twice")
+
+    def test_payload_shape_matches_the_renderer(self):
+        payload = glossary.as_payload()
+        self.assertEqual(len(payload), len(glossary.GLOSSARY))
+        first = payload[0]
+        self.assertEqual(set(first), {"group", "blurb", "terms"})
+        self.assertEqual(set(first["terms"][0]), {"term", "definition"})
+        self.assertEqual(sum(len(g["terms"]) for g in payload), glossary.term_count())
+
+    def test_the_jargon_the_dashboard_shows_is_all_covered(self):
+        # If a label appears in the interface it needs an entry here.
+        text = " ".join(t.lower() for s in glossary.GLOSSARY for t, _ in s["terms"])
+        for required in ["owner earnings", "margin of safety", "moat", "return on equity",
+                         "discounted cash flow", "terminal value", "buffett indicator",
+                         "rsi", "13f", "10-k", "money-market", "performance fee"]:
+            self.assertIn(required, text, f"{required} is used in the UI but not defined")
 
 
 
