@@ -20,6 +20,7 @@ its assumptions so you can disagree with them.
 | **S&P 500 screen** | What else should I look at? A coarse return-on-equity screen over all 500 constituents. |
 | **Berkshire** | What is Buffett actually doing? Latest 13F holdings and quarter-on-quarter changes. |
 | **My positions** | Does my thesis still hold? Your holdings re-checked against the same criteria. |
+| **ETFs** | The simple alternative: low-cost index funds, US and Israeli, ranked by fee. |
 | **Israel** | Tel Aviv indices, the shekel, Israeli money-market and hedge funds. |
 | **Learn** | One principle a day, with the letter it comes from. |
 | **Glossary** | Every term on the page, explained for someone new to investing. |
@@ -74,8 +75,13 @@ All free, none needing an API key.
 | Yahoo Finance chart API | Daily prices, moving averages, RSI |
 | FRED (`fredgraph.csv`) | 10-year Treasury, Buffett Indicator inputs |
 | `datasets/s-and-p-500-companies` | Index constituents |
-| `funder.co.il` | Israeli money-market and hedge funds (digest, full lists linked) |
-| Yahoo Finance | TA-125, TA-35 and the shekel rate |
+| `funder.co.il` | Israeli money-market, hedge and exchange-traded funds (digest, full lists linked) |
+| Yahoo Finance | TA-125, TA-35, the shekel rate, and US ETF prices |
+
+US ETF expense ratios are pinned in `scripts/etfs.py` rather than fetched: no
+free feed carries them reliably and they change perhaps once every few years.
+Verify against the issuer's factsheet before acting on a small difference.
+Fund returns throughout are **price** returns and exclude dividends.
 
 ### A note on the Israeli data
 

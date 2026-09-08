@@ -707,6 +707,93 @@ function renderLearn() {
 }
 
 
+
+/* ------------------------------------------------------------------ etfs */
+
+function renderEtfs() {
+  const d = state.data.etfs || {};
+  const el = document.getElementById('tab-etfs');
+  const us = d.us || [];
+  const isr = d.israel || {};
+
+  const usRows = us.map(f => `
+    <tr class="${f.symbol === d.benchmark ? 'etf-benchmark' : ''}">
+      <td><span class="ticker">${esc(f.symbol)}</span><br>
+        <span class="co-name">${esc(f.name)}</span></td>
+      <td class="fund-what">${esc(f.description)}</td>
+      <td class="num">${money(f.price)}</td>
+      <td class="num ${cls(f.year_pct)}">${signed(f.year_pct)}</td>
+      <td class="num ${cls(f.five_year_pct)}">${signed(f.five_year_pct)}</td>
+      <td class="num"><b>${f.fee_pct === null ? '--' : f.fee_pct.toFixed(2) + '%'}</b><br>
+        <span class="co-name">$${nf(f.fee_per_10k, 2)} / $10k</span></td>
+    </tr>`).join('');
+
+  const catRows = (isr.categories || []).map(c => `
+    <tr><td dir="auto">${esc(c.category)}</td>
+      <td class="num">${c.count}</td>
+      <td class="num ${cls(c.median_ytd_pct)}">${signed(c.median_ytd_pct)}</td>
+      <td class="num ${cls(c.worst_ytd_pct)}">${signed(c.worst_ytd_pct)}</td>
+      <td class="num ${cls(c.best_ytd_pct)}">${signed(c.best_ytd_pct)}</td></tr>`).join('');
+
+  const isrRows = (isr.rows || []).map(f => `
+    <tr><td dir="auto">${esc(f.name)}<br><span class="co-name" dir="auto">${esc(f.manager)}</span></td>
+      <td dir="auto" class="fund-what">${esc(f.sub_category || f.category)}</td>
+      <td class="num ${cls(f.ytd_pct)}">${signed(f.ytd_pct)}</td>
+      <td class="num ${cls(f.month_pct)}">${signed(f.month_pct)}</td></tr>`).join('');
+
+  el.innerHTML = `
+    <h2 class="section">Index funds and ETFs</h2>
+    <p class="lede">The alternative to everything else on this dashboard: buy the whole market
+      cheaply and leave it alone. Buffett's instruction for his own estate was 90% in a low-cost
+      S&amp;P 500 fund and 10% in short-term government bonds, and he has said plainly that most
+      people should not try to pick stocks at all. This tab is here so that advice is visible
+      rather than buried.</p>
+
+    ${d.brief ? `<div class="brief"><div class="brief-label">The short version</div>
+       <p>${esc(d.brief)}</p></div>` : ''}
+
+    <div class="section-head">
+      <h2 class="section" style="font-size:16px">US funds</h2>
+      <span class="co-name">sorted by annual cost, cheapest first</span>
+    </div>
+    <p class="lede">The fee column is the one that matters most, because it is the only number
+      here you can know in advance. Everything else is a guess about the future; the fee is
+      deducted every year regardless.</p>
+    <div class="card"><div class="table-wrap"><table>
+      <thead><tr><th>Fund</th><th>What it holds</th><th class="num">Price</th>
+        <th class="num">1 year</th><th class="num">5 years</th><th class="num">Annual fee</th></tr></thead>
+      <tbody>${usRows}</tbody></table></div></div>
+
+    ${isr.available ? `
+      <div class="section-head" style="margin-top:26px">
+        <h2 class="section" style="font-size:16px">Israeli ETFs</h2>
+        <span class="co-name">${isr.count} funds &middot; median ${signed(isr.median_ytd_pct)} this year</span>
+      </div>
+      <p class="lede">Grouped by what they hold, because 502 funds is not a list anyone reads.
+        Note how wide the range runs inside each group, and especially inside the leveraged
+        category &mdash; those multiply the index's daily move in both directions.</p>
+      <div class="card"><div class="table-wrap"><table>
+        <thead><tr><th>Asset class</th><th class="num">Funds</th><th class="num">Median</th>
+          <th class="num">Worst</th><th class="num">Best</th></tr></thead>
+        <tbody>${catRows}</tbody></table></div></div>
+      <p class="lede" style="margin-top:16px">The ${(isr.rows || []).length} strongest so far this
+        year. Read this as survivorship in action rather than a recommendation: a table sorted by
+        past return will always look impressive, and says nothing about the next twelve months.</p>
+      <div class="card"><div class="table-wrap"><table>
+        <thead><tr><th>Fund</th><th>Holds</th><th class="num">This year</th>
+          <th class="num">This month</th></tr></thead>
+        <tbody>${isrRows}</tbody></table></div></div>`
+    : `<div class="card" style="margin-top:26px"><div class="empty">
+        <div class="big">Israeli ETFs unavailable</div>
+        <div>${esc(isr.reason || 'The source page could not be read on this run.')}</div></div></div>`}
+
+    <h2 class="section" style="font-size:16px;margin-top:26px">Sources</h2>
+    <p class="lede">${esc(d.attribution || '')} ${esc(d.returns_note || '')}</p>
+    ${isr.source ? `<div class="src-links">
+      <a class="src-link" href="${esc(isr.source)}" target="_blank" rel="noopener">
+        Full Israeli ETF list <span dir="auto" class="co-name">קרנות סל</span></a></div>` : ''}`;
+}
+
 /* ---------------------------------------------------------------- israel */
 
 /* Fund names arrive in Hebrew. dir="auto" lets the browser lay each one out
@@ -919,6 +1006,7 @@ async function init() {
   renderCompanies();
   renderScreen();
   renderBerkshire();
+  renderEtfs();
   renderIsrael();
   renderPositions();
   renderLearn();

@@ -570,6 +570,8 @@ class TestGlossary(unittest.TestCase):
         "SEC", "EDGAR", "XBRL", "10-K", "10-Q", "8-K", "13F", "Berkshire",
         "money-market", "hedge fund", "management fee", "performance fee",
         "exposure profile", "long/short", "TA-125", "TA-35", "Tel Bond", "shekel",
+        "ETF", "expense ratio", "index fund", "price return", "dividend",
+        "leveraged", "fund",
     ]
 
     @staticmethod
@@ -589,6 +591,7 @@ class TestGlossary(unittest.TestCase):
             root / "docs" / "app.js",       # every literal string the renderer writes
             root / "scripts" / "summary.py",  # generated company and daily prose
             root / "scripts" / "israel.py",   # generated Israeli prose
+            root / "scripts" / "etfs.py",     # generated fund prose
         ]
         ui_text = "\n".join(p.read_text(encoding="utf-8") for p in sources if p.exists()).lower()
         # Match against the glossary *headings* only. Checking the whole

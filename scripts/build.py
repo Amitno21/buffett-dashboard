@@ -17,6 +17,7 @@ import traceback
 from datetime import datetime, timezone
 
 import edgar
+import etfs
 import glossary
 import israel
 import market
@@ -416,12 +417,12 @@ def build(limit: int | None = None, force: bool = False, skip_screen: bool = Fal
     overrides = {k: v for k, v in (config.get("shares_override") or {}).items()
                  if not k.startswith("_")}
 
-    print("[1/7] Ticker map", flush=True)
+    print("[1/8] Ticker map", flush=True)
     tmap = edgar.ticker_map()
     name_index = edgar.build_name_index(tmap)
     log(f"{len(tmap)} tickers")
 
-    print("[2/7] Berkshire 13F", flush=True)
+    print("[2/8] Berkshire 13F", flush=True)
     try:
         berkshire = summarise_13f(edgar.fetch_13f(back=2), name_index)
         if berkshire.get("available"):
@@ -431,7 +432,7 @@ def build(limit: int | None = None, force: bool = False, skip_screen: bool = Fal
         log(f"unavailable: {exc}")
         berkshire = {"available": False}
 
-    print("[3/7] Building universe", flush=True)
+    print("[3/8] Building universe", flush=True)
     watchlist = [t.upper() for t in config["watchlist"]]
     brk_tickers = [
         h["ticker"] for h in berkshire.get("holdings", [])[:settings["max_berkshire_holdings"]]
@@ -451,7 +452,7 @@ def build(limit: int | None = None, force: bool = False, skip_screen: bool = Fal
         universe = universe[:limit]
     log(f"{len(universe)} companies ({len(watchlist)} watchlist, {len(brk_tickers)} from Berkshire)")
 
-    print(f"[4/7] Analysing {len(universe)} companies", flush=True)
+    print(f"[4/8] Analysing {len(universe)} companies", flush=True)
     companies = []
     for i, ticker in enumerate(universe, 1):
         try:
@@ -471,13 +472,22 @@ def build(limit: int | None = None, force: bool = False, skip_screen: bool = Fal
         company["summary"] = summary.company_summary(company)
         company["headline"] = summary.quality_headline(company)
 
-    print("[5/7] Market weather and screen", flush=True)
+    print("[5/8] Market weather and screen", flush=True)
     weather = market.market_weather()
     screen = {"available": False, "reason": "skipped"} if skip_screen else broad_screen()
     if screen.get("available"):
         log(f"screened {screen['scored']} of {screen['universe']} S&P 500 names for {screen['period']}")
 
-    print("[6/7] Israeli market", flush=True)
+    print("[6/8] Exchange-traded funds", flush=True)
+    try:
+        funds = etfs.snapshot(market.price_history, companies)
+        log(f"{len(funds.get('us', []))} US funds, "
+            f"{(funds.get('israel') or {}).get('count', 0)} Israeli funds")
+    except Exception as exc:  # noqa: BLE001 - a third-party page must not fail the run
+        log(f"unavailable: {type(exc).__name__}: {exc}")
+        funds = {"us": [], "israel": {"available": False}, "brief": ""}
+
+    print("[7/8] Israeli market", flush=True)
     try:
         israeli = israel.snapshot(market.price_history)
         money, hedge = israeli.get("money_market", {}), israeli.get("hedge", {})
@@ -488,7 +498,7 @@ def build(limit: int | None = None, force: bool = False, skip_screen: bool = Fal
         israeli = {"money_market": {"available": False}, "hedge": {"available": False},
                    "indices": [], "shekel": {}, "links": [], "brief": ""}
 
-    print("[7/7] Signals", flush=True)
+    print("[8/8] Signals", flush=True)
     previous = read_json(DATA / "latest.json", {}) or {}
     signals = compute_signals(companies, previous, berkshire, settings)
     log(f"{len(signals)} signals")
@@ -505,6 +515,7 @@ def build(limit: int | None = None, force: bool = False, skip_screen: bool = Fal
         "positions": value_positions(config["positions"], companies),
         "brief": "",
         "israel": israeli,
+        "etfs": funds,
         "glossary": glossary.as_payload(),
         "principle": principle_of_the_day(),
         "previous_generated_at": previous.get("generated_at"),

@@ -44,6 +44,9 @@ GLOSSARY: list[dict] = [
                         "called sales or the top line."),
             ("Net income", "What is left after every cost, including tax. Also called profit, "
                            "earnings, or the bottom line."),
+            ("Dividend", "Cash a company pays out to its shareholders, usually quarterly. It is "
+                         "the other half of what you earn from a share, alongside the price "
+                         "moving. Profit either gets paid out this way or kept and reinvested."),
             ("Book equity (book value)", "What the owners would in theory have left if the company sold "
                                     "everything and paid off all its debts. It comes from the "
                                     "accounts, not the stock market."),
@@ -152,6 +155,35 @@ GLOSSARY: list[dict] = [
                                   "funds looks wonderful precisely because the failures are not in "
                                   "it. Any ranked list on this page, including the fund tables, has "
                                   "to be read with that in mind."),
+        ],
+    },
+    {
+        "group": "Funds, and the simple alternative",
+        "blurb": "Buffett's advice to almost everyone is not to pick stocks at all, but to buy "
+                 "the whole market cheaply and leave it alone.",
+        "terms": [
+            ("Fund", "A pot of money from many people, invested together and run by a manager. You "
+                     "own a slice of the pot rather than the individual holdings."),
+            ("Index fund", "A fund that simply buys everything in an index, in the same "
+                           "proportions, and makes no attempt to pick winners. Because nobody is "
+                           "being paid to choose, it is very cheap to run."),
+            ("ETF (exchange-traded fund)", "A fund you buy and sell on the stock exchange like a "
+                                           "single share, rather than through the fund company. "
+                                           "Most ETFs are index funds, and the two words are often "
+                                           "used loosely to mean the same thing."),
+            ("Expense ratio", "The percentage the fund takes each year, deducted automatically from "
+                              "the fund's value. It is the single most important number on this "
+                              "page: 0.03% costs $3 a year on $10,000, while 1% costs $100, every "
+                              "year, whether the fund rises or falls."),
+            ("Price return vs total return", "Price return counts only the change in price. Total "
+                                             "return also counts the dividends paid along the way. "
+                                             "The fund figures on this dashboard are price returns, "
+                                             "so a fund paying income has done somewhat better than "
+                                             "shown."),
+            ("Leveraged fund", "A fund that borrows in order to multiply the index's daily move, "
+                               "two or three times over. It multiplies losses just as faithfully, "
+                               "and among the Israeli funds listed here the leveraged category "
+                               "spans the widest range of outcomes by far."),
         ],
     },
     {
