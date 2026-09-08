@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-08T03:57:50+00:00",
- "build_seconds": 24.2,
+ "generated_at": "2026-09-08T03:58:37+00:00",
+ "build_seconds": 20.7,
  "settings": {
   "margin_of_safety_pct": 30,
   "discount_rate_pct": 10.0,
@@ -11535,8 +11535,8 @@
    }
   ],
   "shekel": {
-   "rate": 3.0091,
-   "change_pct": -0.08,
+   "rate": 3.0086,
+   "change_pct": -0.1,
    "high_52w": 3.3565,
    "low_52w": 2.8005,
    "as_of": "2026-09-08"
@@ -11841,6 +11841,6 @@
   "index": 7,
   "total": 20
  },
- "previous_generated_at": "2026-09-08T03:37:13+00:00",
+ "previous_generated_at": "2026-09-08T03:57:50+00:00",
  "disclaimer": "This dashboard reports public filings and applies published screening criteria. It is not investment advice, does not know your circumstances, and makes no recommendation to buy or sell anything. Every estimate here depends on assumptions that are shown alongside it and that you should judge for yourself."
 }
