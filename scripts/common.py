@@ -19,7 +19,7 @@ FUND = CACHE / "fundamentals"
 
 # SEC requires a descriptive User-Agent with contact info and caps traffic at
 # 10 req/s. We stay well under that. Override via the SEC_USER_AGENT env var.
-SEC_UA = os.environ.get("SEC_USER_AGENT", "buffett-dashboard/1.0 (contact: dashboard@example.com)")
+SEC_UA = os.environ.get("SEC_USER_AGENT", "amit-dashboard/1.0 (contact: dashboard@example.com)")
 BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"
 
 SEC_MIN_INTERVAL = 0.15  # seconds between SEC calls

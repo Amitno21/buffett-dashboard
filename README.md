@@ -1,4 +1,4 @@
-# Buffett Dashboard
+# Amit Dashboard
 
 A daily value-investing dashboard built entirely from public filings. It applies
 Buffett's published criteria to ten years of SEC data, estimates what each

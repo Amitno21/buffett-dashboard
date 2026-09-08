@@ -1,4 +1,4 @@
-/* Buffett Dashboard - client rendering.
+/* Amit Dashboard - client rendering.
    The payload is produced nightly by scripts/build.py. Everything here is
    presentation, with one exception: the discounted cash flow is recomputed in
    the browser so the assumption sliders respond instantly. That JavaScript
