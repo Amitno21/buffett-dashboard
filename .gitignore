@@ -9,3 +9,10 @@ __pycache__/
 # Archival copy of the prior run. Nothing reads it (the signals diff reads the
 # committed latest.json), so keeping it out of history avoids ~275KB a day.
 docs/data/previous.json
+
+# Real holdings, and the valued result built from them. This repository is
+# public and docs/ is served by GitHub Pages, so share counts and cost basis
+# must never be committed. scripts/build.py keeps them out of
+# docs/data/latest.json by design; these rules are the second line of defence.
+positions.local.json
+docs/data/positions.local.json

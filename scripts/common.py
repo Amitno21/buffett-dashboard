@@ -111,10 +111,39 @@ def write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, indent=1, sort_keys=False), encoding="utf-8")
 
 
+# Real holdings are deliberately kept out of the repository. watchlist.json is
+# committed and this repo is public, so share counts and cost basis there would
+# amount to publishing a position-by-position statement of net worth. Holdings
+# live in positions.local.json, which .gitignore excludes, and the valued result
+# is written to POSITIONS_PRIVATE_OUT rather than into the published payload.
+POSITIONS_PRIVATE_IN = ROOT / "positions.local.json"
+POSITIONS_PRIVATE_OUT = DATA / "positions.local.json"
+
+
+def load_positions() -> tuple[list[dict], bool]:
+    """Return (positions, is_private).
+
+    Reads positions.local.json when it exists, accepting either a bare list or
+    an object with a "positions" key so that a file copied straight from
+    positions.local.example.json works unchanged. Falls back to whatever is in
+    watchlist.json, which ships empty.
+    """
+    raw = read_json(POSITIONS_PRIVATE_IN)
+    if isinstance(raw, dict):
+        raw = raw.get("positions")
+    if isinstance(raw, list):
+        return [p for p in raw if isinstance(p, dict)], True
+    return [], False
+
+
 def load_config() -> dict:
     cfg = read_json(ROOT / "watchlist.json", {}) or {}
     cfg.setdefault("watchlist", [])
     cfg.setdefault("positions", [])
+    private, is_private = load_positions()
+    if is_private:
+        cfg["positions"] = private
+    cfg["positions_are_private"] = is_private
     settings = cfg.setdefault("settings", {})
     settings.setdefault("margin_of_safety_pct", 30)
     settings.setdefault("discount_rate_pct", 10.0)

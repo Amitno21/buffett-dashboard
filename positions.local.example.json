@@ -1,0 +1,20 @@
+{
+  "_comment": [
+    "Copy this file to positions.local.json and edit it. That name is",
+    "git-ignored, so your holdings never leave this machine.",
+    "shares = how many you own. cost_basis = what you paid PER SHARE.",
+    "Tickers must be US-listed SEC filers, the same as the watchlist."
+  ],
+  "positions": [
+    {
+      "ticker": "AAPL",
+      "shares": 100,
+      "cost_basis": 175.5
+    },
+    {
+      "ticker": "KO",
+      "shares": 250,
+      "cost_basis": 58.2
+    }
+  ]
+}

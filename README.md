@@ -119,9 +119,12 @@ gh repo create buffett-dashboard --public --source=. --remote=origin --push
 ```
 
 Pages serves a private repository only on a paid plan, which is why this is
-public. The repository holds no personal data as shipped — but if you add real
-holdings to `positions` in `watchlist.json`, they become public too. Keep that
-section empty, or move to a private repo and view the dashboard locally.
+public. The repository holds no personal data, and it is built so that it cannot
+start holding any by accident: your holdings live in `positions.local.json`,
+which `.gitignore` excludes, and the build keeps them out of the published
+`docs/data/latest.json` as well. See **Your holdings stay private** below. Eleven
+tests enforce both halves of that, so a leak fails the build rather than
+shipping.
 
 ### 2. Turn on GitHub Pages
 
@@ -176,6 +179,43 @@ python scripts/test_pipeline.py
 
 ---
 
+## Your holdings stay private
+
+The dashboard can value what you actually own and re-run the same quality and
+valuation tests against it. That data never enters the repository.
+
+Copy the template and fill it in:
+
+```bash
+cp positions.local.example.json positions.local.json
+```
+
+```jsonc
+{
+  "positions": [
+    { "ticker": "AAPL", "shares": 100, "cost_basis": 175.50 }  // cost per share
+  ]
+}
+```
+
+Two separate rules keep it off the internet, because one is not enough:
+
+1. `.gitignore` excludes `positions.local.json`, so git will not commit it even
+   if you ask it to stage everything.
+2. `scripts/build.py` never writes holdings into `docs/data/latest.json`, which
+   *is* committed. The valued rows go to `docs/data/positions.local.json`, also
+   git-ignored. The page fetches that file if it is there, which it is on your
+   machine and is not on GitHub Pages.
+
+So the **My positions** tab fills in when you open the dashboard from your own
+checkout, and is permanently empty on the public site. That is intended, not a
+bug.
+
+The `PositionPrivacy` tests in `scripts/test_pipeline.py` assert all of this,
+including asking git itself whether the files are ignored. If a future change
+starts publishing holdings, the test suite fails and the nightly workflow stops
+before it can commit anything.
+
 ## Configuring it
 
 Everything lives in `watchlist.json`.
@@ -183,9 +223,8 @@ Everything lives in `watchlist.json`.
 ```jsonc
 {
   "watchlist": ["AAPL", "KO", "MSFT"],     // deep ten-year analysis on each
-  "positions": [
-    { "ticker": "AAPL", "shares": 100, "cost_basis": 175.50 }
-  ],
+  "positions": [],                // always empty: this file is public.
+                                  // Real holdings go in positions.local.json
   "settings": {
     "margin_of_safety_pct": 30,   // discount you demand below estimated value
     "discount_rate_pct": 10.0,    // DCF hurdle rate
@@ -295,8 +334,12 @@ scripts/
   metrics.py        owner earnings, quality scoring, DCF
   principles.py     the rotating daily principle
   build.py          orchestrator, caching, signals -> docs/data/latest.json
-  test_pipeline.py  38 tests, standard library only
+  test_pipeline.py  77 tests, standard library only
 docs/               the published site (GitHub Pages root)
   index.html  app.js  styles.css  data/latest.json
-watchlist.json      everything you configure
+watchlist.json      everything you configure (public: never holdings)
+positions.local.example.json
+                    template; copy to positions.local.json for your holdings
+positions.local.json          your holdings      (git-ignored, never committed)
+docs/data/positions.local.json  valued holdings  (git-ignored, never committed)
 ```

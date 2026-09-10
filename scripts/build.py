@@ -24,8 +24,8 @@ import israel
 import market
 import metrics
 import summary
-from common import (CACHE, DATA, DOCS, FUND, FetchError, fetch, load_config,
-                    read_json, safe_div, write_json)
+from common import (CACHE, DATA, DOCS, FUND, POSITIONS_PRIVATE_OUT, FetchError,
+                    fetch, load_config, read_json, safe_div, write_json)
 from principles import principle_of_the_day
 
 SP500_URL = "https://raw.githubusercontent.com/datasets/s-and-p-500-companies/main/data/constituents.csv"
@@ -407,6 +407,18 @@ def value_positions(positions: list[dict], companies: list[dict]) -> dict:
     }
 
 
+def redacted_positions() -> dict:
+    """The positions block as it appears in the published payload: always empty.
+
+    docs/data/latest.json is committed to a public repository. Valued holdings
+    are written to docs/data/positions.local.json instead, which .gitignore
+    excludes, so the page shows them when opened locally and shows nothing when
+    served from GitHub Pages.
+    """
+    return {"rows": [], "total_value": 0.0, "total_cost": 0.0,
+            "total_gain": 0.0, "total_gain_pct": None, "private": True}
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -513,7 +525,8 @@ def build(limit: int | None = None, force: bool = False, skip_screen: bool = Fal
         "berkshire": berkshire,
         "screen": screen,
         "signals": signals,
-        "positions": value_positions(config["positions"], companies),
+        # Never the real rows: see redacted_positions().
+        "positions": redacted_positions(),
         "brief": "",
         "israel": israeli,
         "etfs": funds,
@@ -539,6 +552,13 @@ def build(limit: int | None = None, force: bool = False, skip_screen: bool = Fal
             log("cache-busted " + ", ".join(f"{k}@{v}" for k, v in sorted(stamped.items())))
     except OSError as exc:
         log(f"could not stamp assets: {exc}")
+
+    # Holdings go to their own git-ignored file, never into latest.json.
+    positions = value_positions(config["positions"], companies)
+    write_json(POSITIONS_PRIVATE_OUT, positions)
+    if positions["rows"]:
+        log(f"{len(positions['rows'])} positions valued -> "
+            "docs/data/positions.local.json (private, never committed)")
 
     if previous:
         write_json(DATA / "previous.json", previous)

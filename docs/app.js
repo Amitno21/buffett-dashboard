@@ -649,8 +649,10 @@ function renderPositions() {
   if (!p.rows.length) {
     el.innerHTML = `<div class="card"><div class="empty">
       <div class="big">No positions recorded</div>
-      <div>Add them to <code>watchlist.json</code> under <code>positions</code>, with a ticker,
-      share count and cost basis. They will then be valued here and checked against the same criteria.</div>
+      <div>Copy <code>positions.local.example.json</code> to <code>positions.local.json</code> and list
+      each holding with a ticker, share count and cost basis. That file is git-ignored, so your holdings
+      stay on your machine: they are valued and checked against the same criteria here, but never
+      published. This tab is therefore always empty on the public site.</div>
     </div></div>`;
     return;
   }
@@ -994,6 +996,25 @@ async function init() {
     return;
   }
   state.data = data;
+
+  // Holdings are private. The build writes them to data/positions.local.json,
+  // which .gitignore excludes, so the file exists when the dashboard is opened
+  // from a local checkout and is absent on GitHub Pages. A failed fetch is the
+  // normal published case, not an error worth showing.
+  // Skipped outright on the published site: the file is git-ignored so it can
+  // never be there, and probing for it would log a 404 in every visitor's
+  // console. Any other host (localhost, a LAN address, file://) still looks.
+  if (!location.hostname.endsWith('github.io')) {
+    try {
+      const pr = await fetch(`data/positions.local.json?t=${Date.now()}`);
+      if (pr.ok) {
+        const priv = await pr.json();
+        if (priv && Array.isArray(priv.rows)) state.data.positions = priv;
+      }
+    } catch (err) {
+      /* no private positions file: the tab keeps its empty state */
+    }
+  }
 
   const stale = (Date.now() - new Date(data.generated_at).getTime()) / 36e5 > 36;
   document.getElementById('updated').innerHTML =

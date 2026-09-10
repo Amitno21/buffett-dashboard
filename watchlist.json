@@ -18,13 +18,7 @@
     "GOOGL",
     "MSFT"
   ],
-  "positions": [
-    {
-      "ticker": "AAPL",
-      "shares": 0,
-      "cost_basis": 0.0
-    }
-  ],
+  "positions": [],
   "settings": {
     "margin_of_safety_pct": 30,
     "discount_rate_pct": 10.0,
@@ -35,5 +29,6 @@
   "shares_override": {
     "_comment": "Companies that report share counts per share class do not expose a single total through the SEC companyfacts API. Supply the diluted share count here to enable a valuation.",
     "V": 1950000000
-  }
+  },
+  "_positions_comment": "Intentionally empty and kept that way: this file is committed to a public repository. Put real holdings in positions.local.json, which is git-ignored (copy positions.local.example.json to start). The build reads them from there and writes the valued result to docs/data/positions.local.json, which is also git-ignored, so nothing about your portfolio is ever published."
 }

@@ -8,8 +8,11 @@ comments say which, so nobody re-introduces one by "simplifying" the code.
 """
 from __future__ import annotations
 
+import json
 import re
+import subprocess
 import sys
+import tempfile
 import unittest
 from datetime import date
 from pathlib import Path
@@ -21,6 +24,8 @@ import metrics  # noqa: E402
 import glossary  # noqa: E402
 import israel  # noqa: E402
 import summary  # noqa: E402
+import build  # noqa: E402
+import common  # noqa: E402
 from common import cagr, safe_div  # noqa: E402
 from principles import PRINCIPLES, principle_of_the_day  # noqa: E402
 
@@ -610,6 +615,135 @@ class TestGlossary(unittest.TestCase):
         self.assertEqual(undefined, [],
                          f"used in the interface but has no glossary entry: {undefined}")
 
+
+
+class PositionPrivacy(unittest.TestCase):
+    """Holdings must never reach a file that gets committed.
+
+    This repository is public and docs/ is served by GitHub Pages, so a filled-in
+    positions block would publish a position-by-position statement of net worth.
+    Real holdings live in positions.local.json and the valued result in
+    docs/data/positions.local.json, both git-ignored. These tests are the
+    regression guard: they fail the build rather than letting a leak ship.
+    """
+
+    ROOT = Path(__file__).resolve().parent.parent
+
+    def test_published_payload_block_is_always_empty(self):
+        block = build.redacted_positions()
+        self.assertEqual(block["rows"], [])
+        self.assertEqual(block["total_value"], 0.0)
+        self.assertEqual(block["total_cost"], 0.0)
+        self.assertTrue(block["private"])
+
+    def test_committed_watchlist_carries_no_holdings(self):
+        cfg = json.loads((self.ROOT / "watchlist.json").read_text(encoding="utf-8"))
+        real = [p for p in cfg.get("positions", [])
+                if float(p.get("shares") or 0) > 0 or float(p.get("cost_basis") or 0) > 0]
+        self.assertEqual(real, [], "watchlist.json is public and must not list real holdings")
+
+    def test_committed_data_file_carries_no_holdings(self):
+        """The published dataset itself, as it currently sits on disk."""
+        path = self.ROOT / "docs" / "data" / "latest.json"
+        if not path.exists():
+            self.skipTest("latest.json not built in this checkout")
+        positions = json.loads(path.read_text(encoding="utf-8")).get("positions") or {}
+        self.assertEqual(positions.get("rows") or [], [],
+                         "docs/data/latest.json is committed and must not contain holdings")
+        self.assertFalse(positions.get("total_value"))
+
+    def test_private_files_are_git_ignored(self):
+        text = (self.ROOT / ".gitignore").read_text(encoding="utf-8")
+        for name in ("positions.local.json", "docs/data/positions.local.json"):
+            self.assertIn(name, text)
+
+    def test_git_actually_ignores_them(self):
+        """Belt and braces: ask git itself, not just the file's text."""
+        try:
+            done = subprocess.run(
+                ["git", "check-ignore", "positions.local.json",
+                 "docs/data/positions.local.json"],
+                cwd=self.ROOT, capture_output=True, text=True, timeout=20)
+        except (OSError, subprocess.SubprocessError):
+            self.skipTest("git not available")
+        if done.returncode == 128:
+            self.skipTest("not a git checkout")
+        self.assertEqual(done.returncode, 0, "git does not ignore the private files")
+        self.assertIn("positions.local.json", done.stdout)
+
+    def test_example_template_is_committed_and_parses(self):
+        """The example is the discoverable path, so it must stay valid."""
+        example = self.ROOT / "positions.local.example.json"
+        self.assertTrue(example.exists(), "positions.local.example.json is missing")
+        data = json.loads(example.read_text(encoding="utf-8"))
+        self.assertTrue(data["positions"], "the template should show a worked example")
+        for row in data["positions"]:
+            self.assertIn("ticker", row)
+            self.assertGreater(float(row["shares"]), 0)
+
+    def test_private_file_is_read_when_present(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "positions.local.json"
+            path.write_text(json.dumps(
+                {"positions": [{"ticker": "ko", "shares": 10, "cost_basis": 50.0}]}),
+                encoding="utf-8")
+            original = common.POSITIONS_PRIVATE_IN
+            try:
+                common.POSITIONS_PRIVATE_IN = path
+                positions, private = common.load_positions()
+            finally:
+                common.POSITIONS_PRIVATE_IN = original
+        self.assertTrue(private)
+        self.assertEqual(positions, [{"ticker": "ko", "shares": 10, "cost_basis": 50.0}])
+
+    def test_bare_list_is_accepted_too(self):
+        """A file holding just the array, without the wrapper object."""
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "positions.local.json"
+            path.write_text(json.dumps([{"ticker": "AAPL", "shares": 1, "cost_basis": 2.0}]),
+                            encoding="utf-8")
+            original = common.POSITIONS_PRIVATE_IN
+            try:
+                common.POSITIONS_PRIVATE_IN = path
+                positions, private = common.load_positions()
+            finally:
+                common.POSITIONS_PRIVATE_IN = original
+        self.assertTrue(private)
+        self.assertEqual(positions[0]["ticker"], "AAPL")
+
+    def test_missing_private_file_is_not_an_error(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            original = common.POSITIONS_PRIVATE_IN
+            try:
+                common.POSITIONS_PRIVATE_IN = Path(tmp) / "absent.json"
+                positions, private = common.load_positions()
+            finally:
+                common.POSITIONS_PRIVATE_IN = original
+        self.assertEqual(positions, [])
+        self.assertFalse(private)
+
+    def test_holdings_are_still_valued_correctly(self):
+        """Privacy must not cost the feature: the numbers still have to be right."""
+        companies = [{"ticker": "KO", "name": "Coca-Cola", "price": {"price": 60.0},
+                      "quality": {"score": 7}, "valuation": {"band": "fair"}}]
+        valued = build.value_positions(
+            [{"ticker": "ko", "shares": 100, "cost_basis": 50.0}], companies)
+        row = valued["rows"][0]
+        self.assertEqual(row["ticker"], "KO")
+        self.assertEqual(row["value"], 6000.0)       # 100 x 60
+        self.assertEqual(row["cost_total"], 5000.0)  # 100 x 50
+        self.assertEqual(row["gain"], 1000.0)
+        self.assertEqual(row["gain_pct"], 20.0)
+        self.assertEqual(valued["total_value"], 6000.0)
+        self.assertEqual(valued["total_gain_pct"], 20.0)
+
+    def test_zero_and_blank_rows_are_skipped(self):
+        valued = build.value_positions(
+            [{"ticker": "KO", "shares": 0, "cost_basis": 50.0},
+             {"ticker": "", "shares": 10, "cost_basis": 1.0},
+             {"shares": 5}], [])
+        self.assertEqual(valued["rows"], [])
+        self.assertIsNone(valued["total_gain_pct"])
 
 
 if __name__ == "__main__":
