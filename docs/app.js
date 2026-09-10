@@ -968,6 +968,8 @@ function applyTheme(theme) {
   catch (e) { /* private mode */ }
 }
 
+function global_ThesisGate() { return window.ThesisGate; }
+
 async function init() {
   let stored = null;
   try { stored = localStorage.getItem('bd-theme'); } catch (e) { /* private mode */ }
@@ -1012,6 +1014,10 @@ async function init() {
   renderLearn();
   renderGlossary();
 
+  // Thesis Gate keeps its own browser-local state and never reads this payload,
+  // which is what keeps prices out of a module the spec forbids them from.
+  if (global_ThesisGate()) global_ThesisGate().mount();
+
   document.getElementById('c-signals').textContent = (data.signals || []).length;
   document.getElementById('c-companies').textContent = data.companies.length;
   document.getElementById('disclaimer-text').textContent = data.disclaimer;
@@ -1024,6 +1030,13 @@ async function init() {
   switchTab(document.querySelector(`nav.tabs button[data-tab="${saved}"]`) ? saved : 'signals');
 
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && state.drawer) closeDrawer(); });
+
+  const tourButton = document.getElementById('tour-start');
+  if (tourButton && window.Tour) {
+    tourButton.onclick = () => window.Tour.start();
+    // Offer it once, unprompted, to somebody arriving for the first time.
+    if (!window.Tour.seen()) setTimeout(() => window.Tour.start(), 700);
+  }
 }
 
 init();

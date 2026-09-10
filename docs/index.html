@@ -7,7 +7,7 @@
 <meta name="description" content="A daily value-investing dashboard built from SEC filings: quality scores, owner earnings, intrinsic value and margin of safety.">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=b08fef56">
 </head>
 <body>
 <div class="wrap">
@@ -21,7 +21,10 @@
           <span>Rebuilt every 24 hours from SEC filings</span>
         </div>
       </div>
-      <button class="icon-btn" id="theme-toggle" title="Switch between light and dark">Dark mode</button>
+      <div class="masthead-actions">
+        <button class="icon-btn" id="tour-start" title="A two-minute guided tour">Take the tour</button>
+        <button class="icon-btn" id="theme-toggle" title="Switch between light and dark">Dark mode</button>
+      </div>
     </div>
   </header>
 
@@ -39,6 +42,7 @@
       <button data-tab="etfs"      role="tab" aria-selected="false">ETFs</button>
       <button data-tab="israel"    role="tab" aria-selected="false">Israel</button>
       <button data-tab="positions" role="tab" aria-selected="false">My positions</button>
+      <button data-tab="thesis"    role="tab" aria-selected="false">Thesis Gate</button>
       <button data-tab="learn"     role="tab" aria-selected="false">Learn</button>
     </nav>
 
@@ -50,6 +54,7 @@
       <section id="tab-etfs"      role="tabpanel" hidden></section>
       <section id="tab-israel"    role="tabpanel" hidden></section>
       <section id="tab-positions" role="tabpanel" hidden></section>
+      <section id="tab-thesis"    role="tabpanel" hidden></section>
       <section id="tab-learn"     role="tabpanel" hidden></section>
     </main>
 
@@ -72,6 +77,9 @@
 </div>
 
 <div id="drawer-root"></div>
-<script src="app.js"></script>
+<script src="thesis-gate-core.js?v=02b052e1"></script>
+<script src="thesis-gate-ui.js?v=7e37e3f8"></script>
+<script src="tour.js?v=5da8f6ab"></script>
+<script src="app.js?v=20a3c706"></script>
 </body>
 </html>

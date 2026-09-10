@@ -22,8 +22,12 @@ its assumptions so you can disagree with them.
 | **My positions** | Does my thesis still hold? Your holdings re-checked against the same criteria. |
 | **ETFs** | The simple alternative: low-cost index funds, US and Israeli, ranked by fee. |
 | **Israel** | Tel Aviv indices, the shekel, Israeli money-market and hedge funds. |
+| **Thesis Gate** | Your own ideas, interrogated through eight gated stages. Browser-local. |
 | **Learn** | One principle a day, with the letter it comes from. |
 | **Glossary** | Every term on the page, explained for someone new to investing. |
+
+A **guided tour** runs on a first visit and can be restarted from the button beside
+the title. It explains each panel and, more importantly, the order to read them in.
 
 Click any company row for the full scoring breakdown, a ten-year history, and a
 **discounted cash flow with sliders** — move the growth and discount assumptions
@@ -207,6 +211,58 @@ expose no single total, and the only figure that survives is a stale cover-page
 number from 2009. Rather than value a company off a share count a sixth of its
 real size, the pipeline rejects any count more than three years old and marks
 the valuation unavailable. Supplying the diluted count here fixes it.
+
+---
+
+## Thesis Gate
+
+Implements `README-thesis-gate.md`. Everything else on the dashboard analyses
+companies for you; this interrogates you instead.
+
+- **Gated, not weighted.** Eight stages in a fixed order with hard gates early,
+  so a weak thesis dies at the regulatory stage rather than being rationalised
+  at the portfolio stage. There is deliberately **no overall score**: a single
+  number is the shortcut the gating structure exists to prevent.
+- **Browser-local.** `ThesisStore` is backed by `localStorage`. Nothing you
+  write is committed to this public repository or sent anywhere.
+- **No prices.** The module never reads the dashboard payload, so it cannot show
+  a price, a return, or a performance figure — the spec forbids all three, and
+  the review screen depends on it: judging reasoning against outcome is the bias
+  the tool exists to counter.
+- **Nothing is deleted.** Killed theses are archived with a reason and stay in
+  the kill log. Every field change is journalled, which is how the review screen
+  can show you the thesis as *originally written*.
+
+Three files: `docs/thesis-gate-core.js` (model, gating, store — no DOM, fully
+testable), `docs/thesis-gate-ui.js` (views), and `docs/thesis-gate-tests.html`.
+
+### Running the Thesis Gate tests
+
+There is no Node on the machine this was built on, so the JavaScript tests run
+in a browser page rather than a runner:
+
+```bash
+python -m http.server 8731 --directory docs
+```
+
+Then open <http://localhost:8731/thesis-gate-tests.html>. It reports pass/fail
+counts on the page and sets `window.__TESTS__` for automation. 26 tests, covering
+every acceptance criterion in section 9 of the spec.
+
+---
+
+## Cache busting
+
+`scripts/assets.py` stamps a content hash onto every script and stylesheet
+reference in `index.html` on each build:
+
+```html
+<script src="app.js?v=9f3c1a2b">
+```
+
+Without it a returning visitor could run yesterday's JavaScript against today's
+data until they happened to force a reload — which is exactly what happened
+during development, and why earlier changes appeared to need a hard refresh.
 
 ---
 

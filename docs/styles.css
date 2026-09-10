@@ -479,3 +479,115 @@ td.num, th.num { text-align: right; }
 .fund-what { color: var(--muted); font-size: 12.5px; max-width: 34ch; }
 tr.etf-benchmark { background: var(--accent-sub); }
 tr.etf-benchmark .ticker { color: var(--accent); }
+
+/* ----------------------------------------------------- thesis gate + tour */
+
+.masthead-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.tg-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.tg-primary:hover { background: var(--accent-2); border-color: var(--accent-2); color: #fff; }
+.icon-btn[disabled] { opacity: .45; cursor: not-allowed; }
+
+.tg-cards { display: grid; gap: 12px; }
+.tg-badge {
+  background: var(--warn-bg); color: var(--ink-2); border-radius: var(--r-sm);
+  padding: 8px 11px; font-size: 12.5px; margin-top: 9px; line-height: 1.5;
+}
+
+/* The 0-8 rail. Colour carries the state, the number carries the position. */
+.tg-rail { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 8px; }
+.tg-step {
+  width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--rule-2);
+  background: var(--card); color: var(--ink-2); font: inherit; font-weight: 650;
+  cursor: pointer; transition: transform .12s;
+}
+.tg-step:hover { transform: translateY(-2px); }
+.tg-step.tg-green  { background: var(--pos-bg);  border-color: var(--pos);  color: var(--pos); }
+.tg-step.tg-red    { background: var(--neg-bg);  border-color: var(--neg);  color: var(--neg); }
+.tg-step.tg-amber  { background: var(--warn-bg); border-color: var(--warn); color: var(--warn); }
+.tg-step.tg-locked { opacity: .45; }
+.tg-step.tg-current { box-shadow: 0 0 0 3px var(--accent-sub); border-color: var(--accent); }
+.tg-rail-key { display: flex; gap: 15px; flex-wrap: wrap; font-size: 12px; color: var(--muted); margin-bottom: 18px; }
+.tg-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 5px; }
+.tg-dot.tg-green { background: var(--pos); } .tg-dot.tg-red { background: var(--neg); }
+.tg-dot.tg-amber { background: var(--warn); } .tg-dot.tg-grey { background: var(--rule-2); }
+
+.tg-field { margin-bottom: 17px; }
+.tg-field label { display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 6px; color: var(--ink); }
+.tg-field input[type=text], .tg-field input[type=number], .tg-field input[type=date],
+.tg-field textarea, .tg-field select {
+  width: 100%; padding: 9px 12px; font: inherit; font-size: 14px;
+  border: 1px solid var(--rule-2); border-radius: var(--r-sm);
+  background: var(--card); color: var(--ink);
+}
+.tg-field textarea { resize: vertical; }
+.tg-field input:focus, .tg-field textarea:focus, .tg-field select:focus {
+  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-sub);
+}
+.tg-hint { font-size: 12.5px; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+.tg-error { font-size: 12.5px; color: var(--neg); margin-top: 5px; }
+.tg-error:empty { display: none; }
+.tg-check { display: inline-flex; align-items: center; gap: 7px; font-weight: 400; font-size: 13.5px; }
+.tg-check input { width: auto; }
+.tg-multi { display: flex; flex-direction: column; gap: 7px; }
+.tg-list { display: flex; flex-direction: column; gap: 8px; }
+.tg-sourced { display: flex; gap: 9px; flex-wrap: wrap; align-items: center; }
+.tg-sourced > * { flex: 1 1 130px; width: auto !important; }
+.tg-bc {
+  display: flex; align-items: center; gap: 11px; padding: 9px 0;
+  border-bottom: 1px solid var(--rule); font-size: 13.5px;
+}
+.tg-bc span { flex: 1; }
+.tg-x { border: none; background: none; color: var(--muted); font-size: 19px; cursor: pointer; }
+.tg-x:hover { color: var(--neg); }
+
+.tg-block {
+  background: var(--neg-bg); border: 1px solid var(--neg); border-radius: var(--r-lg);
+  padding: 17px 20px; margin-top: 16px;
+}
+.tg-block-title { font-weight: 700; color: var(--neg); margin-bottom: 7px; }
+.tg-block p { margin: 0 0 9px; font-size: 14px; color: var(--ink-2); line-height: 1.6; }
+.tg-actions { display: flex; gap: 9px; flex-wrap: wrap; margin-top: 12px; }
+.tg-nav { display: flex; align-items: center; gap: 14px; margin-top: 20px; flex-wrap: wrap; }
+.tg-original {
+  background: var(--paper-2); border-left: 3px solid var(--accent);
+  border-radius: var(--r-sm); padding: 12px 15px; font-size: 15px;
+  line-height: 1.6; color: var(--ink); margin: 0 0 6px;
+}
+.tg-disclaimer {
+  margin-top: 26px; padding: 13px 16px; border: 1px dashed var(--rule-2);
+  border-radius: var(--r-sm); font-size: 12.5px; color: var(--muted); text-align: center;
+}
+
+/* ------------------------------------------------------------------ tour */
+
+.tour-root { position: fixed; inset: 0; z-index: 60; }
+.tour-backdrop { position: absolute; inset: 0; background: rgba(28, 27, 24, .55); }
+.tour-box {
+  position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%);
+  width: min(560px, calc(100vw - 32px)); background: var(--card);
+  border: 1px solid var(--rule-2); border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg); padding: 22px 24px;
+}
+.tour-count { font-size: 11px; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+.tour-box h3 { margin: 0 0 10px; font-size: 19px; font-weight: 650; color: var(--ink); }
+.tour-box p { margin: 0 0 10px; font-size: 14.5px; line-height: 1.65; color: var(--ink-2); }
+.tour-nav { display: flex; align-items: center; gap: 9px; margin-top: 16px; flex-wrap: wrap; }
+.tour-dots { display: flex; gap: 5px; }
+.tour-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--rule-2); display: block; }
+.tour-dots i.on { background: var(--accent); }
+
+/* The highlight has to sit above the backdrop to read as "this bit here". */
+.tour-lit {
+  position: relative; z-index: 61;
+  box-shadow: 0 0 0 4px var(--accent), 0 0 0 11px rgba(74, 111, 212, .28);
+  border-radius: var(--r-md);
+}
+
+@media (max-width: 620px) {
+  .tg-step { width: 34px; height: 34px; }
+  .tour-box { bottom: 12px; padding: 18px 17px; }
+  .masthead-actions { width: 100%; }
+  .masthead-actions .icon-btn { flex: 1; }
+}
+.tg-dot.tg-locked-dot { background: var(--rule-2); opacity: .45; }

@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Thesis Gate tests</title>
+<meta name="color-scheme" content="light">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .t-pass { color: var(--pos); }
+  .t-fail { color: var(--neg); font-weight: 700; }
+  #results { font-family: var(--mono); font-size: 13px; line-height: 1.75; }
+  #summary { font-size: 17px; font-weight: 650; margin: 16px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead"><div class="masthead-top"><div>
+    <h1>Thesis Gate tests</h1>
+    <div class="sub"><span>Every acceptance criterion in README-thesis-gate.md, section 9</span></div>
+  </div></div></header>
+  <div id="summary">Running&hellip;</div>
+  <div class="card"><div class="card-pad"><div id="results"></div></div></div>
+</div>
+
+<script src="thesis-gate-core.js"></script>
+<script>
+const C = window.ThesisGateCore;
+const results = [];
+let passed = 0, failed = 0;
+
+function test(name, fn) {
+  try { fn(); results.push({ name, ok: true }); passed++; }
+  catch (err) { results.push({ name, ok: false, err: err.message }); failed++; }
+}
+function assert(cond, msg) { if (!cond) throw new Error(msg || 'assertion failed'); }
+function eq(a, b, msg) {
+  if (JSON.stringify(a) !== JSON.stringify(b)) {
+    throw new Error((msg || 'not equal') + ': ' + JSON.stringify(a) + ' vs ' + JSON.stringify(b));
+  }
+}
+
+/* A thesis that passes everything, as a baseline the tests can break one
+   piece at a time. */
+function goodThesis() {
+  const t = C.newThesis();
+  t.subject = { name: 'Acme Robotics', ticker: 'ACME', oneLine: 'Warehouse robots become standard fit.' };
+  t.stages.origin = { source: 'own-observation', sourceDetail: 'Saw them in a depot',
+                      anomaly: 'Three competing depots all retrofitted the same rig within a month.' };
+  t.stages.wave = { trendStatement: 'Warehouses automate picking as labour costs rise',
+                    survivesProductFailure: 'pass', horizonYears: 10, wavePosition: 'early' };
+  t.stages.regulatory = { harmTest: 'pass', displacementTest: 'pass',
+                          changeVisibility: 'gradual-and-unnoticed', regulator: 'OSHA', pendingLegal: 'None' };
+  t.stages.operator = { companyStage: 'mature', capitalUse: ['growth-investment'],
+                        allocationFitsStage: 'pass', hedgedBothWays: true, acquisitionInDna: true,
+                        founderTrackRecord: '', builderOrFinancier: '', isOwnCustomer: false,
+                        evidenceOfCourseCorrection: '', commitmentLevel: '' };
+  t.stages.insiders = { holderMoves: [], debtSignal: 'oversubscribed',
+                        insiderBuying: 'buying-own-money', circularityCheck: 'pass' };
+  t.stages.informationEdge = { analystCoverage: 3, obscurityReason: ['unfashionable-sector'],
+    edgeStatement: 'Retrofit revenue is booked as service, so the installed base is invisible in product sales.' };
+  t.stages.numbers = {
+    marketCap: C.sourcedNumber(1000, 'audited-filing'),
+    currentRevenue: C.sourcedNumber(200, 'audited-filing'),
+    growthRate: C.sourcedNumber(30, 'third-party'),
+    projectedRevenue5y: C.sourcedNumber(800, 'own-estimate'),
+    impliedValuation5y: C.sourcedNumber(8000, 'own-estimate'),
+    cashPosition: C.sourcedNumber(300, 'audited-filing'),
+    runwayMonths: 40 };
+  t.stages.killAttempt = { failureReasons: ['Cheaper labour returns', 'Rivals copy the rig', 'Retrofit cycle stalls'],
+                           haloTest: 'Yes - the economics hold without the founder.',
+                           singlePointOfFailure: 'A safety recall', challengerName: 'Dana',
+                           challengerObjection: 'Integration costs are understated' };
+  t.stages.portfolio = { positionSizePct: 5, totalLossTolerable: 'pass', holdingPeriodYears: 7,
+                         sellDiscipline: 'Exit if a break condition is observed', riskProfileNote: 'Long horizon' };
+  t.breakConditions = [{ id: 'bc1', statement: 'Two consecutive quarters of falling retrofit installations',
+                         observed: false }];
+  t.highestStageCompleted = 8;
+  return t;
+}
+
+/* ---------------------------------------- acceptance criteria, section 9 */
+
+test('AC1a: failing the Stage 2 harm test blocks Stage 3', () => {
+  const t = goodThesis();
+  t.stages.regulatory.harmTest = 'fail';
+  const ev = C.evaluate(t);
+  assert(ev.stages[2].blocked, 'stage 2 should be blocked');
+  assert(!ev.stages[3].reachable, 'stage 3 must not be reachable');
+  assert(!C.canAdvance(t, 2).allowed, 'must not advance out of stage 2');
+});
+
+test('AC1b: Reframe creates a linked draft carrying the trend forward', () => {
+  const t = goodThesis();
+  t.stages.regulatory.harmTest = 'fail';
+  const draft = C.reframe(t);
+  eq(draft.derivedFrom, t.id, 'draft must link to the original');
+  eq(draft.stages.wave.trendStatement, t.stages.wave.trendStatement, 'trend carries forward');
+  eq(draft.subject.name, '', 'subject must be empty - the vehicle was the problem');
+  assert(draft.id !== t.id, 'must be a new record');
+});
+
+test('AC2: two failure reasons in Stage 7 cannot advance', () => {
+  const t = goodThesis();
+  t.stages.killAttempt.failureReasons = ['One', 'Two'];
+  const ev = C.evaluate(t);
+  assert(ev.stages[7].blocked, 'stage 7 blocked');
+  assert(!C.canAdvance(t, 7).allowed, 'cannot advance');
+  assert(!C.isStageComplete(t, 7), 'stage 7 incomplete');
+});
+
+test('AC3: "drops 25%" is rejected as a break condition', () => {
+  const r = C.validateBreakCondition('drops 25%');
+  assert(!r.valid, 'must be rejected');
+  assert(/price drop is not a break condition/i.test(r.message), 'must use the spec message');
+  assert(!C.validateBreakCondition('below $10').valid, '"below $10" rejected');
+  assert(!C.validateBreakCondition('Share price falls 30%').valid, 'explicit price rejected');
+});
+
+test('AC3b: a real business trigger containing a number is accepted', () => {
+  assert(C.validateBreakCondition('Founder leaves the company').valid, 'plain event');
+  assert(C.validateBreakCondition(
+    'Revenue falls below 100 million for two consecutive quarters').valid,
+    'business trigger with a figure must survive');
+});
+
+test('AC4: editing Stage 1 to fail drops to blocked and marks later stages stale', () => {
+  const t = goodThesis();
+  t.status = 'active';
+  C.applyChange(t, 'stages.wave.survivesProductFailure', 'fail');
+  C.reconcile(t, [t]);
+  eq(t.status, 'blocked', 'status drops');
+  assert(t.staleStages.indexOf(5) >= 0, 'later stages marked stale');
+  assert(t.stages.numbers.marketCap !== null, 'no data loss');
+  assert(t.stages.killAttempt.failureReasons.length === 3, 'later answers retained');
+});
+
+test('AC5: 60% guidance-sourced numbers raises the reliance warning', () => {
+  const t = goodThesis();
+  t.stages.numbers.marketCap = C.sourcedNumber(1000, 'company-guidance');
+  t.stages.numbers.currentRevenue = C.sourcedNumber(200, 'company-guidance');
+  t.stages.numbers.growthRate = C.sourcedNumber(30, 'company-guidance');
+  t.stages.numbers.projectedRevenue5y = C.sourcedNumber(800, 'company-guidance');
+  const reliance = C.guidanceReliance(t);
+  assert(reliance > 0.5, 'reliance above half, got ' + reliance);
+  const w = C.evaluate(t).warnings.filter(x => x.id === 'numbers.guidance');
+  eq(w.length, 1, 'warning present');
+  eq(w[0].level, 'badge', 'must be a persistent badge, visible on the card');
+});
+
+test('AC6: four active theses show the concentration warning', () => {
+  const all = [1, 2, 3, 4].map(() => { const t = goodThesis(); t.status = 'active'; return t; });
+  const w = C.portfolioWarnings(all[0], all).filter(x => x.id === 'portfolio.count');
+  eq(w.length, 1, 'concentration warning present');
+  const ten = [];
+  for (let i = 0; i < 10; i++) { const t = goodThesis(); t.status = 'active'; ten.push(t); }
+  eq(C.portfolioWarnings(ten[0], ten).filter(x => x.id === 'portfolio.count').length, 0,
+     'ten positions - no warning');
+});
+
+test('AC7: review reads the ORIGINAL one-line from the journal', () => {
+  const t = goodThesis();
+  C.applyChange(t, 'subject.oneLine', 'Rewritten after the price moved');
+  eq(C.originalValue(t, 'subject.oneLine'), 'Warehouse robots become standard fit.',
+     'must return the original wording');
+  eq(t.subject.oneLine, 'Rewritten after the price moved', 'current value still updated');
+});
+
+test('AC8: the core exposes no score, price or return', () => {
+  const ev = C.evaluate(goodThesis());
+  const keys = Object.keys(ev).join(' ').toLowerCase();
+  assert(keys.indexOf('score') < 0, 'no score in the evaluation');
+  assert(keys.indexOf('price') < 0, 'no price');
+  assert(keys.indexOf('return') < 0, 'no return');
+  assert(Object.keys(C).join(' ').toLowerCase().indexOf('score') < 0, 'no scoring in the API');
+});
+
+test('AC9: killing requires a reason and stays retrievable', async () => {
+  const store = C.createLocalStore('thesis-gate-test-' + Math.random());
+  const t = await store.create(goodThesis());
+  await store.archive(t.id, 'Regulatory risk turned out to be unmanageable');
+  const back = await store.get(t.id);
+  eq(back.status, 'killed', 'status killed');
+  eq(back.killedReason, 'Regulatory risk turned out to be unmanageable', 'reason kept');
+  assert((await store.list()).length === 1, 'never hard-deleted');
+});
+
+/* ------------------------------------------------- gating and validation */
+
+test('an unknown hard gate does not block but prevents active', () => {
+  const t = goodThesis();
+  t.stages.portfolio.totalLossTolerable = 'unknown';
+  const ev = C.evaluate(t);
+  eq(ev.failedGates.length, 0, 'unknown is not a failure');
+  eq(ev.unknownGates.length, 1, 'counted as unknown');
+  assert(!ev.canBeActive, 'cannot be active with an unknown gate');
+});
+
+test('a complete, clean thesis can be active', () => {
+  const ev = C.evaluate(goodThesis());
+  eq(ev.failedGates.length, 0, 'no failures');
+  eq(ev.unknownGates.length, 0, 'no unknowns');
+  assert(ev.allComplete, 'all stages complete');
+  assert(ev.canBeActive, 'eligible for active');
+});
+
+test('active requires at least one break condition', () => {
+  const t = goodThesis();
+  t.breakConditions = [];
+  assert(!C.evaluate(t).canBeActive, 'no break conditions, not active');
+});
+
+test('the trend statement may not name the company', () => {
+  const subject = { name: 'Acme Robotics', ticker: 'ACME' };
+  assert(!C.validateTrendStatement('Acme Robotics will win warehouses', subject).valid, 'name rejected');
+  assert(!C.validateTrendStatement('ACME is mispriced', subject).valid, 'ticker rejected');
+  assert(C.validateTrendStatement('Warehouses automate as labour costs rise', subject).valid, 'clean trend ok');
+});
+
+test('a generic edge claim is rejected', () => {
+  assert(!C.validateEdgeStatement('undervalued').valid, 'one word rejected');
+  assert(!C.validateEdgeStatement("it's cheap").valid, 'conclusion rejected');
+  assert(!C.validateEdgeStatement('x'.repeat(220)).valid, 'over 200 chars rejected');
+  assert(C.validateEdgeStatement(
+    'Retrofit revenue is booked as service, hiding the installed base.').valid, 'specific edge ok');
+});
+
+test('an idea from a public channel warns without blocking', () => {
+  const t = goodThesis();
+  t.stages.origin.source = 'social-trend';
+  const ev = C.evaluate(t);
+  eq(ev.failedGates.length, 0, 'not a block');
+  eq(ev.warnings.filter(w => w.id === 'origin.channel').length, 1, 'warning raised');
+});
+
+test('circular funding is a persistent badge, not a block', () => {
+  const t = goodThesis();
+  t.stages.insiders.circularityCheck = 'fail';
+  const ev = C.evaluate(t);
+  eq(ev.failedGates.length, 0, 'must not block');
+  const w = ev.warnings.filter(x => x.id === 'insiders.circularity');
+  eq(w.length, 1, 'badge raised');
+  eq(w[0].level, 'badge', 'persists on the card');
+});
+
+test('upside below 5x warns but does not block', () => {
+  const t = goodThesis();
+  t.stages.numbers.impliedValuation5y = C.sourcedNumber(3000, 'own-estimate');
+  eq(C.upsideMultiple(t), 3, '3x upside');
+  const ev = C.evaluate(t);
+  eq(ev.failedGates.length, 0, 'soft check only');
+  eq(ev.warnings.filter(w => w.id === 'numbers.upside').length, 1, 'warning raised');
+});
+
+test('a young company is gated on founder fields, not capital allocation', () => {
+  const t = goodThesis();
+  t.stages.operator = { companyStage: 'young', founderTrackRecord: 'Built and sold a rig maker',
+                        builderOrFinancier: 'builder', isOwnCustomer: true,
+                        evidenceOfCourseCorrection: 'Killed the consumer line publicly',
+                        commitmentLevel: 'all-in', capitalUse: [],
+                        allocationFitsStage: 'unknown', hedgedBothWays: false, acquisitionInDna: false };
+  assert(C.isStageComplete(t, 3), 'young path completes on founder evidence');
+  eq(C.evaluate(t).failedGates.length, 0, 'allocation gate does not apply to a young company');
+});
+
+test('short runway raises the dilution flag', () => {
+  const t = goodThesis();
+  t.stages.numbers.runwayMonths = 9;
+  eq(C.evaluate(t).warnings.filter(w => w.id === 'numbers.runway').length, 1, 'dilution flagged');
+});
+
+test('horizon shorter than the holding period is flagged', () => {
+  const t = goodThesis();
+  t.stages.wave.horizonYears = 3;
+  t.stages.portfolio.holdingPeriodYears = 7;
+  eq(C.evaluate(t).warnings.filter(w => w.id === 'wave.horizonMismatch').length, 1, 'mismatch flagged');
+});
+
+test('every field change is journalled with both values', () => {
+  const t = goodThesis();
+  const before = t.journal.length;
+  C.applyChange(t, 'stages.numbers.runwayMonths', 12, 'updated after the raise');
+  eq(t.journal.length, before + 1, 'one entry appended');
+  const e = t.journal[t.journal.length - 1];
+  eq(e.from, 40, 'old value kept');
+  eq(e.to, 12, 'new value kept');
+  eq(e.note, 'updated after the raise', 'note kept');
+});
+
+test('an unchanged value is not journalled', () => {
+  const t = goodThesis();
+  const before = t.journal.length;
+  C.applyChange(t, 'stages.numbers.runwayMonths', 40);
+  eq(t.journal.length, before, 'no entry for a no-op');
+});
+
+test('review falls due after 90 days and not before', () => {
+  const t = goodThesis();
+  t.status = 'active';
+  t.createdAt = new Date(Date.now() - 100 * 86400000).toISOString();
+  assert(C.reviewDue(t), 'due after 100 days');
+  t.createdAt = new Date(Date.now() - 10 * 86400000).toISOString();
+  assert(!C.reviewDue(t), 'not due after 10 days');
+});
+
+test('a stage the user has not reached is not reachable, so cannot read as blocked', () => {
+  // Regression: an empty Stage 5 edge statement and an empty Stage 7 make those
+  // gates "fail", which painted them red on the rail before they were opened.
+  const t = C.newThesis();
+  t.stages.origin = { source: 'own-observation', sourceDetail: '',
+                      anomaly: 'Something specific and clearly odd here.' };
+  const ev = C.evaluate(t);
+  assert(ev.stages[0].reachable, 'stage 0 always reachable');
+  assert(!ev.stages[5].reachable, 'stage 5 not reachable from a fresh thesis');
+  assert(!ev.stages[7].reachable, 'stage 7 not reachable from a fresh thesis');
+});
+
+/* ------------------------------------------------------------- report */
+
+(async function run() {
+  // Await the async test bodies before reporting.
+  await new Promise(r => setTimeout(r, 60));
+  const el = document.getElementById('results');
+  el.innerHTML = results.map(r =>
+    `<div class="${r.ok ? 't-pass' : 't-fail'}">${r.ok ? 'PASS' : 'FAIL'} &nbsp;${r.name}` +
+    (r.ok ? '' : `<br>&nbsp;&nbsp;&nbsp;&nbsp;${r.err}`) + '</div>').join('');
+  const ok = failed === 0;
+  document.getElementById('summary').innerHTML =
+    `<span class="${ok ? 't-pass' : 't-fail'}">${passed} passed, ${failed} failed</span>`;
+  window.__TESTS__ = { passed, failed, ok, failures: results.filter(r => !r.ok) };
+})();
+</script>
+</body>
+</html>

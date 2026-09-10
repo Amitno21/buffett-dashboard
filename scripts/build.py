@@ -16,6 +16,7 @@ import sys
 import traceback
 from datetime import datetime, timezone
 
+import assets
 import edgar
 import etfs
 import glossary
@@ -23,7 +24,7 @@ import israel
 import market
 import metrics
 import summary
-from common import (CACHE, DATA, FUND, FetchError, fetch, load_config,
+from common import (CACHE, DATA, DOCS, FUND, FetchError, fetch, load_config,
                     read_json, safe_div, write_json)
 from principles import principle_of_the_day
 
@@ -529,6 +530,15 @@ def build(limit: int | None = None, force: bool = False, skip_screen: bool = Fal
 
     # The brief reads the finished payload, so it is written last.
     payload["brief"] = summary.daily_brief(payload)
+
+    # Stamp the scripts and stylesheet with their content hashes so a returning
+    # visitor cannot run yesterday's JavaScript against today's data.
+    try:
+        stamped = assets.stamp(DOCS / "index.html")
+        if stamped:
+            log("cache-busted " + ", ".join(f"{k}@{v}" for k, v in sorted(stamped.items())))
+    except OSError as exc:
+        log(f"could not stamp assets: {exc}")
 
     if previous:
         write_json(DATA / "previous.json", previous)
