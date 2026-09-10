@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-10T04:17:22+00:00",
- "build_seconds": 31.7,
+ "generated_at": "2026-09-10T04:18:27+00:00",
+ "build_seconds": 31.2,
  "settings": {
   "margin_of_safety_pct": 30,
   "discount_rate_pct": 10.0,
@@ -11163,14 +11163,6 @@
    "url": ""
   },
   {
-   "severity": "medium",
-   "ticker": "DAL",
-   "kind": "valuation",
-   "headline": "DAL moved from 'Above estimated value' to 'Near fair value'",
-   "detail": "Estimated value $72.32, margin-of-safety price $50.62.",
-   "url": ""
-  },
-  {
    "severity": "low",
    "ticker": "AXP",
    "kind": "technical",
@@ -11194,7 +11186,7 @@
   "total_gain": 0.0,
   "total_gain_pct": null
  },
- "brief": "The US stock market as a whole is worth about 218% of everything the country produces in a year, which is high by any historical standard and is the measure Buffett has pointed to as a warning sign. Government bonds pay 4.80%, which is the return a share has to beat before it is worth taking on the extra risk. Since the last check: LEN is at a 52-week low. There are 3 other items below. Of the 23 companies tracked, 4 currently sit below the margin of safety set in the settings: NUE, CB, LEN, DVA. That is this dashboard's arithmetic on its default assumptions rather than a recommendation, so open each one and judge whether the assumptions behind it look right to you.",
+ "brief": "The US stock market as a whole is worth about 218% of everything the country produces in a year, which is high by any historical standard and is the measure Buffett has pointed to as a warning sign. Government bonds pay 4.80%, which is the return a share has to beat before it is worth taking on the extra risk. Since the last check: LEN is at a 52-week low. There are 2 other items below. Of the 23 companies tracked, 4 currently sit below the margin of safety set in the settings: NUE, CB, LEN, DVA. That is this dashboard's arithmetic on its default assumptions rather than a recommendation, so open each one and judge whether the assumptions behind it look right to you.",
  "israel": {
   "money_market": {
    "available": true,
@@ -11568,7 +11560,7 @@
    }
   ],
   "shekel": {
-   "rate": 3.0224,
+   "rate": 3.0223,
    "change_pct": 0.37,
    "high_52w": 3.3565,
    "low_52w": 2.8005,
@@ -12220,6 +12212,6 @@
   "index": 9,
   "total": 20
  },
- "previous_generated_at": "2026-09-08T04:11:23+00:00",
+ "previous_generated_at": "2026-09-10T04:17:22+00:00",
  "disclaimer": "This dashboard reports public filings and applies published screening criteria. It is not investment advice, does not know your circumstances, and makes no recommendation to buy or sell anything. Every estimate here depends on assumptions that are shown alongside it and that you should judge for yourself."
 }
