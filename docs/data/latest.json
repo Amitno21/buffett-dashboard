@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-10T12:11:35+00:00",
- "build_seconds": 40.4,
+ "generated_at": "2026-09-11T12:10:07+00:00",
+ "build_seconds": 36.8,
  "settings": {
   "margin_of_safety_pct": 30,
   "discount_rate_pct": 10.0,
@@ -15,9 +15,9 @@
    "index": "Yahoo Finance ^GSPC, ^VIX"
   },
   "treasury_10y": {
-   "date": "2026-09-08",
-   "value": 4.8,
-   "prior_year": 4.17
+   "date": "2026-09-09",
+   "value": 4.83,
+   "prior_year": 4.1
   },
   "buffett_indicator": {
    "value": 218.1,
@@ -26,16 +26,16 @@
    "gdp_usd_bn": 31865.7
   },
   "sp500": {
-   "price": 7636.36,
-   "change_pct": -0.48,
-   "from_high_pct": -2.09,
+   "price": 7591.7,
+   "change_pct": -0.58,
+   "from_high_pct": -2.66,
    "high_52w": 7798.9902,
    "low_52w": 6343.7202
   },
   "vix": {
-   "price": 16.85,
-   "change_pct": 2.37,
-   "from_high_pct": -45.73,
+   "price": 17.08,
+   "change_pct": -4.26,
+   "from_high_pct": -44.99,
    "high_52w": 31.05,
    "low_52w": 13.47
   }
@@ -51,18 +51,18 @@
    "price": {
     "symbol": "COST",
     "currency": "USD",
-    "price": 902.6,
-    "previous_close": 910.18,
-    "change_pct": -0.83,
+    "price": 902.38,
+    "previous_close": 902.6,
+    "change_pct": -0.02,
     "high_52w": 1094.3199,
     "low_52w": 850.0,
-    "from_high_pct": -17.52,
-    "from_low_pct": 6.19,
-    "sma50": 941.8448,
-    "sma200": 960.3979,
-    "rsi14": 32.08,
-    "atr_pct": 1.2,
-    "as_of": "2026-09-09",
+    "from_high_pct": -17.54,
+    "from_low_pct": 6.16,
+    "sma50": 941.183,
+    "sma200": 960.4434,
+    "rsi14": 37.89,
+    "atr_pct": 1.02,
+    "as_of": "2026-09-10",
     "first_close": 151.69,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -251,8 +251,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 19.46,
-      "note": "Each $1 retained since 2016-09-12 created $19.46 of market value",
+      "value": 19.45,
+      "note": "Each $1 retained since 2016-09-12 created $19.45 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -306,7 +306,7 @@
     "discount_to_value_pct": -120.8,
     "band": "Above estimated value",
     "owner_earnings_yield_pct": 1.59,
-    "market_cap": 401479187800.0
+    "market_cap": 401381331140.0
    },
    "series": {
     "owner_earnings": {
@@ -501,7 +501,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000035/xslF345X05/form4.xml"
     }
    ],
-   "summary": "Costco Wholesale Corp scores 98.3 out of 100, which makes it an exceptional business by these tests. It earns about 25% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $408.77 each, against a market price of $902.60. That is roughly 121% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "Costco Wholesale Corp scores 98.3 out of 100, which makes it an exceptional business by these tests. It earns about 25% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $408.77 each, against a market price of $902.38. That is roughly 121% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Exceptional business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=909832&type=10-K&dateb=&owner=include&count=10"
   },
@@ -515,18 +515,18 @@
    "price": {
     "symbol": "MSFT",
     "currency": "USD",
-    "price": 491.65,
-    "previous_close": 493.95,
-    "change_pct": -0.47,
+    "price": 492.44,
+    "previous_close": 491.65,
+    "change_pct": 0.16,
     "high_52w": 542.07,
     "low_52w": 352.83,
-    "from_high_pct": -9.3,
-    "from_low_pct": 39.34,
-    "sma50": 449.0534,
-    "sma200": 431.07,
-    "rsi14": 54.37,
-    "atr_pct": 1.22,
-    "as_of": "2026-09-09",
+    "from_high_pct": -9.16,
+    "from_low_pct": 39.57,
+    "sma50": 451.4418,
+    "sma200": 431.14,
+    "rsi14": 56.91,
+    "atr_pct": 1.18,
+    "as_of": "2026-09-10",
     "first_close": 57.05,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -715,8 +715,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 13.63,
-      "note": "Each $1 retained since 2016-09-12 created $13.63 of market value",
+      "value": 13.66,
+      "note": "Each $1 retained since 2016-09-12 created $13.66 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -742,7 +742,7 @@
       "terminal_share_of_value": 0.564,
       "growth_1_5_pct": 10.0,
       "growth_6_10_pct": 8.0,
-      "upside_pct": -46.9
+      "upside_pct": -47.0
      },
      "base": {
       "per_share": 365.21,
@@ -752,7 +752,7 @@
       "terminal_share_of_value": 0.605,
       "growth_1_5_pct": 15.0,
       "growth_6_10_pct": 12.0,
-      "upside_pct": -25.7
+      "upside_pct": -25.8
      },
      "bull": {
       "per_share": 473.38,
@@ -762,15 +762,15 @@
       "terminal_share_of_value": 0.632,
       "growth_1_5_pct": 19.0,
       "growth_6_10_pct": 15.0,
-      "upside_pct": -3.7
+      "upside_pct": -3.9
      }
     },
     "base_value": 365.21,
     "buy_below": 255.65,
-    "discount_to_value_pct": -34.6,
+    "discount_to_value_pct": -34.8,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 2.41,
-    "market_cap": 3664267450000.0
+    "owner_earnings_yield_pct": 2.4,
+    "market_cap": 3670155320000.0
    },
    "series": {
     "owner_earnings": {
@@ -902,6 +902,14 @@
    "filings": [
     {
      "form": "4",
+     "filed": "2026-09-10",
+     "report_date": "2026-09-09",
+     "accession": "0000789019-26-000188",
+     "document": "xslF345X06/form4.xml",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000188/xslF345X06/form4.xml"
+    },
+    {
+     "form": "4",
      "filed": "2026-09-08",
      "report_date": "2026-09-05",
      "accession": "0000789019-26-000186",
@@ -955,17 +963,9 @@
      "accession": "0000789019-26-000180",
      "document": "xslF345X06/form4.xml",
      "url": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000180/xslF345X06/form4.xml"
-    },
-    {
-     "form": "4",
-     "filed": "2026-09-08",
-     "report_date": "2026-09-05",
-     "accession": "0000789019-26-000179",
-     "document": "xslF345X06/form4.xml",
-     "url": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000179/xslF345X06/form4.xml"
     }
    ],
-   "summary": "Microsoft Corp scores 96.2 out of 100, which makes it an exceptional business by these tests. It earns about 33% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $365.21 each, against a market price of $491.65. That is roughly 35% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "Microsoft Corp scores 96.2 out of 100, which makes it an exceptional business by these tests. It earns about 33% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $365.21 each, against a market price of $492.44. That is roughly 35% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Exceptional business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=789019&type=10-K&dateb=&owner=include&count=10"
   },
@@ -979,18 +979,18 @@
    "price": {
     "symbol": "GOOGL",
     "currency": "USD",
-    "price": 330.65,
-    "previous_close": 338.36,
-    "change_pct": -2.28,
+    "price": 332.6,
+    "previous_close": 330.65,
+    "change_pct": 0.59,
     "high_52w": 402.62,
     "low_52w": 236.57,
-    "from_high_pct": -17.88,
-    "from_low_pct": 39.77,
-    "sma50": 348.1288,
-    "sma200": 336.4006,
-    "rsi14": 37.36,
-    "atr_pct": 1.2,
-    "as_of": "2026-09-09",
+    "from_high_pct": -17.39,
+    "from_low_pct": 40.59,
+    "sma50": 347.6334,
+    "sma200": 336.6164,
+    "rsi14": 42.46,
+    "atr_pct": 1.15,
+    "as_of": "2026-09-10",
     "first_close": 39.941,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -1179,8 +1179,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 15.14,
-      "note": "Each $1 retained since 2016-09-12 created $15.14 of market value",
+      "value": 15.24,
+      "note": "Each $1 retained since 2016-09-12 created $15.24 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -1206,7 +1206,7 @@
       "terminal_share_of_value": 0.567,
       "growth_1_5_pct": 10.0,
       "growth_6_10_pct": 8.0,
-      "upside_pct": -58.6
+      "upside_pct": -58.9
      },
      "base": {
       "per_share": 191.4,
@@ -1216,7 +1216,7 @@
       "terminal_share_of_value": 0.607,
       "growth_1_5_pct": 15.0,
       "growth_6_10_pct": 12.0,
-      "upside_pct": -42.1
+      "upside_pct": -42.5
      },
      "bull": {
       "per_share": 248.27,
@@ -1226,15 +1226,15 @@
       "terminal_share_of_value": 0.633,
       "growth_1_5_pct": 19.0,
       "growth_6_10_pct": 15.0,
-      "upside_pct": -24.9
+      "upside_pct": -25.4
      }
     },
     "base_value": 191.4,
     "buy_below": 133.98,
-    "discount_to_value_pct": -72.8,
+    "discount_to_value_pct": -73.8,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 1.88,
-    "market_cap": 4043849500000.0
+    "owner_earnings_yield_pct": 1.87,
+    "market_cap": 4067698000000.0
    },
    "series": {
     "owner_earnings": {
@@ -1429,7 +1429,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526371785/xslF345X06/ownership.xml"
     }
    ],
-   "summary": "Alphabet Inc. scores 88.8 out of 100, which makes it an exceptional business by these tests. It earns about 21% a year on the money shareholders have left in it and its long-term debt comes to only about 0.3 years of earnings. On the dashboard's default assumptions its shares work out at around $191.40 each, against a market price of $330.65. That is roughly 73% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "Alphabet Inc. scores 88.8 out of 100, which makes it an exceptional business by these tests. It earns about 21% a year on the money shareholders have left in it and its long-term debt comes to only about 0.3 years of earnings. On the dashboard's default assumptions its shares work out at around $191.40 each, against a market price of $332.60. That is roughly 74% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Exceptional business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1652044&type=10-K&dateb=&owner=include&count=10"
   },
@@ -1443,18 +1443,18 @@
    "price": {
     "symbol": "MCO",
     "currency": "USD",
-    "price": 474.57,
-    "previous_close": 481.25,
-    "change_pct": -1.39,
+    "price": 467.36,
+    "previous_close": 474.57,
+    "change_pct": -1.52,
     "high_52w": 539.61,
     "low_52w": 412.23,
-    "from_high_pct": -12.05,
-    "from_low_pct": 15.12,
-    "sma50": 490.294,
-    "sma200": 473.1262,
-    "rsi14": 38.54,
-    "atr_pct": 1.47,
-    "as_of": "2026-09-09",
+    "from_high_pct": -13.39,
+    "from_low_pct": 13.37,
+    "sma50": 490.5828,
+    "sma200": 473.0904,
+    "rsi14": 34.82,
+    "atr_pct": 1.58,
+    "as_of": "2026-09-10",
     "first_close": 108.61,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -1643,8 +1643,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 5.91,
-      "note": "Each $1 retained since 2016-09-12 created $5.91 of market value",
+      "value": 5.79,
+      "note": "Each $1 retained since 2016-09-12 created $5.79 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -1670,7 +1670,7 @@
       "terminal_share_of_value": 0.59,
       "growth_1_5_pct": 5.5,
       "growth_6_10_pct": 3.5,
-      "upside_pct": -64.8
+      "upside_pct": -64.3
      },
      "base": {
       "per_share": 243.01,
@@ -1680,7 +1680,7 @@
       "terminal_share_of_value": 0.617,
       "growth_1_5_pct": 10.5,
       "growth_6_10_pct": 7.5,
-      "upside_pct": -48.8
+      "upside_pct": -48.0
      },
      "bull": {
       "per_share": 322.71,
@@ -1690,15 +1690,15 @@
       "terminal_share_of_value": 0.637,
       "growth_1_5_pct": 14.5,
       "growth_6_10_pct": 10.5,
-      "upside_pct": -32.0
+      "upside_pct": -31.0
      }
     },
     "base_value": 243.01,
     "buy_below": 170.11,
-    "discount_to_value_pct": -95.3,
+    "discount_to_value_pct": -92.3,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 2.54,
-    "market_cap": 85375143000.0
+    "owner_earnings_yield_pct": 2.58,
+    "market_cap": 84078064000.0
    },
    "series": {
     "owner_earnings": {
@@ -1890,7 +1890,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026060093/xslF345X06/wk-form4_1788379796.xml"
     }
    ],
-   "summary": "Moodys Corp scores 84.3 out of 100, which makes it an exceptional business by these tests. It earns about 40% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. On the dashboard's default assumptions its shares work out at around $243.01 each, against a market price of $474.57. That is roughly 95% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "Moodys Corp scores 84.3 out of 100, which makes it an exceptional business by these tests. It earns about 40% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. On the dashboard's default assumptions its shares work out at around $243.01 each, against a market price of $467.36. That is roughly 92% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Exceptional business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1059556&type=10-K&dateb=&owner=include&count=10"
   },
@@ -1904,18 +1904,18 @@
    "price": {
     "symbol": "V",
     "currency": "USD",
-    "price": 367.39,
-    "previous_close": 368.64,
-    "change_pct": -0.34,
+    "price": 367.21,
+    "previous_close": 367.39,
+    "change_pct": -0.05,
     "high_52w": 384.14,
     "low_52w": 295.52,
-    "from_high_pct": -4.36,
-    "from_low_pct": 24.32,
-    "sma50": 364.3558,
-    "sma200": 334.5239,
-    "rsi14": 51.8,
+    "from_high_pct": -4.41,
+    "from_low_pct": 24.26,
+    "sma50": 364.8382,
+    "sma200": 334.7411,
+    "rsi14": 51.44,
     "atr_pct": 1.0,
-    "as_of": "2026-09-09",
+    "as_of": "2026-09-10",
     "first_close": 82.97,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -2104,8 +2104,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 128.47,
-      "note": "Each $1 retained since 2016-09-12 created $128.47 of market value",
+      "value": 128.39,
+      "note": "Each $1 retained since 2016-09-12 created $128.39 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -2141,7 +2141,7 @@
       "terminal_share_of_value": 0.581,
       "growth_1_5_pct": 12.1,
       "growth_6_10_pct": 9.1,
-      "upside_pct": -40.3
+      "upside_pct": -40.2
      },
      "bull": {
       "per_share": 285.18,
@@ -2151,7 +2151,7 @@
       "terminal_share_of_value": 0.61,
       "growth_1_5_pct": 16.1,
       "growth_6_10_pct": 12.1,
-      "upside_pct": -22.4
+      "upside_pct": -22.3
      }
     },
     "base_value": 219.42,
@@ -2159,7 +2159,7 @@
     "discount_to_value_pct": -67.4,
     "band": "Above estimated value",
     "owner_earnings_yield_pct": 2.41,
-    "market_cap": 716410500000.0
+    "market_cap": 716059500000.0
    },
    "series": {
     "owner_earnings": {
@@ -2265,6 +2265,14 @@
    "filings": [
     {
      "form": "4",
+     "filed": "2026-09-10",
+     "report_date": "2026-09-09",
+     "accession": "0001403161-26-000118",
+     "document": "xslF345X06/form4.xml",
+     "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000118/xslF345X06/form4.xml"
+    },
+    {
+     "form": "4",
      "filed": "2026-09-02",
      "report_date": "2026-09-01",
      "accession": "0001403161-26-000117",
@@ -2318,17 +2326,9 @@
      "accession": "0001403161-26-000107",
      "document": "xslF345X06/form4.xml",
      "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000107/xslF345X06/form4.xml"
-    },
-    {
-     "form": "10-Q",
-     "filed": "2026-07-29",
-     "report_date": "2026-06-30",
-     "accession": "0001403161-26-000104",
-     "document": "v-20260630.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm"
     }
    ],
-   "summary": "Visa Inc. scores 81.2 out of 100, which makes it an exceptional business by these tests. It earns about 34% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $219.42 each, against a market price of $367.39. That is roughly 67% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "Visa Inc. scores 81.2 out of 100, which makes it an exceptional business by these tests. It earns about 34% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $219.42 each, against a market price of $367.21. That is roughly 67% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Exceptional business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1403161&type=10-K&dateb=&owner=include&count=10"
   },
@@ -2342,18 +2342,18 @@
    "price": {
     "symbol": "MA",
     "currency": "USD",
-    "price": 567.5,
-    "previous_close": 570.89,
-    "change_pct": -0.59,
+    "price": 565.37,
+    "previous_close": 567.5,
+    "change_pct": -0.38,
     "high_52w": 599.86,
     "low_52w": 471.55,
-    "from_high_pct": -5.39,
-    "from_low_pct": 20.35,
-    "sma50": 560.308,
-    "sma200": 530.7527,
-    "rsi14": 46.1,
-    "atr_pct": 1.0,
-    "as_of": "2026-09-09",
+    "from_high_pct": -5.75,
+    "from_low_pct": 19.9,
+    "sma50": 561.3434,
+    "sma200": 530.9402,
+    "rsi14": 44.81,
+    "atr_pct": 1.03,
+    "as_of": "2026-09-10",
     "first_close": 100.11,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -2542,8 +2542,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 6.15,
-      "note": "Each $1 retained since 2016-09-12 created $6.15 of market value",
+      "value": 6.13,
+      "note": "Each $1 retained since 2016-09-12 created $6.13 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -2569,7 +2569,7 @@
       "terminal_share_of_value": 0.575,
       "growth_1_5_pct": 9.6,
       "growth_6_10_pct": 7.6,
-      "upside_pct": -52.7
+      "upside_pct": -52.6
      },
      "base": {
       "per_share": 377.81,
@@ -2579,7 +2579,7 @@
       "terminal_share_of_value": 0.612,
       "growth_1_5_pct": 14.6,
       "growth_6_10_pct": 11.6,
-      "upside_pct": -33.4
+      "upside_pct": -33.2
      },
      "bull": {
       "per_share": 491.9,
@@ -2589,15 +2589,15 @@
       "terminal_share_of_value": 0.638,
       "growth_1_5_pct": 18.6,
       "growth_6_10_pct": 14.6,
-      "upside_pct": -13.3
+      "upside_pct": -13.0
      }
     },
     "base_value": 377.81,
     "buy_below": 264.47,
-    "discount_to_value_pct": -50.2,
+    "discount_to_value_pct": -49.6,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 2.26,
-    "market_cap": 514155000000.0
+    "owner_earnings_yield_pct": 2.27,
+    "market_cap": 512225220000.0
    },
    "series": {
     "owner_earnings": {
@@ -2779,7 +2779,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000094/xslF345X06/wk-form4_1785961107.xml"
     }
    ],
-   "summary": "Mastercard Inc scores 80.9 out of 100, which makes it an exceptional business by these tests. It earns about 126% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $377.81 each, against a market price of $567.50. That is roughly 50% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "Mastercard Inc scores 80.9 out of 100, which makes it an exceptional business by these tests. It earns about 126% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $377.81 each, against a market price of $565.37. That is roughly 50% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Exceptional business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1141391&type=10-K&dateb=&owner=include&count=10"
   },
@@ -2793,18 +2793,18 @@
    "price": {
     "symbol": "JNJ",
     "currency": "USD",
-    "price": 267.08,
-    "previous_close": 269.12,
-    "change_pct": -0.76,
+    "price": 266.35,
+    "previous_close": 267.08,
+    "change_pct": -0.27,
     "high_52w": 278.43,
     "low_52w": 174.16,
-    "from_high_pct": -4.08,
-    "from_low_pct": 53.35,
-    "sma50": 262.229,
-    "sma200": 236.4917,
-    "rsi14": 43.35,
-    "atr_pct": 1.27,
-    "as_of": "2026-09-09",
+    "from_high_pct": -4.34,
+    "from_low_pct": 52.93,
+    "sma50": 262.4766,
+    "sma200": 236.8081,
+    "rsi14": 48.79,
+    "atr_pct": 1.13,
+    "as_of": "2026-09-10",
     "first_close": 119.16,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -2993,8 +2993,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 5.52,
-      "note": "Each $1 retained since 2016-09-12 created $5.52 of market value",
+      "value": 5.49,
+      "note": "Each $1 retained since 2016-09-12 created $5.49 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -3020,7 +3020,7 @@
       "terminal_share_of_value": 0.497,
       "growth_1_5_pct": 1.2,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -55.7
+      "upside_pct": -55.6
      },
      "base": {
       "per_share": 163.4,
@@ -3030,7 +3030,7 @@
       "terminal_share_of_value": 0.536,
       "growth_1_5_pct": 6.2,
       "growth_6_10_pct": 3.2,
-      "upside_pct": -38.8
+      "upside_pct": -38.7
      },
      "bull": {
       "per_share": 214.15,
@@ -3040,15 +3040,15 @@
       "terminal_share_of_value": 0.568,
       "growth_1_5_pct": 10.2,
       "growth_6_10_pct": 6.2,
-      "upside_pct": -19.8
+      "upside_pct": -19.6
      }
     },
     "base_value": 163.4,
     "buy_below": 114.38,
-    "discount_to_value_pct": -63.5,
+    "discount_to_value_pct": -63.0,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 3.95,
-    "market_cap": 648844152000.0
+    "owner_earnings_yield_pct": 3.96,
+    "market_cap": 647070690000.0
    },
    "series": {
     "owner_earnings": {
@@ -3154,6 +3154,30 @@
    "filings": [
     {
      "form": "4",
+     "filed": "2026-09-10",
+     "report_date": "2026-09-08",
+     "accession": "0000200406-26-000185",
+     "document": "xslF345X06/wk-form4_1789087875.xml",
+     "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000185/xslF345X06/wk-form4_1789087875.xml"
+    },
+    {
+     "form": "4",
+     "filed": "2026-09-10",
+     "report_date": "2026-09-08",
+     "accession": "0000200406-26-000184",
+     "document": "xslF345X06/wk-form4_1789087843.xml",
+     "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000184/xslF345X06/wk-form4_1789087843.xml"
+    },
+    {
+     "form": "4",
+     "filed": "2026-09-10",
+     "report_date": "2026-09-08",
+     "accession": "0000200406-26-000183",
+     "document": "xslF345X06/wk-form4_1789087809.xml",
+     "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000183/xslF345X06/wk-form4_1789087809.xml"
+    },
+    {
+     "form": "4",
      "filed": "2026-09-04",
      "report_date": "2026-09-02",
      "accession": "0000200406-26-000179",
@@ -3191,33 +3215,9 @@
      "accession": "0000200406-26-000169",
      "document": "xslF345X06/wk-form4_1786139073.xml",
      "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000169/xslF345X06/wk-form4_1786139073.xml"
-    },
-    {
-     "form": "8-K",
-     "filed": "2026-08-04",
-     "report_date": "2026-08-04",
-     "accession": "0000200406-26-000167",
-     "document": "jnj-20260804.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000167/jnj-20260804.htm"
-    },
-    {
-     "form": "8-K",
-     "filed": "2026-07-29",
-     "report_date": "2026-07-29",
-     "accession": "0000200406-26-000163",
-     "document": "jnj-20260729.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000163/jnj-20260729.htm"
-    },
-    {
-     "form": "8-K",
-     "filed": "2026-07-28",
-     "report_date": "2026-07-27",
-     "accession": "0000200406-26-000155",
-     "document": "jnj-20260727.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000155/jnj-20260727.htm"
     }
    ],
-   "summary": "Johnson & Johnson scores 79.8 out of 100, which makes it a strong business by these tests. It earns about 25% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. The main mark against it is that profit fell sharply in 3 of the last ten years. On the dashboard's default assumptions its shares work out at around $163.40 each, against a market price of $267.08. That is roughly 64% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "Johnson & Johnson scores 79.8 out of 100, which makes it a strong business by these tests. It earns about 25% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. The main mark against it is that profit fell sharply in 3 of the last ten years. On the dashboard's default assumptions its shares work out at around $163.40 each, against a market price of $266.35. That is roughly 63% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Strong business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=200406&type=10-K&dateb=&owner=include&count=10"
   },
@@ -3231,18 +3231,18 @@
    "price": {
     "symbol": "PG",
     "currency": "USD",
-    "price": 142.64,
-    "previous_close": 145.58,
-    "change_pct": -2.02,
+    "price": 142.97,
+    "previous_close": 142.64,
+    "change_pct": 0.23,
     "high_52w": 167.2,
     "low_52w": 138.04,
-    "from_high_pct": -14.69,
-    "from_low_pct": 3.33,
-    "sma50": 146.5352,
-    "sma200": 147.5418,
-    "rsi14": 45.17,
-    "atr_pct": 0.9,
-    "as_of": "2026-09-09",
+    "from_high_pct": -14.49,
+    "from_low_pct": 3.57,
+    "sma50": 146.4618,
+    "sma200": 147.5157,
+    "rsi14": 50.0,
+    "atr_pct": 0.85,
+    "as_of": "2026-09-10",
     "first_close": 88.25,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -3431,8 +3431,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 3.76,
-      "note": "Each $1 retained since 2016-09-12 created $3.76 of market value",
+      "value": 3.78,
+      "note": "Each $1 retained since 2016-09-12 created $3.78 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -3458,7 +3458,7 @@
       "terminal_share_of_value": 0.512,
       "growth_1_5_pct": 0.0,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -55.7
+      "upside_pct": -55.8
      },
      "base": {
       "per_share": 70.93,
@@ -3468,7 +3468,7 @@
       "terminal_share_of_value": 0.515,
       "growth_1_5_pct": 2.5,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -50.3
+      "upside_pct": -50.4
      },
      "bull": {
       "per_share": 92.18,
@@ -3478,15 +3478,15 @@
       "terminal_share_of_value": 0.543,
       "growth_1_5_pct": 6.5,
       "growth_6_10_pct": 2.5,
-      "upside_pct": -35.4
+      "upside_pct": -35.5
      }
     },
     "base_value": 70.93,
     "buy_below": 49.65,
-    "discount_to_value_pct": -101.1,
+    "discount_to_value_pct": -101.6,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 4.31,
-    "market_cap": 345545400000.0
+    "owner_earnings_yield_pct": 4.3,
+    "market_cap": 346344825000.0
    },
    "series": {
     "owner_earnings": {
@@ -3617,6 +3617,54 @@
    },
    "filings": [
     {
+     "form": "4",
+     "filed": "2026-09-10",
+     "report_date": "2026-09-08",
+     "accession": "0000080424-26-000166",
+     "document": "xslF345X06/form4.xml",
+     "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000166/xslF345X06/form4.xml"
+    },
+    {
+     "form": "4",
+     "filed": "2026-09-10",
+     "report_date": "2026-09-08",
+     "accession": "0000080424-26-000165",
+     "document": "xslF345X06/form4.xml",
+     "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000165/xslF345X06/form4.xml"
+    },
+    {
+     "form": "4",
+     "filed": "2026-09-10",
+     "report_date": "2026-09-08",
+     "accession": "0000080424-26-000164",
+     "document": "xslF345X06/form4.xml",
+     "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000164/xslF345X06/form4.xml"
+    },
+    {
+     "form": "4",
+     "filed": "2026-09-10",
+     "report_date": "2026-09-08",
+     "accession": "0000080424-26-000163",
+     "document": "xslF345X06/form4.xml",
+     "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000163/xslF345X06/form4.xml"
+    },
+    {
+     "form": "4",
+     "filed": "2026-09-10",
+     "report_date": "2026-09-08",
+     "accession": "0000080424-26-000162",
+     "document": "xslF345X06/form4.xml",
+     "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000162/xslF345X06/form4.xml"
+    },
+    {
+     "form": "4",
+     "filed": "2026-09-10",
+     "report_date": "2026-09-08",
+     "accession": "0000080424-26-000161",
+     "document": "xslF345X06/form4.xml",
+     "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000161/xslF345X06/form4.xml"
+    },
+    {
      "form": "4/A",
      "filed": "2026-08-27",
      "report_date": "2026-08-20",
@@ -3631,57 +3679,9 @@
      "accession": "0000080424-26-000159",
      "document": "xslF345X06/form4.xml",
      "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000159/xslF345X06/form4.xml"
-    },
-    {
-     "form": "4",
-     "filed": "2026-08-24",
-     "report_date": "2026-08-19",
-     "accession": "0000080424-26-000158",
-     "document": "xslF345X06/form4.xml",
-     "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000158/xslF345X06/form4.xml"
-    },
-    {
-     "form": "4",
-     "filed": "2026-08-24",
-     "report_date": "2026-08-20",
-     "accession": "0000080424-26-000157",
-     "document": "xslF345X06/form4.xml",
-     "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000157/xslF345X06/form4.xml"
-    },
-    {
-     "form": "4",
-     "filed": "2026-08-24",
-     "report_date": "2026-08-21",
-     "accession": "0000080424-26-000156",
-     "document": "xslF345X06/form4.xml",
-     "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000156/xslF345X06/form4.xml"
-    },
-    {
-     "form": "4",
-     "filed": "2026-08-24",
-     "report_date": "2026-08-20",
-     "accession": "0000080424-26-000155",
-     "document": "xslF345X06/form4.xml",
-     "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000155/xslF345X06/form4.xml"
-    },
-    {
-     "form": "4",
-     "filed": "2026-08-24",
-     "report_date": "2026-08-20",
-     "accession": "0000080424-26-000154",
-     "document": "xslF345X06/form4.xml",
-     "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000154/xslF345X06/form4.xml"
-    },
-    {
-     "form": "4",
-     "filed": "2026-08-24",
-     "report_date": "2026-08-20",
-     "accession": "0000080424-26-000153",
-     "document": "xslF345X06/form4.xml",
-     "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000153/xslF345X06/form4.xml"
     }
    ],
-   "summary": "PROCTER & GAMBLE Co scores 78.5 out of 100, which makes it a strong business by these tests. It earns about 26% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. The main mark against it is that the cash it throws off for owners has grown only about 2% a year. On the dashboard's default assumptions its shares work out at around $70.93 each, against a market price of $142.64. That is roughly 101% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "PROCTER & GAMBLE Co scores 78.5 out of 100, which makes it a strong business by these tests. It earns about 26% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. The main mark against it is that the cash it throws off for owners has grown only about 2% a year. On the dashboard's default assumptions its shares work out at around $70.93 each, against a market price of $142.97. That is roughly 102% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Strong business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=80424&type=10-K&dateb=&owner=include&count=10"
   },
@@ -3695,18 +3695,18 @@
    "price": {
     "symbol": "AAPL",
     "currency": "USD",
-    "price": 315.34,
-    "previous_close": 316.22,
-    "change_pct": -0.28,
+    "price": 326.57,
+    "previous_close": 315.34,
+    "change_pct": 3.56,
     "high_52w": 340.08,
     "low_52w": 226.79,
-    "from_high_pct": -7.27,
-    "from_low_pct": 39.04,
-    "sma50": 316.4722,
-    "sma200": 284.3478,
-    "rsi14": 48.38,
-    "atr_pct": 1.04,
-    "as_of": "2026-09-09",
+    "from_high_pct": -3.97,
+    "from_low_pct": 44.0,
+    "sma50": 317.2164,
+    "sma200": 284.6495,
+    "rsi14": 64.73,
+    "atr_pct": 1.13,
+    "as_of": "2026-09-10",
     "first_close": 26.36,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -3922,7 +3922,7 @@
       "terminal_share_of_value": 0.489,
       "growth_1_5_pct": 2.7,
       "growth_6_10_pct": 0.7,
-      "upside_pct": -73.7
+      "upside_pct": -74.6
      },
      "base": {
       "per_share": 116.09,
@@ -3932,7 +3932,7 @@
       "terminal_share_of_value": 0.538,
       "growth_1_5_pct": 7.7,
       "growth_6_10_pct": 4.7,
-      "upside_pct": -63.2
+      "upside_pct": -64.5
      },
      "bull": {
       "per_share": 151.12,
@@ -3942,15 +3942,15 @@
       "terminal_share_of_value": 0.571,
       "growth_1_5_pct": 11.7,
       "growth_6_10_pct": 7.7,
-      "upside_pct": -52.1
+      "upside_pct": -53.7
      }
     },
     "base_value": 116.09,
     "buy_below": 81.26,
-    "discount_to_value_pct": -171.6,
+    "discount_to_value_pct": -181.3,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 2.06,
-    "market_cap": 4731581151980.0
+    "owner_earnings_yield_pct": 1.99,
+    "market_cap": 4900083899290.0
    },
    "series": {
     "owner_earnings": {
@@ -4082,6 +4082,14 @@
    "filings": [
     {
      "form": "4",
+     "filed": "2026-09-10",
+     "report_date": "2026-09-08",
+     "accession": "0001140361-26-036226",
+     "document": "xslF345X06/form4.xml",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126036226/xslF345X06/form4.xml"
+    },
+    {
+     "form": "4",
      "filed": "2026-09-03",
      "report_date": "2026-09-01",
      "accession": "0001140361-26-035636",
@@ -4135,17 +4143,9 @@
      "accession": "0000320193-26-000020",
      "document": "aapl-20260627.htm",
      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
-    },
-    {
-     "form": "8-K",
-     "filed": "2026-07-30",
-     "report_date": "2026-07-30",
-     "accession": "0000320193-26-000018",
-     "document": "aapl-20260730.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm"
     }
    ],
-   "summary": "Apple Inc. scores 77.6 out of 100, which makes it a strong business by these tests. It earns about 92% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $116.09 each, against a market price of $315.34. That is roughly 172% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "Apple Inc. scores 77.6 out of 100, which makes it a strong business by these tests. It earns about 92% a year on the money shareholders have left in it and it has beaten a 15% return on shareholders' money in 11 of the last 11 years. On the dashboard's default assumptions its shares work out at around $116.09 each, against a market price of $326.57. That is roughly 181% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Strong business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=320193&type=10-K&dateb=&owner=include&count=10"
   },
@@ -4159,18 +4159,18 @@
    "price": {
     "symbol": "UNH",
     "currency": "USD",
-    "price": 393.06,
-    "previous_close": 400.84,
-    "change_pct": -1.94,
+    "price": 388.28,
+    "previous_close": 393.06,
+    "change_pct": -1.22,
     "high_52w": 436.35,
     "low_52w": 259.02,
-    "from_high_pct": -9.92,
-    "from_low_pct": 51.75,
-    "sma50": 410.6622,
-    "sma200": 352.3467,
-    "rsi14": 53.55,
-    "atr_pct": 1.14,
-    "as_of": "2026-09-09",
+    "from_high_pct": -11.02,
+    "from_low_pct": 49.9,
+    "sma50": 410.1152,
+    "sma200": 352.7304,
+    "rsi14": 52.69,
+    "atr_pct": 1.17,
+    "as_of": "2026-09-10",
     "first_close": 135.53,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -4359,8 +4359,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 4.01,
-      "note": "Each $1 retained since 2016-09-12 created $4.01 of market value",
+      "value": 3.94,
+      "note": "Each $1 retained since 2016-09-12 created $3.94 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -4386,7 +4386,7 @@
       "terminal_share_of_value": 0.601,
       "growth_1_5_pct": 3.0,
       "growth_6_10_pct": 1.0,
-      "upside_pct": -46.7
+      "upside_pct": -46.1
      },
      "base": {
       "per_share": 312.21,
@@ -4396,7 +4396,7 @@
       "terminal_share_of_value": 0.621,
       "growth_1_5_pct": 8.0,
       "growth_6_10_pct": 5.0,
-      "upside_pct": -20.6
+      "upside_pct": -19.6
      },
      "bull": {
       "per_share": 420.39,
@@ -4406,15 +4406,15 @@
       "terminal_share_of_value": 0.636,
       "growth_1_5_pct": 12.0,
       "growth_6_10_pct": 8.0,
-      "upside_pct": 7.0
+      "upside_pct": 8.3
      }
     },
     "base_value": 312.21,
     "buy_below": 218.55,
-    "discount_to_value_pct": -25.9,
+    "discount_to_value_pct": -24.4,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 5.01,
-    "market_cap": 358077660000.0
+    "owner_earnings_yield_pct": 5.07,
+    "market_cap": 353723080000.0
    },
    "series": {
     "owner_earnings": {
@@ -4609,7 +4609,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/731766/000073176626000189/xslF345X06/wk-form4_1783370801.xml"
     }
    ],
-   "summary": "Unitedhealth Group Inc scores 75.7 out of 100, which makes it a strong business by these tests. It earns about 20% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. The main mark against it is that it owes about 5.7 years of earnings in long-term debt. On the dashboard's default assumptions its shares work out at around $312.21 each, against a market price of $393.06. That is roughly 26% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "Unitedhealth Group Inc scores 75.7 out of 100, which makes it a strong business by these tests. It earns about 20% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. The main mark against it is that it owes about 5.7 years of earnings in long-term debt. On the dashboard's default assumptions its shares work out at around $312.21 each, against a market price of $388.28. That is roughly 24% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Strong business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=731766&type=10-K&dateb=&owner=include&count=10"
   },
@@ -4623,18 +4623,18 @@
    "price": {
     "symbol": "KO",
     "currency": "USD",
-    "price": 87.55,
-    "previous_close": 88.36,
-    "change_pct": -0.92,
+    "price": 87.83,
+    "previous_close": 87.55,
+    "change_pct": 0.32,
     "high_52w": 91.99,
     "low_52w": 65.67,
-    "from_high_pct": -4.83,
-    "from_low_pct": 33.32,
-    "sma50": 86.2784,
-    "sma200": 78.614,
-    "rsi14": 35.23,
-    "atr_pct": 0.77,
-    "as_of": "2026-09-09",
+    "from_high_pct": -4.52,
+    "from_low_pct": 33.74,
+    "sma50": 86.4096,
+    "sma200": 78.6971,
+    "rsi14": 36.11,
+    "atr_pct": 0.78,
+    "as_of": "2026-09-10",
     "first_close": 43.19,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -4823,8 +4823,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 12.45,
-      "note": "Each $1 retained since 2016-09-12 created $12.45 of market value",
+      "value": 12.53,
+      "note": "Each $1 retained since 2016-09-12 created $12.53 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -4860,7 +4860,7 @@
       "terminal_share_of_value": 0.624,
       "growth_1_5_pct": 6.0,
       "growth_6_10_pct": 3.0,
-      "upside_pct": -63.3
+      "upside_pct": -63.4
      },
      "bull": {
       "per_share": 43.83,
@@ -4870,15 +4870,15 @@
       "terminal_share_of_value": 0.636,
       "growth_1_5_pct": 10.0,
       "growth_6_10_pct": 6.0,
-      "upside_pct": -49.9
+      "upside_pct": -50.1
      }
     },
     "base_value": 32.14,
     "buy_below": 22.5,
-    "discount_to_value_pct": -172.4,
+    "discount_to_value_pct": -173.3,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 2.82,
-    "market_cap": 377603150000.0
+    "owner_earnings_yield_pct": 2.81,
+    "market_cap": 378810790000.0
    },
    "series": {
     "owner_earnings": {
@@ -5073,7 +5073,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/21344/000002134426000154/xslF345X06/form4.xml"
     }
    ],
-   "summary": "Coca Cola Co scores 75.5 out of 100, which makes it a strong business by these tests. It earns about 36% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. The main mark against it is that profit fell sharply in 3 of the last ten years. On the dashboard's default assumptions its shares work out at around $32.14 each, against a market price of $87.55. That is roughly 172% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "Coca Cola Co scores 75.5 out of 100, which makes it a strong business by these tests. It earns about 36% a year on the money shareholders have left in it and its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. The main mark against it is that profit fell sharply in 3 of the last ten years. On the dashboard's default assumptions its shares work out at around $32.14 each, against a market price of $87.83. That is roughly 173% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Strong business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=21344&type=10-K&dateb=&owner=include&count=10"
   },
@@ -5087,18 +5087,18 @@
    "price": {
     "symbol": "AXP",
     "currency": "USD",
-    "price": 321.8,
-    "previous_close": 326.1,
-    "change_pct": -1.32,
+    "price": 320.71,
+    "previous_close": 321.8,
+    "change_pct": -0.34,
     "high_52w": 384.89,
     "low_52w": 292.27,
-    "from_high_pct": -16.39,
-    "from_low_pct": 10.1,
-    "sma50": 340.7744,
-    "sma200": 336.9256,
-    "rsi14": 28.68,
-    "atr_pct": 0.94,
-    "as_of": "2026-09-09",
+    "from_high_pct": -16.67,
+    "from_low_pct": 9.73,
+    "sma50": 340.4236,
+    "sma200": 336.8102,
+    "rsi14": 34.99,
+    "atr_pct": 0.77,
+    "as_of": "2026-09-10",
     "first_close": 65.9,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -5287,8 +5287,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 11.26,
-      "note": "Each $1 retained since 2016-09-12 created $11.26 of market value",
+      "value": 11.21,
+      "note": "Each $1 retained since 2016-09-12 created $11.21 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -5314,7 +5314,7 @@
       "terminal_share_of_value": 0.513,
       "growth_1_5_pct": 2.2,
       "growth_6_10_pct": 0.2,
-      "upside_pct": -56.1
+      "upside_pct": -55.9
      },
      "base": {
       "per_share": 201.63,
@@ -5324,7 +5324,7 @@
       "terminal_share_of_value": 0.555,
       "growth_1_5_pct": 7.2,
       "growth_6_10_pct": 4.2,
-      "upside_pct": -37.3
+      "upside_pct": -37.1
      },
      "bull": {
       "per_share": 265.03,
@@ -5334,15 +5334,15 @@
       "terminal_share_of_value": 0.584,
       "growth_1_5_pct": 11.2,
       "growth_6_10_pct": 7.2,
-      "upside_pct": -17.6
+      "upside_pct": -17.4
      }
     },
     "base_value": 201.63,
     "buy_below": 141.14,
-    "discount_to_value_pct": -59.6,
+    "discount_to_value_pct": -59.1,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 3.78,
-    "market_cap": 223972800000.0
+    "owner_earnings_yield_pct": 3.79,
+    "market_cap": 223214160000.0
    },
    "series": {
     "owner_earnings": {
@@ -5498,7 +5498,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/4962/000000496226000318/axp-20260724.htm"
     }
    ],
-   "summary": "American Express Co scores 61.6 out of 100, which makes it a middling business by these tests. It earns about 28% a year on the money shareholders have left in it. Against that, it owes about 5.2 years of earnings in long-term debt. On the dashboard's default assumptions its shares work out at around $201.63 each, against a market price of $321.80. That is roughly 60% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "American Express Co scores 61.6 out of 100, which makes it a middling business by these tests. It earns about 28% a year on the money shareholders have left in it. Against that, it owes about 5.2 years of earnings in long-term debt. On the dashboard's default assumptions its shares work out at around $201.63 each, against a market price of $320.71. That is roughly 59% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Adequate business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=4962&type=10-K&dateb=&owner=include&count=10"
   },
@@ -5512,18 +5512,18 @@
    "price": {
     "symbol": "NUE",
     "currency": "USD",
-    "price": 257.91,
-    "previous_close": 256.4,
-    "change_pct": 0.59,
+    "price": 255.46,
+    "previous_close": 257.91,
+    "change_pct": -0.95,
     "high_52w": 274.74,
     "low_52w": 131.78,
-    "from_high_pct": -6.13,
-    "from_low_pct": 95.71,
-    "sma50": 249.482,
-    "sma200": 207.1019,
-    "rsi14": 59.72,
-    "atr_pct": 1.31,
-    "as_of": "2026-09-09",
+    "from_high_pct": -7.02,
+    "from_low_pct": 93.85,
+    "sma50": 250.1362,
+    "sma200": 207.6431,
+    "rsi14": 68.12,
+    "atr_pct": 1.16,
+    "as_of": "2026-09-10",
     "first_close": 47.71,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -5712,8 +5712,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 2.01,
-      "note": "Each $1 retained since 2016-09-12 created $2.01 of market value",
+      "value": 1.98,
+      "note": "Each $1 retained since 2016-09-12 created $1.98 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -5739,7 +5739,7 @@
       "terminal_share_of_value": 0.589,
       "growth_1_5_pct": 10.0,
       "growth_6_10_pct": 8.0,
-      "upside_pct": 60.8
+      "upside_pct": 62.4
      },
      "base": {
       "per_share": 587.03,
@@ -5749,7 +5749,7 @@
       "terminal_share_of_value": 0.623,
       "growth_1_5_pct": 15.0,
       "growth_6_10_pct": 12.0,
-      "upside_pct": 127.6
+      "upside_pct": 129.8
      },
      "bull": {
       "per_share": 766.22,
@@ -5759,15 +5759,15 @@
       "terminal_share_of_value": 0.647,
       "growth_1_5_pct": 19.0,
       "growth_6_10_pct": 15.0,
-      "upside_pct": 197.1
+      "upside_pct": 199.9
      }
     },
     "base_value": 587.03,
     "buy_below": 410.92,
-    "discount_to_value_pct": 56.1,
+    "discount_to_value_pct": 56.5,
     "band": "Below margin of safety",
-    "owner_earnings_yield_pct": 7.6,
-    "market_cap": 59577210000.0
+    "owner_earnings_yield_pct": 7.67,
+    "market_cap": 59011260000.0
    },
    "series": {
     "owner_earnings": {
@@ -5936,7 +5936,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/73309/000007330926000122/xslF345X06/form4.xml"
     }
    ],
-   "summary": "Nucor Corp scores 58.2 out of 100, which makes it a middling business by these tests. It earns about 18% a year on the money shareholders have left in it. Against that, its profit margin swings around a lot, which suggests less protection from competition than the headline figures imply. On the dashboard's default assumptions its shares work out at around $587.03 each, and they trade at $257.91, about 56% below that estimate. That is inside the margin of safety set in the settings, which asks for $410.92 or less.",
+   "summary": "Nucor Corp scores 58.2 out of 100, which makes it a middling business by these tests. It earns about 18% a year on the money shareholders have left in it. Against that, its profit margin swings around a lot, which suggests less protection from competition than the headline figures imply. On the dashboard's default assumptions its shares work out at around $587.03 each, and they trade at $255.46, about 56% below that estimate. That is inside the margin of safety set in the settings, which asks for $410.92 or less.",
    "headline": "Adequate business, trading below the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=73309&type=10-K&dateb=&owner=include&count=10"
   },
@@ -5950,18 +5950,18 @@
    "price": {
     "symbol": "KR",
     "currency": "USD",
-    "price": 56.44,
-    "previous_close": 57.2,
-    "change_pct": -1.33,
+    "price": 56.95,
+    "previous_close": 56.44,
+    "change_pct": 0.9,
     "high_52w": 75.6,
     "low_52w": 55.53,
-    "from_high_pct": -25.34,
-    "from_low_pct": 1.64,
-    "sma50": 57.6994,
-    "sma200": 63.9468,
-    "rsi14": 50.92,
-    "atr_pct": 1.17,
-    "as_of": "2026-09-09",
+    "from_high_pct": -24.67,
+    "from_low_pct": 2.56,
+    "sma50": 57.7278,
+    "sma200": 63.9021,
+    "rsi14": 53.24,
+    "atr_pct": 1.22,
+    "as_of": "2026-09-10",
     "first_close": 30.89,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -6088,7 +6088,7 @@
     ]
    },
    "quality": {
-    "score": 55.0,
+    "score": 55.2,
     "grade": "Adequate",
     "components": [
      {
@@ -6148,10 +6148,10 @@
      {
       "key": "retained_earnings",
       "label": "One-dollar premise",
-      "points": 6.28,
+      "points": 6.5,
       "max": 10,
-      "value": 1.13,
-      "note": "Each $1 retained since 2016-09-12 created $1.13 of market value",
+      "value": 1.15,
+      "note": "Each $1 retained since 2016-09-12 created $1.15 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -6177,7 +6177,7 @@
       "terminal_share_of_value": 0.843,
       "growth_1_5_pct": 0.0,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -63.4
+      "upside_pct": -63.7
      },
      "base": {
       "per_share": 20.65,
@@ -6187,7 +6187,7 @@
       "terminal_share_of_value": 0.843,
       "growth_1_5_pct": 0.0,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -63.4
+      "upside_pct": -63.7
      },
      "bull": {
       "per_share": 27.58,
@@ -6197,15 +6197,15 @@
       "terminal_share_of_value": 0.768,
       "growth_1_5_pct": 4.0,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -51.1
+      "upside_pct": -51.6
      }
     },
     "base_value": 20.65,
     "buy_below": 14.45,
-    "discount_to_value_pct": -173.3,
+    "discount_to_value_pct": -175.8,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 5.85,
-    "market_cap": 36968200000.0
+    "owner_earnings_yield_pct": 5.8,
+    "market_cap": 37302250000.0
    },
    "series": {
     "owner_earnings": {
@@ -6329,6 +6329,14 @@
    "filings": [
     {
      "form": "8-K",
+     "filed": "2026-09-11",
+     "report_date": "2026-09-11",
+     "accession": "0001104659-26-106890",
+     "document": "tm2625060d1_8k.htm",
+     "url": "https://www.sec.gov/Archives/edgar/data/56873/000110465926106890/tm2625060d1_8k.htm"
+    },
+    {
+     "form": "8-K",
      "filed": "2026-09-02",
      "report_date": "2026-08-31",
      "accession": "0001104659-26-104763",
@@ -6382,17 +6390,9 @@
      "accession": "0001402419-26-000007",
      "document": "xslF345X06/ownership.xml",
      "url": "https://www.sec.gov/Archives/edgar/data/56873/000140241926000007/xslF345X06/ownership.xml"
-    },
-    {
-     "form": "4",
-     "filed": "2026-07-16",
-     "report_date": "2026-07-15",
-     "accession": "0001691983-26-000003",
-     "document": "xslF345X06/ownership.xml",
-     "url": "https://www.sec.gov/Archives/edgar/data/56873/000169198326000003/xslF345X06/ownership.xml"
     }
    ],
-   "summary": "Kroger Co scores 55 out of 100, which makes it a middling business by these tests. It earns about 26% a year on the money shareholders have left in it. Against that, it owes about 12.3 years of earnings in long-term debt. On the dashboard's default assumptions its shares work out at around $20.65 each, against a market price of $56.44. That is roughly 173% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "Kroger Co scores 55.2 out of 100, which makes it a middling business by these tests. It earns about 26% a year on the money shareholders have left in it. Against that, it owes about 12.3 years of earnings in long-term debt. On the dashboard's default assumptions its shares work out at around $20.65 each, against a market price of $56.95. That is roughly 176% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Adequate business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=56873&type=10-K&dateb=&owner=include&count=10"
   },
@@ -6406,18 +6406,18 @@
    "price": {
     "symbol": "CB",
     "currency": "USD",
-    "price": 337.62,
-    "previous_close": 336.64,
-    "change_pct": 0.29,
+    "price": 338.67,
+    "previous_close": 337.62,
+    "change_pct": 0.31,
     "high_52w": 363.5,
     "low_52w": 268.2,
-    "from_high_pct": -7.12,
-    "from_low_pct": 25.88,
-    "sma50": 347.7226,
-    "sma200": 326.7667,
-    "rsi14": 46.13,
-    "atr_pct": 0.9,
-    "as_of": "2026-09-09",
+    "from_high_pct": -6.83,
+    "from_low_pct": 26.28,
+    "sma50": 347.6812,
+    "sma200": 326.9784,
+    "rsi14": 44.97,
+    "atr_pct": 0.88,
+    "as_of": "2026-09-10",
     "first_close": 126.31,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -6606,8 +6606,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 1.68,
-      "note": "Each $1 retained since 2016-09-12 created $1.68 of market value",
+      "value": 1.69,
+      "note": "Each $1 retained since 2016-09-12 created $1.69 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -6635,7 +6635,7 @@
       "terminal_share_of_value": 0.591,
       "growth_1_5_pct": 8.8,
       "growth_6_10_pct": 6.8,
-      "upside_pct": 25.5
+      "upside_pct": 25.1
      },
      "base": {
       "per_share": 604.69,
@@ -6645,7 +6645,7 @@
       "terminal_share_of_value": 0.624,
       "growth_1_5_pct": 13.8,
       "growth_6_10_pct": 10.8,
-      "upside_pct": 79.1
+      "upside_pct": 78.5
      },
      "bull": {
       "per_share": 793.29,
@@ -6655,15 +6655,15 @@
       "terminal_share_of_value": 0.646,
       "growth_1_5_pct": 17.8,
       "growth_6_10_pct": 13.8,
-      "upside_pct": 135.0
+      "upside_pct": 134.2
      }
     },
     "base_value": 604.69,
     "buy_below": 423.28,
-    "discount_to_value_pct": 44.2,
+    "discount_to_value_pct": 44.0,
     "band": "Below margin of safety",
-    "owner_earnings_yield_pct": 6.66,
-    "market_cap": 135558933176.0
+    "owner_earnings_yield_pct": 6.64,
+    "market_cap": 135980522180.0
    },
    "series": {
     "owner_earnings": {
@@ -6819,7 +6819,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/896159/000110465926071034/tm2616757-2_424b2.htm"
     }
    ],
-   "summary": "Chubb Ltd scores 52.4 out of 100, which makes it a middling business by these tests. The cash it throws off for owners has grown about 14% a year. Against that, it beat a 15% return on shareholders' money in only 1 of the last 11 years. On the dashboard's default assumptions its shares work out at around $604.69 each, and they trade at $337.62, about 44% below that estimate. That is inside the margin of safety set in the settings, which asks for $423.28 or less. One caution: this looks like a financial company. Gross margin and maintenance capital expenditure do not apply to banks and insurers, so the margin-stability and owner-earnings components understate it. Judge it on return on equity, consistency and book value instead.",
+   "summary": "Chubb Ltd scores 52.4 out of 100, which makes it a middling business by these tests. The cash it throws off for owners has grown about 14% a year. Against that, it beat a 15% return on shareholders' money in only 1 of the last 11 years. On the dashboard's default assumptions its shares work out at around $604.69 each, and they trade at $338.67, about 44% below that estimate. That is inside the margin of safety set in the settings, which asks for $423.28 or less. One caution: this looks like a financial company. Gross margin and maintenance capital expenditure do not apply to banks and insurers, so the margin-stability and owner-earnings components understate it. Judge it on return on equity, consistency and book value instead.",
    "headline": "Adequate business, trading below the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=896159&type=10-K&dateb=&owner=include&count=10"
   },
@@ -6833,18 +6833,18 @@
    "price": {
     "symbol": "LEN",
     "currency": "USD",
-    "price": 80.76,
-    "previous_close": 80.37,
-    "change_pct": 0.49,
+    "price": 77.9,
+    "previous_close": 80.76,
+    "change_pct": -3.54,
     "high_52w": 140.09,
-    "low_52w": 80.37,
-    "from_high_pct": -42.35,
-    "from_low_pct": 0.49,
-    "sma50": 85.2514,
-    "sma200": 98.0123,
-    "rsi14": 32.46,
-    "atr_pct": 1.65,
-    "as_of": "2026-09-09",
+    "low_52w": 77.9,
+    "from_high_pct": -44.39,
+    "from_low_pct": 0.0,
+    "sma50": 84.9996,
+    "sma200": 97.8205,
+    "rsi14": 30.84,
+    "atr_pct": 1.8,
+    "as_of": "2026-09-10",
     "first_close": 43.6624,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -7031,10 +7031,10 @@
      {
       "key": "retained_earnings",
       "label": "One-dollar premise",
-      "points": 0.02,
+      "points": 0.0,
       "max": 10,
-      "value": 0.5,
-      "note": "Each $1 retained since 2016-09-12 created $0.50 of market value",
+      "value": 0.46,
+      "note": "Each $1 retained since 2016-09-12 created $0.46 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -7060,7 +7060,7 @@
       "terminal_share_of_value": 0.52,
       "growth_1_5_pct": 4.6,
       "growth_6_10_pct": 2.6,
-      "upside_pct": 174.8
+      "upside_pct": 184.9
      },
      "base": {
       "per_share": 312.7,
@@ -7070,7 +7070,7 @@
       "terminal_share_of_value": 0.564,
       "growth_1_5_pct": 9.6,
       "growth_6_10_pct": 6.6,
-      "upside_pct": 287.2
+      "upside_pct": 301.4
      },
      "bull": {
       "per_share": 407.93,
@@ -7080,15 +7080,15 @@
       "terminal_share_of_value": 0.594,
       "growth_1_5_pct": 13.6,
       "growth_6_10_pct": 9.6,
-      "upside_pct": 405.1
+      "upside_pct": 423.7
      }
     },
     "base_value": 312.7,
     "buy_below": 218.89,
-    "discount_to_value_pct": 74.2,
+    "discount_to_value_pct": 75.1,
     "band": "Below margin of safety",
-    "owner_earnings_yield_pct": 18.97,
-    "market_cap": 20815566960.0
+    "owner_earnings_yield_pct": 19.67,
+    "market_cap": 20078413400.0
    },
    "series": {
     "owner_earnings": {
@@ -7266,7 +7266,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/920760/000119312526303507/xslF345X06/ownership.xml"
     }
    ],
-   "summary": "Lennar Corp scores 45.8 out of 100, which makes it a weak business by these tests. Each $1 it held back has produced only about $0.50 of market value and it beat a 15% return on shareholders' money in only 2 of the last 11 years. It does score well on one measure: the cash it throws off for owners has grown about 10% a year. On the dashboard's default assumptions its shares work out at around $312.70 each, and they trade at $80.76, about 74% below that estimate. That is inside the margin of safety set in the settings, which asks for $218.89 or less.",
+   "summary": "Lennar Corp scores 45.8 out of 100, which makes it a weak business by these tests. Each $1 it held back has produced only about $0.46 of market value and it beat a 15% return on shareholders' money in only 2 of the last 11 years. It does score well on one measure: the cash it throws off for owners has grown about 10% a year. On the dashboard's default assumptions its shares work out at around $312.70 each, and they trade at $77.90, about 75% below that estimate. That is inside the margin of safety set in the settings, which asks for $218.89 or less.",
    "headline": "Weak business, trading below the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=920760&type=10-K&dateb=&owner=include&count=10"
   },
@@ -7280,18 +7280,18 @@
    "price": {
     "symbol": "CVX",
     "currency": "USD",
-    "price": 213.81,
-    "previous_close": 209.8,
-    "change_pct": 1.91,
+    "price": 212.76,
+    "previous_close": 213.81,
+    "change_pct": -0.49,
     "high_52w": 213.81,
     "low_52w": 146.75,
-    "from_high_pct": 0.0,
-    "from_low_pct": 45.7,
-    "sma50": 192.8348,
-    "sma200": 181.7113,
-    "rsi14": 64.88,
-    "atr_pct": 0.9,
-    "as_of": "2026-09-09",
+    "from_high_pct": -0.49,
+    "from_low_pct": 44.98,
+    "sma50": 193.7748,
+    "sma200": 182.0236,
+    "rsi14": 62.44,
+    "atr_pct": 0.94,
+    "as_of": "2026-09-10",
     "first_close": 102.25,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -7480,8 +7480,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 8.7,
-      "note": "Each $1 retained since 2016-09-12 created $8.70 of market value",
+      "value": 8.62,
+      "note": "Each $1 retained since 2016-09-12 created $8.62 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -7507,7 +7507,7 @@
       "terminal_share_of_value": 0.522,
       "growth_1_5_pct": 0.8,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -33.5
+      "upside_pct": -33.2
      },
      "base": {
       "per_share": 196.76,
@@ -7517,7 +7517,7 @@
       "terminal_share_of_value": 0.551,
       "growth_1_5_pct": 5.8,
       "growth_6_10_pct": 2.8,
-      "upside_pct": -8.0
+      "upside_pct": -7.5
      },
      "bull": {
       "per_share": 260.12,
@@ -7527,15 +7527,15 @@
       "terminal_share_of_value": 0.579,
       "growth_1_5_pct": 9.8,
       "growth_6_10_pct": 5.8,
-      "upside_pct": 21.7
+      "upside_pct": 22.3
      }
     },
     "base_value": 196.76,
     "buy_below": 137.73,
-    "discount_to_value_pct": -8.7,
+    "discount_to_value_pct": -8.1,
     "band": "Near fair value",
-    "owner_earnings_yield_pct": 6.32,
-    "market_cap": 396831360000.0
+    "owner_earnings_yield_pct": 6.35,
+    "market_cap": 394882560000.0
    },
    "series": {
     "owner_earnings": {
@@ -7703,7 +7703,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/93410/000009341026000169/xslF345X06/form4.xml"
     }
    ],
-   "summary": "Chevron Corp scores 42.6 out of 100, which makes it a weak business by these tests. It earns only about 7% a year on the money shareholders have left in it and profit fell sharply in 6 of the last ten years. It does score well on one measure: every $1 it held back rather than paying out has become about $8.70 of market value. On the dashboard's default assumptions its shares work out at around $196.76 each, and they trade at $213.81. That is close enough to the estimate to leave little room for the estimate itself to be wrong.",
+   "summary": "Chevron Corp scores 42.6 out of 100, which makes it a weak business by these tests. It earns only about 7% a year on the money shareholders have left in it and profit fell sharply in 6 of the last ten years. It does score well on one measure: every $1 it held back rather than paying out has become about $8.62 of market value. On the dashboard's default assumptions its shares work out at around $196.76 each, and they trade at $212.76. That is close enough to the estimate to leave little room for the estimate itself to be wrong.",
    "headline": "Weak business, priced near the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=93410&type=10-K&dateb=&owner=include&count=10"
   },
@@ -7717,18 +7717,18 @@
    "price": {
     "symbol": "DVA",
     "currency": "USD",
-    "price": 183.01,
-    "previous_close": 180.06,
-    "change_pct": 1.64,
+    "price": 181.33,
+    "previous_close": 183.01,
+    "change_pct": -0.92,
     "high_52w": 240.96,
     "low_52w": 103.87,
-    "from_high_pct": -24.05,
-    "from_low_pct": 76.19,
-    "sma50": 206.8108,
-    "sma200": 164.7369,
-    "rsi14": 58.92,
-    "atr_pct": 1.26,
-    "as_of": "2026-09-09",
+    "from_high_pct": -24.75,
+    "from_low_pct": 74.57,
+    "sma50": 205.9878,
+    "sma200": 165.0667,
+    "rsi14": 59.57,
+    "atr_pct": 1.25,
+    "as_of": "2026-09-10",
     "first_close": 64.71,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -7946,7 +7946,7 @@
       "terminal_share_of_value": 0.868,
       "growth_1_5_pct": 10.0,
       "growth_6_10_pct": 8.0,
-      "upside_pct": 25.3
+      "upside_pct": 26.5
      },
      "base": {
       "per_share": 369.65,
@@ -7956,7 +7956,7 @@
       "terminal_share_of_value": 0.806,
       "growth_1_5_pct": 15.0,
       "growth_6_10_pct": 12.0,
-      "upside_pct": 102.0
+      "upside_pct": 103.9
      },
      "bull": {
       "per_share": 515.64,
@@ -7966,15 +7966,15 @@
       "terminal_share_of_value": 0.783,
       "growth_1_5_pct": 19.0,
       "growth_6_10_pct": 15.0,
-      "upside_pct": 181.8
+      "upside_pct": 184.4
      }
     },
     "base_value": 369.65,
     "buy_below": 258.75,
-    "discount_to_value_pct": 50.5,
+    "discount_to_value_pct": 50.9,
     "band": "Below margin of safety",
-    "owner_earnings_yield_pct": 8.72,
-    "market_cap": 13887713850.0
+    "owner_earnings_yield_pct": 8.8,
+    "market_cap": 13760227050.0
    },
    "series": {
     "owner_earnings": {
@@ -8154,7 +8154,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000117/xslF345X06/wk-form4_1787091007.xml"
     }
    ],
-   "summary": "Davita Inc. scores 38.2 out of 100, which makes it a weak business by these tests. It owes about 8.4 years of earnings in long-term debt and profit fell sharply in 4 of the last ten years. It does score well on one measure: the cash it throws off for owners has grown about 16% a year. On the dashboard's default assumptions its shares work out at around $369.65 each, and they trade at $183.01, about 50% below that estimate. That is inside the margin of safety set in the settings, which asks for $258.75 or less. One caution: book equity is negative or very small, usually the result of years of buybacks. Return-on-equity figures for such a company are an artefact of its capital structure rather than a measure of profitability, so return on invested capital is scored in its place.",
+   "summary": "Davita Inc. scores 38.2 out of 100, which makes it a weak business by these tests. It owes about 8.4 years of earnings in long-term debt and profit fell sharply in 4 of the last ten years. It does score well on one measure: the cash it throws off for owners has grown about 16% a year. On the dashboard's default assumptions its shares work out at around $369.65 each, and they trade at $181.33, about 51% below that estimate. That is inside the margin of safety set in the settings, which asks for $258.75 or less. One caution: book equity is negative or very small, usually the result of years of buybacks. Return-on-equity figures for such a company are an artefact of its capital structure rather than a measure of profitability, so return on invested capital is scored in its place.",
    "headline": "Weak business, trading below the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=927066&type=10-K&dateb=&owner=include&count=10"
   },
@@ -8168,18 +8168,18 @@
    "price": {
     "symbol": "DAL",
     "currency": "USD",
-    "price": 78.75,
-    "previous_close": 78.96,
-    "change_pct": -0.27,
+    "price": 78.24,
+    "previous_close": 78.75,
+    "change_pct": -0.65,
     "high_52w": 93.66,
     "low_52w": 55.65,
-    "from_high_pct": -15.92,
-    "from_low_pct": 41.51,
-    "sma50": 86.013,
-    "sma200": 74.4132,
-    "rsi14": 36.83,
-    "atr_pct": 1.56,
-    "as_of": "2026-09-09",
+    "from_high_pct": -16.46,
+    "from_low_pct": 40.59,
+    "sma50": 85.7046,
+    "sma200": 74.5245,
+    "rsi14": 40.91,
+    "atr_pct": 1.42,
+    "as_of": "2026-09-10",
     "first_close": 38.44,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -8368,8 +8368,8 @@
       "label": "One-dollar premise",
       "points": 10.0,
       "max": 10,
-      "value": 3.39,
-      "note": "Each $1 retained since 2016-09-12 created $3.39 of market value",
+      "value": 3.35,
+      "note": "Each $1 retained since 2016-09-12 created $3.35 of market value",
       "detail": "Buffett's one-dollar premise, comparing the change in retained earnings with the change in market value over the same window. Full marks at $1.50, none at $0.50."
      }
     ],
@@ -8395,7 +8395,7 @@
       "terminal_share_of_value": 0.54,
       "growth_1_5_pct": 0.0,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -12.7
+      "upside_pct": -12.1
      },
      "base": {
       "per_share": 72.32,
@@ -8405,7 +8405,7 @@
       "terminal_share_of_value": 0.54,
       "growth_1_5_pct": 1.0,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -8.2
+      "upside_pct": -7.6
      },
      "bull": {
       "per_share": 90.72,
@@ -8415,15 +8415,15 @@
       "terminal_share_of_value": 0.55,
       "growth_1_5_pct": 5.0,
       "growth_6_10_pct": 1.0,
-      "upside_pct": 15.2
+      "upside_pct": 16.0
      }
     },
     "base_value": 72.32,
     "buy_below": 50.62,
-    "discount_to_value_pct": -8.9,
+    "discount_to_value_pct": -8.2,
     "band": "Near fair value",
-    "owner_earnings_yield_pct": 8.95,
-    "market_cap": 51502500000.0
+    "owner_earnings_yield_pct": 9.01,
+    "market_cap": 51168960000.0
    },
    "series": {
     "owner_earnings": {
@@ -8605,7 +8605,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/27904/000002790426000031/dal-20260630.htm"
     }
    ],
-   "summary": "Delta Air Lines, Inc. scores 31.5 out of 100, which makes it a poor business by these tests. It is losing money on the money shareholders have left in it, at a rate of about 48% a year and profit fell sharply in 3 of the last ten years. It does score well on one measure: every $1 it held back rather than paying out has become about $3.39 of market value. On the dashboard's default assumptions its shares work out at around $72.32 each, and they trade at $78.75. That is close enough to the estimate to leave little room for the estimate itself to be wrong.",
+   "summary": "Delta Air Lines, Inc. scores 31.5 out of 100, which makes it a poor business by these tests. It is losing money on the money shareholders have left in it, at a rate of about 48% a year and profit fell sharply in 3 of the last ten years. It does score well on one measure: every $1 it held back rather than paying out has become about $3.35 of market value. On the dashboard's default assumptions its shares work out at around $72.32 each, and they trade at $78.24. That is close enough to the estimate to leave little room for the estimate itself to be wrong.",
    "headline": "Poor business, priced near the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=27904&type=10-K&dateb=&owner=include&count=10"
   },
@@ -8619,18 +8619,18 @@
    "price": {
     "symbol": "BAC",
     "currency": "USD",
-    "price": 62.67,
-    "previous_close": 62.39,
-    "change_pct": 0.45,
+    "price": 62.56,
+    "previous_close": 62.67,
+    "change_pct": -0.18,
     "high_52w": 64.81,
     "low_52w": 46.72,
-    "from_high_pct": -3.3,
-    "from_low_pct": 34.14,
-    "sma50": 61.8058,
-    "sma200": 54.98,
-    "rsi14": 46.45,
-    "atr_pct": 0.8,
-    "as_of": "2026-09-09",
+    "from_high_pct": -3.47,
+    "from_low_pct": 33.9,
+    "sma50": 61.9174,
+    "sma200": 55.0378,
+    "rsi14": 55.99,
+    "atr_pct": 0.67,
+    "as_of": "2026-09-10",
     "first_close": 15.9,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -8849,7 +8849,7 @@
       "terminal_share_of_value": 0.627,
       "growth_1_5_pct": 1.7,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -47.6
+      "upside_pct": -47.5
      },
      "base": {
       "per_share": 49.55,
@@ -8859,7 +8859,7 @@
       "terminal_share_of_value": 0.634,
       "growth_1_5_pct": 6.7,
       "growth_6_10_pct": 3.7,
-      "upside_pct": -20.9
+      "upside_pct": -20.8
      },
      "bull": {
       "per_share": 67.54,
@@ -8869,15 +8869,15 @@
       "terminal_share_of_value": 0.644,
       "growth_1_5_pct": 10.7,
       "growth_6_10_pct": 6.7,
-      "upside_pct": 7.8
+      "upside_pct": 8.0
      }
     },
     "base_value": 49.55,
     "buy_below": 34.68,
-    "discount_to_value_pct": -26.5,
+    "discount_to_value_pct": -26.3,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 5.72,
-    "market_cap": 481362003000.0
+    "owner_earnings_yield_pct": 5.73,
+    "market_cap": 480517104000.0
    },
    "series": {
     "owner_earnings": {
@@ -8972,68 +8972,68 @@
      "form": "424B2",
      "filed": "2026-09-10",
      "report_date": "",
-     "accession": "0001918704-26-027039",
+     "accession": "0001918704-26-027170",
      "document": "form424b2.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027039/form424b2.htm"
+     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027170/form424b2.htm"
     },
     {
      "form": "424B2",
      "filed": "2026-09-10",
      "report_date": "",
-     "accession": "0001918704-26-027036",
+     "accession": "0001918704-26-027169",
      "document": "form424b2.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027036/form424b2.htm"
+     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027169/form424b2.htm"
     },
     {
      "form": "424B2",
      "filed": "2026-09-10",
      "report_date": "",
-     "accession": "0001918704-26-027034",
+     "accession": "0001918704-26-027165",
      "document": "form424b2.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027034/form424b2.htm"
+     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027165/form424b2.htm"
     },
     {
      "form": "424B2",
      "filed": "2026-09-10",
      "report_date": "",
-     "accession": "0001918704-26-027033",
-     "document": "form424b2.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027033/form424b2.htm"
+     "accession": "0001918704-26-027163",
+     "document": "bofa-424b2.htm",
+     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027163/bofa-424b2.htm"
     },
     {
      "form": "424B2",
      "filed": "2026-09-10",
      "report_date": "",
-     "accession": "0001918704-26-027029",
+     "accession": "0001918704-26-027151",
      "document": "form424b2.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027029/form424b2.htm"
+     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027151/form424b2.htm"
     },
     {
      "form": "424B2",
-     "filed": "2026-09-09",
+     "filed": "2026-09-10",
      "report_date": "",
-     "accession": "0001918704-26-027026",
-     "document": "form424b2.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027026/form424b2.htm"
+     "accession": "0001918704-26-027130",
+     "document": "bofa-424b2.htm",
+     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027130/bofa-424b2.htm"
     },
     {
      "form": "424B2",
-     "filed": "2026-09-09",
+     "filed": "2026-09-10",
      "report_date": "",
-     "accession": "0001213900-26-098393",
-     "document": "ea0305013-01_424b2.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/70858/000121390026098393/ea0305013-01_424b2.htm"
+     "accession": "0001918704-26-027129",
+     "document": "form424b2.htm",
+     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027129/form424b2.htm"
     },
     {
      "form": "424B2",
-     "filed": "2026-09-09",
+     "filed": "2026-09-10",
      "report_date": "",
-     "accession": "0001918704-26-026991",
+     "accession": "0001918704-26-027127",
      "document": "form424b2.htm",
-     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426026991/form424b2.htm"
+     "url": "https://www.sec.gov/Archives/edgar/data/70858/000191870426027127/form424b2.htm"
     }
    ],
-   "summary": "Bank of America Corp scores 27.6 out of 100, which makes it a poor business by these tests. It has not once beaten a 15% return on shareholders' money in 11 years and it owes about 10.4 years of earnings in long-term debt. It does score well on one measure: every $1 it held back rather than paying out has become about $2.07 of market value. On the dashboard's default assumptions its shares work out at around $49.55 each, against a market price of $62.67. That is roughly 26% more than the estimate supports, so it is the price rather than the business that stands out. One caution: this looks like a financial company. Gross margin and maintenance capital expenditure do not apply to banks and insurers, so the margin-stability and owner-earnings components understate it. Judge it on return on equity, consistency and book value instead.",
+   "summary": "Bank of America Corp scores 27.6 out of 100, which makes it a poor business by these tests. It has not once beaten a 15% return on shareholders' money in 11 years and it owes about 10.4 years of earnings in long-term debt. It does score well on one measure: every $1 it held back rather than paying out has become about $2.07 of market value. On the dashboard's default assumptions its shares work out at around $49.55 each, against a market price of $62.56. That is roughly 26% more than the estimate supports, so it is the price rather than the business that stands out. One caution: this looks like a financial company. Gross margin and maintenance capital expenditure do not apply to banks and insurers, so the margin-stability and owner-earnings components understate it. Judge it on return on equity, consistency and book value instead.",
    "headline": "Poor business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=70858&type=10-K&dateb=&owner=include&count=10"
   },
@@ -9047,18 +9047,18 @@
    "price": {
     "symbol": "OXY",
     "currency": "USD",
-    "price": 61.3,
-    "previous_close": 60.65,
-    "change_pct": 1.07,
+    "price": 61.16,
+    "previous_close": 61.3,
+    "change_pct": -0.23,
     "high_52w": 66.24,
     "low_52w": 38.92,
-    "from_high_pct": -7.46,
-    "from_low_pct": 57.5,
-    "sma50": 56.5758,
-    "sma200": 52.593,
-    "rsi14": 56.44,
-    "atr_pct": 1.09,
-    "as_of": "2026-09-09",
+    "from_high_pct": -7.67,
+    "from_low_pct": 57.14,
+    "sma50": 56.8276,
+    "sma200": 52.6927,
+    "rsi14": 47.78,
+    "atr_pct": 0.95,
+    "as_of": "2026-09-10",
     "first_close": 75.85,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -9274,7 +9274,7 @@
       "terminal_share_of_value": 0.659,
       "growth_1_5_pct": 0.0,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -29.0
+      "upside_pct": -28.8
      },
      "base": {
       "per_share": 43.53,
@@ -9284,7 +9284,7 @@
       "terminal_share_of_value": 0.659,
       "growth_1_5_pct": 0.0,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -29.0
+      "upside_pct": -28.8
      },
      "bull": {
       "per_share": 54.97,
@@ -9294,15 +9294,15 @@
       "terminal_share_of_value": 0.635,
       "growth_1_5_pct": 4.0,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -10.3
+      "upside_pct": -10.1
      }
     },
     "base_value": 43.53,
     "buy_below": 30.47,
-    "discount_to_value_pct": -40.8,
+    "discount_to_value_pct": -40.5,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 8.89,
-    "market_cap": 61306130000.0
+    "owner_earnings_yield_pct": 8.91,
+    "market_cap": 61166116000.0
    },
    "series": {
     "owner_earnings": {
@@ -9468,7 +9468,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026031570/xslF345X06/wk-form4_1778108846.xml"
     }
    ],
-   "summary": "Occidental Petroleum Corp scores 20.8 out of 100, which makes it a poor business by these tests. It is losing money on the money shareholders have left in it, at a rate of about 47% a year and profit fell sharply in 4 of the last ten years. It does score well on one measure: its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. On the dashboard's default assumptions its shares work out at around $43.53 each, against a market price of $61.30. That is roughly 41% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "Occidental Petroleum Corp scores 20.8 out of 100, which makes it a poor business by these tests. It is losing money on the money shareholders have left in it, at a rate of about 47% a year and profit fell sharply in 4 of the last ten years. It does score well on one measure: its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. On the dashboard's default assumptions its shares work out at around $43.53 each, against a market price of $61.16. That is roughly 40% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Poor business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=797468&type=10-K&dateb=&owner=include&count=10"
   },
@@ -9482,18 +9482,18 @@
    "price": {
     "symbol": "KHC",
     "currency": "USD",
-    "price": 24.61,
-    "previous_close": 24.9,
-    "change_pct": -1.16,
+    "price": 24.39,
+    "previous_close": 24.61,
+    "change_pct": -0.89,
     "high_52w": 27.62,
     "low_52w": 21.21,
-    "from_high_pct": -10.9,
-    "from_low_pct": 16.03,
-    "sma50": 25.4622,
-    "sma200": 24.0282,
-    "rsi14": 37.76,
-    "atr_pct": 1.27,
-    "as_of": "2026-09-09",
+    "from_high_pct": -11.69,
+    "from_low_pct": 14.99,
+    "sma50": 25.4776,
+    "sma200": 24.0253,
+    "rsi14": 36.83,
+    "atr_pct": 1.31,
+    "as_of": "2026-09-10",
     "first_close": 88.56,
     "first_date": "2016-09-12",
     "sparkline": [
@@ -9709,7 +9709,7 @@
       "terminal_share_of_value": 0.958,
       "growth_1_5_pct": 0.0,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -46.8
+      "upside_pct": -46.3
      },
      "base": {
       "per_share": 16.8,
@@ -9719,7 +9719,7 @@
       "terminal_share_of_value": 0.866,
       "growth_1_5_pct": 3.0,
       "growth_6_10_pct": 0.0,
-      "upside_pct": -31.7
+      "upside_pct": -31.1
      },
      "bull": {
       "per_share": 25.85,
@@ -9729,15 +9729,15 @@
       "terminal_share_of_value": 0.789,
       "growth_1_5_pct": 7.0,
       "growth_6_10_pct": 3.0,
-      "upside_pct": 5.0
+      "upside_pct": 6.0
      }
     },
     "base_value": 16.8,
     "buy_below": 11.76,
-    "discount_to_value_pct": -46.5,
+    "discount_to_value_pct": -45.2,
     "band": "Above estimated value",
-    "owner_earnings_yield_pct": 9.67,
-    "market_cap": 29212070000.0
+    "owner_earnings_yield_pct": 9.75,
+    "market_cap": 28950930000.0
    },
    "series": {
     "owner_earnings": {
@@ -9932,7 +9932,7 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1637459/000119312526234627/d101070d8k.htm"
     }
    ],
-   "summary": "Kraft Heinz Co scores 19 out of 100, which makes it a poor business by these tests. It earns only about 1% a year on the money shareholders have left in it and it owes about 18.3 years of earnings in long-term debt. It does score well on one measure: its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. On the dashboard's default assumptions its shares work out at around $16.80 each, against a market price of $24.61. That is roughly 46% more than the estimate supports, so it is the price rather than the business that stands out.",
+   "summary": "Kraft Heinz Co scores 19 out of 100, which makes it a poor business by these tests. It earns only about 1% a year on the money shareholders have left in it and it owes about 18.3 years of earnings in long-term debt. It does score well on one measure: its profit margin has barely moved in a decade, which is what a durable competitive advantage looks like from the outside. On the dashboard's default assumptions its shares work out at around $16.80 each, against a market price of $24.39. That is roughly 45% more than the estimate supports, so it is the price rather than the business that stands out.",
    "headline": "Poor business, priced above the estimate",
    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1637459&type=10-K&dateb=&owner=include&count=10"
   },
@@ -9946,18 +9946,18 @@
    "price": {
     "symbol": "LLYVA",
     "currency": "USD",
-    "price": 93.66,
-    "previous_close": 94.34,
-    "change_pct": -0.72,
+    "price": 93.38,
+    "previous_close": 93.66,
+    "change_pct": -0.3,
     "high_52w": 104.99,
     "low_52w": 74.85,
-    "from_high_pct": -10.79,
-    "from_low_pct": 25.13,
-    "sma50": 99.8603,
-    "sma200": 91.7906,
-    "rsi14": 21.87,
-    "atr_pct": 1.33,
-    "as_of": "2026-09-09",
+    "from_high_pct": -11.06,
+    "from_low_pct": 24.76,
+    "sma50": 99.7027,
+    "sma200": 91.8772,
+    "rsi14": 23.61,
+    "atr_pct": 1.23,
+    "as_of": "2026-09-10",
     "first_close": 35.73,
     "first_date": "2023-08-04",
     "sparkline": [
@@ -11159,22 +11159,14 @@
    "ticker": "LEN",
    "kind": "price",
    "headline": "LEN is at a 52-week low",
-   "detail": "$80.76 against a 52-week low of $80.37.",
-   "url": ""
-  },
-  {
-   "severity": "low",
-   "ticker": "AXP",
-   "kind": "technical",
-   "headline": "AXP RSI is 28.68",
-   "detail": "Conventionally oversold. A short-term signal, not a valuation one.",
+   "detail": "$77.9 against a 52-week low of $77.9.",
    "url": ""
   },
   {
    "severity": "low",
    "ticker": "LLYVA",
    "kind": "technical",
-   "headline": "LLYVA RSI is 21.87",
+   "headline": "LLYVA RSI is 23.61",
    "detail": "Conventionally oversold. A short-term signal, not a valuation one.",
    "url": ""
   }
@@ -11187,7 +11179,7 @@
   "total_gain_pct": null,
   "private": true
  },
- "brief": "The US stock market as a whole is worth about 218% of everything the country produces in a year, which is high by any historical standard and is the measure Buffett has pointed to as a warning sign. Government bonds pay 4.80%, which is the return a share has to beat before it is worth taking on the extra risk. Since the last check: LEN is at a 52-week low. There are 2 other items below. Of the 23 companies tracked, 4 currently sit below the margin of safety set in the settings: NUE, CB, LEN, DVA. That is this dashboard's arithmetic on its default assumptions rather than a recommendation, so open each one and judge whether the assumptions behind it look right to you.",
+ "brief": "The US stock market as a whole is worth about 218% of everything the country produces in a year, which is high by any historical standard and is the measure Buffett has pointed to as a warning sign. Government bonds pay 4.83%, which is the return a share has to beat before it is worth taking on the extra risk. Since the last check: LEN is at a 52-week low. There is 1 other item below. Of the 23 companies tracked, 4 currently sit below the margin of safety set in the settings: NUE, CB, LEN, DVA. That is this dashboard's arithmetic on its default assumptions rather than a recommendation, so open each one and judge whether the assumptions behind it look right to you.",
  "israel": {
   "money_market": {
    "available": false,
@@ -11201,9 +11193,9 @@
    {
     "label": "TA-125",
     "description": "The 125 largest companies on the Tel Aviv exchange",
-    "price": 4144.01,
-    "change_pct": -0.84,
-    "from_high_pct": -7.52,
+    "price": 4121.28,
+    "change_pct": -1.38,
+    "from_high_pct": -8.03,
     "high_52w": 4481.04,
     "low_52w": 3044.46,
     "as_of": "2026-09-10"
@@ -11211,20 +11203,20 @@
    {
     "label": "TA-35",
     "description": "The 35 largest, Israel's blue-chip index",
-    "price": 4240.8,
-    "change_pct": -0.77,
-    "from_high_pct": -6.31,
+    "price": 4221.44,
+    "change_pct": -1.22,
+    "from_high_pct": -6.74,
     "high_52w": 4526.4502,
     "low_52w": 3000.1699,
     "as_of": "2026-09-10"
    }
   ],
   "shekel": {
-   "rate": 3.0284,
-   "change_pct": 0.57,
+   "rate": 3.045,
+   "change_pct": 0.84,
    "high_52w": 3.3565,
    "low_52w": 2.8005,
-   "as_of": "2026-09-10"
+   "as_of": "2026-09-11"
   },
   "links": [
    {
@@ -11249,7 +11241,7 @@
    }
   ],
   "attribution": "Fund data from funder.co.il, shown as a digest with the full lists linked. Index levels and the shekel rate from Yahoo Finance.",
-  "brief": "TA-125 is down 0.84% at 4,144, 7.5% below its 12-month high. A dollar buys 3.028 shekels. None of the Buffett tests on the other tabs apply here. Those measure operating businesses through their accounts; these are funds, and what matters instead is the fee, the risk taken to earn the return, and how the return compares with simply holding cash."
+  "brief": "TA-125 is down 1.38% at 4,121, 8.0% below its 12-month high. A dollar buys 3.045 shekels. None of the Buffett tests on the other tabs apply here. Those measure operating businesses through their accounts; these are funds, and what matters instead is the fee, the risk taken to earn the return, and how the return compares with simply holding cash."
  },
  "etfs": {
   "us": [
@@ -11257,105 +11249,105 @@
     "symbol": "VOO",
     "name": "Vanguard S&P 500",
     "description": "The 500 largest US companies. The fund Buffett named for his estate.",
-    "price": 700.87,
-    "change_pct": -0.45,
-    "year_pct": 16.9,
-    "five_year_pct": 71.1,
-    "from_high_pct": -1.97,
+    "price": 696.65,
+    "change_pct": -0.6,
+    "year_pct": 15.2,
+    "five_year_pct": 69.7,
+    "from_high_pct": -2.56,
     "fee_pct": 0.03,
     "fee_per_10k": 3.0,
-    "as_of": "2026-09-09"
+    "as_of": "2026-09-10"
    },
    {
     "symbol": "VTI",
     "name": "Vanguard Total US Market",
     "description": "Every listed US company, not just the largest 500.",
-    "price": 375.56,
-    "change_pct": -0.54,
-    "year_pct": 16.7,
-    "five_year_pct": 63.2,
-    "from_high_pct": -2.27,
+    "price": 373.24,
+    "change_pct": -0.62,
+    "year_pct": 14.9,
+    "five_year_pct": 61.9,
+    "from_high_pct": -2.88,
     "fee_pct": 0.03,
     "fee_per_10k": 3.0,
-    "as_of": "2026-09-09"
+    "as_of": "2026-09-10"
    },
    {
     "symbol": "AGG",
     "name": "iShares US Bonds",
     "description": "US investment-grade bonds, held as ballast rather than for growth.",
-    "price": 96.68,
-    "change_pct": -0.23,
-    "year_pct": -3.7,
-    "five_year_pct": -16.6,
-    "from_high_pct": -4.65,
+    "price": 96.05,
+    "change_pct": -0.65,
+    "year_pct": -4.6,
+    "five_year_pct": -17.2,
+    "from_high_pct": -5.28,
     "fee_pct": 0.03,
     "fee_per_10k": 3.0,
-    "as_of": "2026-09-09"
+    "as_of": "2026-09-10"
    },
    {
     "symbol": "VXUS",
     "name": "Vanguard World ex-US",
     "description": "Developed and emerging markets outside America.",
-    "price": 87.41,
-    "change_pct": -0.76,
-    "year_pct": 20.5,
-    "five_year_pct": 32.2,
-    "from_high_pct": -1.13,
+    "price": 86.28,
+    "change_pct": -1.29,
+    "year_pct": 17.7,
+    "five_year_pct": 29.6,
+    "from_high_pct": -2.41,
     "fee_pct": 0.05,
     "fee_per_10k": 5.0,
-    "as_of": "2026-09-09"
+    "as_of": "2026-09-10"
    },
    {
     "symbol": "VT",
     "name": "Vanguard Total World",
     "description": "The whole investable world in one fund.",
-    "price": 159.89,
-    "change_pct": -0.64,
-    "year_pct": 18.0,
-    "five_year_pct": 50.8,
-    "from_high_pct": -1.54,
+    "price": 158.53,
+    "change_pct": -0.85,
+    "year_pct": 15.8,
+    "five_year_pct": 49.0,
+    "from_high_pct": -2.38,
     "fee_pct": 0.06,
     "fee_per_10k": 6.0,
-    "as_of": "2026-09-09"
+    "as_of": "2026-09-10"
    },
    {
     "symbol": "SCHD",
     "name": "Schwab US Dividend",
     "description": "US companies with a long record of paying dividends.",
-    "price": 34.09,
-    "change_pct": -0.93,
-    "year_pct": 24.0,
-    "five_year_pct": 34.5,
-    "from_high_pct": -3.18,
+    "price": 33.99,
+    "change_pct": -0.29,
+    "year_pct": 22.6,
+    "five_year_pct": 33.5,
+    "from_high_pct": -3.46,
     "fee_pct": 0.06,
     "fee_per_10k": 6.0,
-    "as_of": "2026-09-09"
+    "as_of": "2026-09-10"
    },
    {
     "symbol": "SPY",
     "name": "SPDR S&P 500",
     "description": "The same index, older and dearer, but the most heavily traded.",
-    "price": 762.4,
-    "change_pct": -0.46,
-    "year_pct": 16.9,
-    "five_year_pct": 71.2,
-    "from_high_pct": -1.99,
+    "price": 757.83,
+    "change_pct": -0.6,
+    "year_pct": 15.2,
+    "five_year_pct": 69.7,
+    "from_high_pct": -2.58,
     "fee_pct": 0.0945,
     "fee_per_10k": 9.45,
-    "as_of": "2026-09-09"
+    "as_of": "2026-09-10"
    },
    {
     "symbol": "QQQ",
     "name": "Invesco Nasdaq 100",
     "description": "The 100 largest Nasdaq companies. Heavily weighted to technology.",
-    "price": 716.31,
-    "change_pct": -0.29,
-    "year_pct": 23.4,
-    "five_year_pct": 90.2,
-    "from_high_pct": -4.0,
+    "price": 708.69,
+    "change_pct": -1.06,
+    "year_pct": 21.3,
+    "five_year_pct": 88.3,
+    "from_high_pct": -5.02,
     "fee_pct": 0.2,
     "fee_per_10k": 20.0,
-    "as_of": "2026-09-09"
+    "as_of": "2026-09-10"
    }
   ],
   "israel": {
@@ -11365,7 +11357,7 @@
   "benchmark": "VOO",
   "attribution": "US prices from Yahoo Finance; expense ratios as published by the issuers and pinned in scripts/etfs.py. Israeli funds from funder.co.il, shown as a digest with the full list linked.",
   "returns_note": "All returns here are price returns and exclude dividends, so a fund paying income has done better than the figure shown.",
-  "brief": "Buying the whole S&P 500 through VOO returned 16.9% over the past year, before dividends, for a fee of 0.03% a year \u2014 about $3 annually on every $10,000 invested. Fees across this list run from 0.03% to 0.20%. That gap sounds trivial and is not: it is deducted every year, on the whole balance, whether the fund rises or falls. This is the benchmark the rest of the dashboard has to beat. Picking individual companies only makes sense if it does better than simply buying the index, after the effort and the mistakes \u2014 and today the screen finds 4 of 23 tracked companies trading below their estimated value. Buffett's own instruction for his estate was 90% in a low-cost S&P 500 fund and 10% in short-term government bonds. He has been explicit that most people, including his own family, should not try to pick stocks at all."
+  "brief": "Buying the whole S&P 500 through VOO returned 15.2% over the past year, before dividends, for a fee of 0.03% a year \u2014 about $3 annually on every $10,000 invested. Fees across this list run from 0.03% to 0.20%. That gap sounds trivial and is not: it is deducted every year, on the whole balance, whether the fund rises or falls. This is the benchmark the rest of the dashboard has to beat. Picking individual companies only makes sense if it does better than simply buying the index, after the effort and the mistakes \u2014 and today the screen finds 4 of 23 tracked companies trading below their estimated value. Buffett's own instruction for his estate was 90% in a low-cost S&P 500 fund and 10% in short-term government bonds. He has been explicit that most people, including his own family, should not try to pick stocks at all."
  },
  "glossary": [
   {
@@ -11670,12 +11662,12 @@
   }
  ],
  "principle": {
-  "title": "Beware the institutional imperative",
-  "body": "Organisations imitate their peers, resist changing direction, and find justifications for whatever leadership already wants to do. Buffett names this tendency as a major destroyer of capital and looks for managers who visibly resist it.",
+  "title": "Time is the friend of the wonderful business",
+  "body": "A mediocre company bought cheaply must be sold to make money. A great company compounds while you own it, which means the passage of time works for you rather than against you.",
   "source": "1989 shareholder letter",
-  "index": 9,
+  "index": 10,
   "total": 20
  },
- "previous_generated_at": "2026-09-10T08:42:31+00:00",
+ "previous_generated_at": "2026-09-10T12:11:35+00:00",
  "disclaimer": "This dashboard reports public filings and applies published screening criteria. It is not investment advice, does not know your circumstances, and makes no recommendation to buy or sell anything. Every estimate here depends on assumptions that are shown alongside it and that you should judge for yourself."
 }
